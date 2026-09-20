@@ -1,8 +1,3 @@
-# Nginx Proxy Manager (GUI-based reverse proxy + automatic Let's Encrypt SSL)
-# plus the app itself. See PRODUCTION.md for the one-time setup steps after
-# first launch: opening the NPM admin UI, adding a Proxy Host for the app,
-# requesting a certificate, and enabling COOKIE_SECURE once HTTPS is
-# confirmed working end-to-end.
 services:
   nginx-proxy-manager:
     image: 'jc21/nginx-proxy-manager:latest'
@@ -18,27 +13,13 @@ services:
     networks:
       - proxy-net
 
-  # No host port published on purpose — Nginx Proxy Manager reaches this
-  # container over the shared network at "uptime-monitoring:3300", so the
-  # app is never directly exposed without TLS. To allow direct/local access
-  # instead, add a top-level `ports: ["3300:3300"]` entry to this service.
   uptime-monitoring:
     build: .
     container_name: uptime-monitoring
     restart: unless-stopped
     environment:
       PORT: '3300'
-      # Define the admin login on first run. If left unset, a random
-      # password is generated and printed to the container logs instead.
-      # ADMIN_USERNAME: 'admin'
-      # ADMIN_PASSWORD: 'change-me'
-      # SESSION_SECRET: 'some-long-random-string'
-      # Nginx Proxy Manager always sits in front, so trust its forwarded
-      # headers. Enable COOKIE_SECURE only once the HTTPS proxy host is
-      # confirmed working — turning it on too early locks out logins
-      # served over plain HTTP.
       TRUST_PROXY: '1'
-      # COOKIE_SECURE: '1'
     volumes:
       - uptime-data:/app/data
     networks:

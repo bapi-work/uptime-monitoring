@@ -34,11 +34,16 @@ alphanumeric strings, not user input.
 
 By default, on first boot the app generates a random admin password and
 prints it once to the logs. For production, set it explicitly instead so you
-don't have to go digging through logs:
+don't have to go digging through logs. Add these under the
+`uptime-monitoring` service's `environment:` block in `docker-compose.yml`
+(mapping syntax, matching what's already there):
 
-```
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=<a strong password>
+```yaml
+    environment:
+      PORT: '3300'
+      TRUST_PROXY: '1'
+      ADMIN_USERNAME: 'admin'
+      ADMIN_PASSWORD: '<a strong password>'
 ```
 
 These only take effect on the **first** boot (when `data/users.json` doesn't
@@ -59,14 +64,15 @@ vars on the `uptime-monitoring` service so `req.ip` is read from
 `X-Forwarded-For` correctly (needed for the login rate limiter to key on the
 real client IP, not the proxy's) and session cookies are marked `Secure`:
 
-```
-TRUST_PROXY=1
-COOKIE_SECURE=1
+```yaml
+    environment:
+      TRUST_PROXY: '1'
+      COOKIE_SECURE: '1'
 ```
 
-`docker-compose.yml` already sets `TRUST_PROXY=1` by default since NPM always
-sits in front in that setup. **Don't set `COOKIE_SECURE=1` until HTTPS is
-actually working end-to-end** — the browser will silently refuse to send the
+`docker-compose.yml` already sets `TRUST_PROXY: '1'` by default since NPM
+always sits in front in that setup. **Don't add `COOKIE_SECURE: '1'` until
+HTTPS is actually working end-to-end** — the browser will silently refuse to send the
 cookie over plain HTTP and nobody will be able to log in. Enable it after
 you've confirmed the proxy host below serves HTTPS correctly, then
 `docker compose up -d` to apply it.
@@ -162,8 +168,9 @@ persistent volume. If you'd rather manage it explicitly (e.g. to share it
 across a redeploy that recreates the volume, or because your secrets
 management policy requires it), set:
 
-```
-SESSION_SECRET=<64+ random hex/base64 characters>
+```yaml
+    environment:
+      SESSION_SECRET: '<64+ random hex/base64 characters>'
 ```
 
 Generate one with: `openssl rand -hex 48`
