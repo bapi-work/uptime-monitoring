@@ -1,0 +1,20 @@
+[
+  {
+    "id": "mu8bh0mxuzxpbv",
+    "name": "Test Webhook",
+    "type": "webhook",
+    "config": {
+      "url": "https://httpbin.org/post"
+    },
+    "createdAt": "2026-09-19T11:41:19.353Z"
+  },
+  {
+    "id": "mu8bkbnraodkdz",
+    "name": "Sink",
+    "type": "webhook",
+    "config": {
+      "url": "https://httpbin.org/status/200"
+    },
+    "createdAt": "2026-09-19T11:43:53.607Z"
+  }
+]

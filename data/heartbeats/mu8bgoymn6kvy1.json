@@ -1,0 +1,3002 @@
+[
+  {
+    "time": "2026-09-20T09:19:58.934Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:20:28.938Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:20:58.945Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:21:28.946Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:21:58.963Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:22:28.957Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:22:58.969Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:23:28.973Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:23:58.983Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:24:29.006Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:24:59.006Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:25:29.033Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:25:59.038Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:26:29.037Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:26:59.041Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:27:29.055Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:27:59.053Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:28:29.062Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:28:59.067Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:29:29.074Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:29:59.075Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:30:29.073Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:30:59.085Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:31:29.100Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:31:59.091Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:32:29.097Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:32:59.102Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:33:29.098Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:33:59.121Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:34:29.127Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:34:59.153Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:35:29.136Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:35:59.142Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:36:29.158Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:36:59.163Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:37:29.158Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:37:59.165Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:38:29.172Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:38:59.170Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:39:29.178Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:39:59.192Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:40:29.194Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:40:59.199Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:41:29.208Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:41:59.219Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:42:29.234Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:42:59.233Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:43:29.231Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:43:59.245Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:44:29.246Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:44:59.257Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:45:29.257Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:45:59.262Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:46:29.274Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:46:59.292Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:47:29.295Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:47:59.309Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:48:29.307Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:48:59.314Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:49:29.318Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:49:59.325Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:50:29.327Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:50:59.336Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:51:29.348Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:51:59.347Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:52:29.353Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:52:59.360Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:53:29.361Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:53:59.369Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:54:29.383Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:54:59.398Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:55:29.404Z",
+    "status": "up",
+    "ping": 17,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:55:59.420Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:56:29.426Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:56:59.429Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:57:29.436Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:57:59.436Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:58:29.434Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:58:59.453Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:59:29.450Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T09:59:59.455Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:00:29.467Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:00:59.465Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:01:29.487Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:01:59.480Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:02:29.493Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:02:59.487Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:03:29.502Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:03:59.509Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:04:29.513Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:04:59.511Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:05:29.520Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:05:59.529Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:06:29.530Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:06:59.542Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:07:29.549Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:07:59.560Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:08:29.561Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:08:59.572Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:09:29.571Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:09:59.579Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:10:29.585Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:10:59.603Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:11:29.596Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:11:59.626Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:12:29.608Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:12:59.626Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:13:29.637Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:13:59.657Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:14:29.663Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:14:59.672Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:15:29.676Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:15:59.683Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:16:29.684Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:16:59.696Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:17:29.697Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:17:59.702Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:18:29.725Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:18:59.717Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:19:29.740Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:19:59.743Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:20:29.751Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:20:59.760Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:21:29.786Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:21:59.790Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:22:29.790Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:22:59.809Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:23:29.814Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:23:59.822Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:24:39.525Z",
+    "status": "down",
+    "ping": null,
+    "message": "Host unreachable"
+  },
+  {
+    "time": "2026-09-20T10:24:59.844Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:25:29.854Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:25:59.865Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:26:29.868Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:26:59.873Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:27:29.880Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:27:59.882Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:28:29.893Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:28:59.898Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:29:29.915Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:29:59.923Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:30:29.915Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:30:59.918Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:31:29.933Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:31:59.938Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:32:29.938Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:32:59.955Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:33:29.958Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:33:59.963Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:34:29.975Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:34:59.991Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:35:29.985Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:35:59.981Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:36:29.989Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:37:00.003Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:37:30.014Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:38:00.024Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:38:30.033Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:39:00.048Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:39:30.045Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:40:00.061Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:40:30.052Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:41:00.061Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:41:30.066Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:42:00.091Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:42:30.089Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:43:00.106Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:43:30.102Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:44:00.118Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:44:30.117Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:45:00.113Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:45:30.125Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:46:00.133Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:46:30.146Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:47:00.154Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:47:30.180Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:48:00.169Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:48:30.194Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:49:00.197Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:49:30.198Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:50:00.200Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:50:30.208Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:51:00.218Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:51:30.224Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:52:00.245Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:52:30.242Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:53:00.255Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:53:30.269Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:54:00.279Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:54:30.294Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:55:00.297Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:55:30.314Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:56:00.313Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:56:30.327Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:57:00.324Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:57:30.327Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:58:00.343Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:58:30.341Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:59:00.356Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:59:30.370Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:00:00.379Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:00:30.387Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:01:00.403Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:01:30.404Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:02:00.410Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:02:30.432Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:03:00.433Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:03:30.440Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:04:00.441Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:04:30.445Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:05:00.450Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:05:30.482Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:06:00.476Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:06:30.477Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:07:00.487Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:07:30.497Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:08:00.497Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:08:30.498Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:09:00.504Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:09:30.512Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:10:00.522Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:10:30.537Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:11:00.536Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:11:30.538Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:12:00.541Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:12:30.565Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:13:00.574Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:13:30.579Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:14:00.582Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:14:30.599Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:15:00.604Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:15:30.620Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:16:00.614Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:16:30.615Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:17:00.632Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:17:30.651Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:18:00.665Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:18:30.674Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:19:00.691Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:19:30.729Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:20:00.716Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:20:30.722Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:21:00.721Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:21:30.760Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:22:00.744Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:22:30.766Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:23:00.759Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:23:30.769Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:24:00.783Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:24:30.796Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:25:00.797Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:25:30.802Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:26:00.802Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:26:30.821Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:27:00.808Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:27:30.820Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:28:00.832Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:28:30.856Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:29:00.865Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:29:30.882Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:30:00.882Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:30:30.902Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:31:00.897Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:31:30.904Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:32:00.904Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:32:30.924Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:33:00.919Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:33:30.937Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:34:00.940Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:34:30.955Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:35:00.941Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:35:30.954Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:36:00.962Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:36:30.974Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:37:00.987Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:37:30.991Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:38:01.004Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:38:31.007Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:39:01.017Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:39:31.030Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:40:01.042Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:40:31.046Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:41:01.064Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:41:31.063Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:42:01.066Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:42:31.072Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:43:01.082Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:43:31.109Z",
+    "status": "up",
+    "ping": 18,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:44:01.106Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:44:31.112Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:45:01.114Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:45:31.122Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:46:01.130Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:46:31.132Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:47:01.139Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:47:31.161Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:48:01.171Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:48:31.168Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:49:01.173Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:49:31.177Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:50:01.182Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:50:31.197Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:51:01.198Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:51:31.219Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:52:01.216Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:52:31.230Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:53:01.234Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:53:31.232Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:54:01.237Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:54:31.248Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:55:01.257Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:55:31.266Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:56:01.281Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:56:31.295Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:57:01.298Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:57:31.309Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:58:01.312Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:58:31.325Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:59:01.336Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T11:59:31.351Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:00:01.364Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:00:31.379Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:01:01.369Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:01:31.384Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:02:01.387Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:02:31.399Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:03:01.404Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:03:31.402Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:04:01.414Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:04:31.414Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:05:01.423Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:05:31.424Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:06:01.435Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:06:31.432Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:07:01.447Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:07:31.445Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:08:01.463Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:08:31.464Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:09:01.472Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:09:31.487Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:10:01.495Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:10:31.516Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:11:01.513Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:11:31.521Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:12:01.523Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:12:31.528Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:13:01.539Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:13:31.555Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:14:01.557Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:14:31.560Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:15:01.574Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:15:31.574Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:16:01.583Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:16:31.590Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:17:01.598Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:17:31.605Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:18:01.606Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:18:31.616Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:19:01.620Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:19:31.642Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:20:01.644Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:20:31.651Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:21:01.663Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:21:31.674Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:22:01.679Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:22:31.696Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:23:01.699Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:23:31.715Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:24:01.717Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:24:31.732Z",
+    "status": "up",
+    "ping": 20,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:25:01.724Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:25:31.729Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:26:01.732Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:26:31.749Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:27:01.760Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:27:31.774Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:28:01.792Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:28:31.794Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:29:01.803Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:29:31.815Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:30:01.837Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:30:31.843Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:31:01.839Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:31:31.854Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:32:01.866Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:32:31.863Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:33:01.874Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:33:31.882Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:34:01.887Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:34:31.889Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:35:01.899Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:35:31.901Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:36:01.910Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:36:31.913Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:37:01.922Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:37:31.927Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:38:01.932Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:38:31.938Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:39:01.947Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:39:31.948Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:40:01.955Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:40:31.956Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:41:01.955Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:41:31.973Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:42:01.974Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:42:31.973Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:43:01.987Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:43:32.003Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:44:02.005Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:44:32.013Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:45:02.010Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:45:32.030Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:46:02.025Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:46:32.030Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:47:02.028Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:47:32.037Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:48:02.040Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:48:32.049Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:49:02.048Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:49:32.053Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:50:02.062Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:50:32.068Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:51:02.071Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:51:32.081Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:52:02.094Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:52:32.101Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:53:02.123Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:53:32.122Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:54:02.133Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:54:32.141Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:55:02.155Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:55:32.168Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:56:02.177Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:56:32.187Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:56:49.255Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:57:19.251Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:57:47.250Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:58:09.555Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:58:39.564Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:59:09.573Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T12:59:39.561Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:00:09.572Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:00:39.579Z",
+    "status": "up",
+    "ping": 13,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:01:09.577Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:01:39.581Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:02:09.587Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:02:39.600Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:03:09.606Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:03:39.609Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:04:09.620Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:04:39.630Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:05:09.637Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:05:39.652Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:06:09.648Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:06:39.654Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:07:09.657Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:07:39.665Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:08:09.680Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:08:39.689Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:09:09.695Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:09:39.703Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:10:09.705Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:10:39.716Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:11:09.727Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:11:39.732Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:12:09.729Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:12:39.744Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:13:09.760Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:13:39.751Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:14:09.748Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:14:39.768Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:15:09.782Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:15:39.783Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:16:09.789Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:16:39.789Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:17:09.803Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:17:39.809Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:18:09.812Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:18:39.831Z",
+    "status": "up",
+    "ping": 23,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:19:09.838Z",
+    "status": "up",
+    "ping": 24,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:19:39.828Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:20:09.833Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:20:39.833Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:21:09.840Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:21:39.852Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:22:09.863Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:22:39.878Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:23:09.887Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:23:39.893Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:24:09.904Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:24:39.904Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:25:09.921Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:25:39.920Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:26:09.923Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:26:39.927Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:27:09.944Z",
+    "status": "up",
+    "ping": 19,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:27:39.951Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:28:09.966Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:28:39.962Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T13:29:09.973Z",
+    "status": "up",
+    "ping": 14,
+    "message": "Ping successful"
+  }
+]

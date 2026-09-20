@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Login - Uptime Monitor</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .login-box {
+      width: 100%;
+      max-width: 360px;
+      padding: 32px;
+    }
+    .login-box h1 {
+      font-size: 18px;
+      margin: 0 0 4px;
+      text-align: center;
+    }
+    .login-box p.sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0 0 24px;
+    }
+    .login-box form > div { margin-bottom: 14px; }
+    .login-box button { width: 100%; padding: 10px; margin-top: 6px; }
+    .error-msg {
+      display: none;
+      background: rgba(231,76,60,0.12);
+      color: var(--down);
+      border: 1px solid rgba(231,76,60,0.3);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+    .back-link { text-align: center; margin-top: 16px; }
+    .back-link a { color: var(--muted); font-size: 13px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="panel login-box">
+    <img data-brand-logo class="brand-logo login-logo" style="display:none" alt="" />
+    <h1><span data-brand-name>Uptime Monitor</span> Admin Login</h1>
+    <p class="sub">Sign in to set up and manage status pages</p>
+    <div class="error-msg" id="error-msg"></div>
+    <form id="login-form">
+      <div>
+        <label>Username</label>
+        <input id="username" autocomplete="username" required autofocus />
+      </div>
+      <div>
+        <label>Password</label>
+        <input id="password" type="password" autocomplete="current-password" required />
+      </div>
+      <div id="token-field" style="display:none">
+        <label>2FA code</label>
+        <input id="token" maxlength="6" autocomplete="one-time-code" />
+      </div>
+      <button type="submit" id="login-btn">Sign In</button>
+    </form>
+    <div class="back-link"><a href="/status.html">&larr; Back to public status page</a></div>
+    <div data-brand-footer class="brand-footer" style="display:none; text-align:center; margin-top:14px;"></div>
+  </div>
+
+  <script src="/branding.js"></script>
+  <script src="/login.js"></script>
+</body>
+</html>

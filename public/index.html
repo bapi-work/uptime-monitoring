@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Uptime Monitor - Admin</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img data-brand-logo class="brand-logo" style="display:none" alt="" />
+      <h1><span data-brand-name>Uptime Monitor</span></h1>
+    </div>
+    <div style="display:flex; align-items:center; gap:18px;">
+      <a href="/status.html">View public status page &rarr;</a>
+      <button class="secondary" id="logout-btn" type="button">Log out</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav class="tabs" id="tabs">
+      <button class="tab-btn active" data-tab="monitors">Monitors</button>
+      <button class="tab-btn" data-tab="notifications">Notifications</button>
+      <button class="tab-btn" data-tab="statuspages">Status Pages</button>
+      <button class="tab-btn" data-tab="maintenance">Maintenance</button>
+      <button class="tab-btn" data-tab="branding">Branding</button>
+      <button class="tab-btn" data-tab="security">Security</button>
+    </nav>
+
+    <!-- ===== Monitors tab ===== -->
+    <section class="tab-panel active" id="tab-monitors">
+      <div class="panel">
+        <h2 id="form-title">Add Monitor</h2>
+        <form id="monitor-form">
+          <input type="hidden" id="monitor-id" />
+          <div class="form-grid">
+            <div>
+              <label>Name</label>
+              <input id="f-name" required placeholder="My website" />
+            </div>
+            <div>
+              <label>Type</label>
+              <select id="f-type">
+                <option value="http">HTTP(s)</option>
+                <option value="keyword">HTTP(s) - Keyword</option>
+                <option value="json_query">HTTP(s) - JSON Query</option>
+                <option value="tcp">TCP Port</option>
+                <option value="dns">DNS Record</option>
+                <option value="ping">Ping</option>
+                <option value="websocket">WebSocket</option>
+              </select>
+            </div>
+            <div id="field-url">
+              <label>URL</label>
+              <input id="f-url" placeholder="https://example.com" />
+            </div>
+            <div id="field-host" style="display:none">
+              <label>Host</label>
+              <input id="f-host" placeholder="example.com" />
+            </div>
+            <div id="field-port" style="display:none">
+              <label>Port</label>
+              <input id="f-port" type="number" placeholder="443" />
+            </div>
+            <div id="field-keyword" style="display:none">
+              <label>Keyword</label>
+              <input id="f-keyword" placeholder="Text to find" />
+            </div>
+            <div id="field-keyword-type" style="display:none">
+              <label>Keyword condition</label>
+              <select id="f-keyword-type">
+                <option value="contains">Response contains keyword</option>
+                <option value="not_contains">Response does NOT contain keyword</option>
+              </select>
+            </div>
+            <div id="field-jsonpath" style="display:none">
+              <label>JSON path (dot notation)</label>
+              <input id="f-jsonpath" placeholder="data.status" />
+            </div>
+            <div id="field-jsonexpected" style="display:none">
+              <label>Expected value</label>
+              <input id="f-jsonexpected" placeholder="ok" />
+            </div>
+            <div id="field-dnstype" style="display:none">
+              <label>DNS record type</label>
+              <select id="f-dnstype">
+                <option>A</option>
+                <option>AAAA</option>
+                <option>CNAME</option>
+                <option>MX</option>
+                <option>TXT</option>
+                <option>NS</option>
+                <option>SRV</option>
+                <option>PTR</option>
+              </select>
+            </div>
+            <div id="field-dnsexpected" style="display:none">
+              <label>Expected value (optional)</label>
+              <input id="f-dnsexpected" placeholder="1.2.3.4" />
+            </div>
+            <div>
+              <label>Check interval (sec)</label>
+              <input id="f-interval" type="number" value="60" min="5" />
+            </div>
+            <div>
+              <label>Timeout (sec)</label>
+              <input id="f-timeout" type="number" value="10" min="1" />
+            </div>
+            <div>
+              <label>Retries before down</label>
+              <input id="f-retries" type="number" value="0" min="0" />
+            </div>
+            <div>
+              <label>Tags (comma separated)</label>
+              <input id="f-tags" placeholder="prod, api" />
+            </div>
+            <div>
+              <label>Notify via</label>
+              <select id="f-notifications" multiple size="3"></select>
+            </div>
+          </div>
+          <div id="field-cert" class="cert-check-row" style="display:none">
+            <label><input type="checkbox" id="f-certcheck" /> Warn when TLS certificate is expiring</label>
+            <input id="f-cert-threshold" type="number" value="14" min="1" style="width:80px" title="days before expiry" />
+            <span class="muted">days before expiry</span>
+          </div>
+          <div style="margin-top:14px; display:flex; gap:10px;">
+            <button type="submit" id="submit-btn">Add Monitor</button>
+            <button type="button" class="secondary" id="cancel-edit" style="display:none">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Monitors</h2>
+        <table id="monitors-table">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Name</th>
+              <th>Target</th>
+              <th>Tags</th>
+              <th>Interval</th>
+              <th>Last check</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="monitors-body">
+            <tr><td colspan="7" class="empty">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel" id="events-panel" style="display:none">
+        <h2>Event history: <span id="events-monitor-name"></span></h2>
+        <table>
+          <thead><tr><th>Time</th><th>Status</th><th>Message</th></tr></thead>
+          <tbody id="events-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Notifications tab ===== -->
+    <section class="tab-panel" id="tab-notifications">
+      <div class="panel">
+        <h2 id="notif-form-title">Add Notification Channel</h2>
+        <form id="notif-form">
+          <input type="hidden" id="n-id" />
+          <div class="form-grid">
+            <div>
+              <label>Name</label>
+              <input id="n-name" required placeholder="Ops Slack" />
+            </div>
+            <div>
+              <label>Type</label>
+              <select id="n-type">
+                <option value="webhook">Generic Webhook</option>
+                <option value="slack">Slack</option>
+                <option value="discord">Discord</option>
+                <option value="teams">Microsoft Teams</option>
+                <option value="telegram">Telegram</option>
+                <option value="email">Email (SMTP)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-grid" id="notif-config-fields" style="margin-top:12px;"></div>
+          <div style="margin-top:14px; display:flex; gap:10px;">
+            <button type="submit" id="notif-submit-btn">Add Channel</button>
+            <button type="button" class="secondary" id="notif-cancel" style="display:none">Cancel</button>
+          </div>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>Notification Channels</h2>
+        <table>
+          <thead><tr><th>Name</th><th>Type</th><th></th></tr></thead>
+          <tbody id="notif-body"><tr><td colspan="3" class="empty">Loading...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Status Pages tab ===== -->
+    <section class="tab-panel" id="tab-statuspages">
+      <div class="panel">
+        <h2 id="sp-form-title">Create Status Page</h2>
+        <form id="sp-form">
+          <input type="hidden" id="sp-id" />
+          <div class="form-grid">
+            <div>
+              <label>Title</label>
+              <input id="sp-title" required placeholder="Public Status" />
+            </div>
+            <div>
+              <label>URL slug</label>
+              <input id="sp-slug" placeholder="auto-generated from title" />
+            </div>
+          </div>
+          <div style="margin-top:12px;">
+            <label>Description</label>
+            <input id="sp-description" placeholder="Optional summary shown at the top" />
+          </div>
+          <div style="margin-top:12px;">
+            <label>Monitors on this page</label>
+            <select id="sp-monitors" multiple size="6" style="width:100%"></select>
+          </div>
+          <div style="margin-top:14px; display:flex; gap:10px;">
+            <button type="submit" id="sp-submit-btn">Create Page</button>
+            <button type="button" class="secondary" id="sp-cancel" style="display:none">Cancel</button>
+          </div>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>Status Pages</h2>
+        <table>
+          <thead><tr><th>Title</th><th>URL</th><th>Monitors</th><th></th></tr></thead>
+          <tbody id="sp-body"><tr><td colspan="4" class="empty">Loading...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Maintenance tab ===== -->
+    <section class="tab-panel" id="tab-maintenance">
+      <div class="panel">
+        <h2>Schedule Maintenance Window</h2>
+        <p class="muted" style="margin-top:-6px;">Monitors under maintenance are excluded from checks and shown as "Maintenance" instead of down.</p>
+        <form id="maint-form">
+          <div class="form-grid">
+            <div>
+              <label>Title</label>
+              <input id="m-title" placeholder="Server migration" />
+            </div>
+            <div>
+              <label>Start</label>
+              <input id="m-start" type="datetime-local" required />
+            </div>
+            <div>
+              <label>End</label>
+              <input id="m-end" type="datetime-local" required />
+            </div>
+          </div>
+          <div style="margin-top:12px;">
+            <label>Monitors affected</label>
+            <select id="m-monitors" multiple size="6" style="width:100%"></select>
+          </div>
+          <div style="margin-top:14px;">
+            <button type="submit">Schedule</button>
+          </div>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>Scheduled Windows</h2>
+        <table>
+          <thead><tr><th>Title</th><th>Monitors</th><th>Start</th><th>End</th><th></th></tr></thead>
+          <tbody id="maint-body"><tr><td colspan="5" class="empty">Loading...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Branding tab ===== -->
+    <section class="tab-panel" id="tab-branding">
+      <div class="panel">
+        <h2>Branding</h2>
+        <p class="muted" style="margin-top:-6px;">Customize what visitors see on your public status page(s) and login screen.</p>
+        <form id="branding-form">
+          <div class="form-grid">
+            <div>
+              <label>Site name</label>
+              <input id="b-sitename" placeholder="Uptime Monitor" />
+            </div>
+            <div>
+              <label>Accent color</label>
+              <input id="b-accent" type="color" value="#4f8cff" />
+            </div>
+          </div>
+          <div style="margin-top:12px;">
+            <label>Logo</label>
+            <div style="display:flex; align-items:center; gap:14px;">
+              <img id="b-logo-preview" style="max-height:48px; display:none; background:#fff; border-radius:6px; padding:4px;" alt="" />
+              <input id="b-logo-file" type="file" accept="image/*" />
+              <button type="button" class="secondary" id="b-logo-clear">Remove</button>
+            </div>
+          </div>
+          <div style="margin-top:12px;">
+            <label>Favicon</label>
+            <div style="display:flex; align-items:center; gap:14px;">
+              <img id="b-favicon-preview" style="max-height:32px; display:none; background:#fff; border-radius:4px; padding:4px;" alt="" />
+              <input id="b-favicon-file" type="file" accept="image/*" />
+              <button type="button" class="secondary" id="b-favicon-clear">Remove</button>
+            </div>
+          </div>
+          <div style="margin-top:12px;">
+            <label>Footer text</label>
+            <input id="b-footer" placeholder="© 2026 My Company" />
+          </div>
+          <div style="margin-top:12px;">
+            <label><input type="checkbox" id="b-powered-by" checked /> Show "Powered by Uptime Monitor" in footer</label>
+          </div>
+          <div style="margin-top:16px;">
+            <button type="submit">Save Branding</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== Security tab ===== -->
+    <section class="tab-panel" id="tab-security">
+      <div class="panel">
+        <h2>Change Password</h2>
+        <form id="password-form">
+          <div class="form-grid">
+            <div>
+              <label>Current password</label>
+              <input id="p-current" type="password" required />
+            </div>
+            <div>
+              <label>New password (min 6 chars)</label>
+              <input id="p-new" type="password" required minlength="6" />
+            </div>
+          </div>
+          <div style="margin-top:14px;">
+            <button type="submit">Update Password</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Two-Factor Authentication</h2>
+        <div id="twofa-status" class="muted" style="margin-bottom:14px;">Loading...</div>
+        <div id="twofa-setup" style="display:none;">
+          <p class="muted">Scan this QR code with an authenticator app (Google Authenticator, Authy, etc.), then enter the 6-digit code to confirm.</p>
+          <img id="twofa-qr" style="background:#fff; padding:8px; border-radius:8px;" />
+          <div style="max-width:220px; margin-top:12px;">
+            <label>6-digit code</label>
+            <input id="twofa-token" maxlength="6" />
+          </div>
+          <button type="button" id="twofa-confirm-btn" style="margin-top:10px;">Confirm & Enable</button>
+        </div>
+        <button type="button" id="twofa-enable-btn">Enable 2FA</button>
+        <button type="button" class="danger" id="twofa-disable-btn" style="display:none;">Disable 2FA</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="/branding.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

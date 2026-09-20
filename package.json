@@ -1,0 +1,20 @@
+{
+  "name": "uptime-monitoring",
+  "version": "1.0.0",
+  "description": "Self-hosted uptime monitoring app with a public status page (30/45/90 day views)",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^4.19.2",
+    "express-session": "^1.19.0",
+    "nodemailer": "^10.0.10",
+    "otplib": "^13.5.0",
+    "qrcode": "^1.5.4",
+    "session-file-store": "^1.5.0",
+    "ws": "^8.21.3"
+  }
+}

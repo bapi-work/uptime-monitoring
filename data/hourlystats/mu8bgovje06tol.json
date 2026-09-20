@@ -1,0 +1,16 @@
+[
+  {
+    "hour": "2026-09-20T12",
+    "up": 4,
+    "down": 0,
+    "pingSum": 190,
+    "pingCount": 4
+  },
+  {
+    "hour": "2026-09-20T13",
+    "up": 30,
+    "down": 0,
+    "pingSum": 1147,
+    "pingCount": 30
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "time": "2026-09-19T11:41:04.285Z",
+    "status": "up",
+    "message": "Ping successful"
+  },
+  {
+    "time": "2026-09-20T10:24:39.525Z",
+    "status": "down",
+    "message": "Host unreachable"
+  },
+  {
+    "time": "2026-09-20T10:24:59.844Z",
+    "status": "up",
+    "message": "Ping successful"
+  }
+]

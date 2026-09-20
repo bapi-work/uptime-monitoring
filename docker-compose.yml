@@ -1,0 +1,60 @@
+services:
+  # Nginx Proxy Manager — GUI-based reverse proxy + automatic Let's Encrypt
+  # SSL. Terminates HTTPS for the domain(s) you point at this host and
+  # forwards to the app container over the internal network. See
+  # PRODUCTION.md for the one-time setup steps after first launch.
+  nginx-proxy-manager:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    ports:
+      - '80:80'   # HTTP + ACME HTTP-01 challenge
+      - '443:443' # HTTPS
+      - '81:81'   # NPM admin UI — first visit prompts you to create the admin account
+    volumes:
+      - npm-data:/data
+      - npm-letsencrypt:/etc/letsencrypt
+    networks:
+      - proxy-net
+
+  uptime-monitoring:
+    build: .
+    container_name: uptime-monitoring
+    restart: unless-stopped
+    # No host port published on purpose — Nginx Proxy Manager reaches this
+    # container over the shared network at "uptime-monitoring:3300", so the
+    # app is never directly exposed without TLS. Uncomment for local
+    # debugging / direct access:
+    # ports:
+    #   - "3300:3300"
+    environment:
+      - PORT=3300
+      # Set these to define the admin login on first run. If omitted, a
+      # random password is generated and printed to the container logs.
+      # - ADMIN_USERNAME=admin
+      # - ADMIN_PASSWORD=change-me
+      # - SESSION_SECRET=some-long-random-string
+      # Nginx Proxy Manager always sits in front, so trust its forwarded
+      # headers. Enable COOKIE_SECURE once the HTTPS proxy host below is
+      # actually configured and working — turning it on too early will
+      # lock out logins served over plain HTTP.
+      - TRUST_PROXY=1
+      # - COOKIE_SECURE=1
+    volumes:
+      - uptime-data:/app/data
+    networks:
+      - proxy-net
+    logging:
+      driver: json-file
+      options:
+        max-size: '10m'
+        max-file: '3'
+
+networks:
+  proxy-net:
+    name: proxy-net
+
+volumes:
+  uptime-data:
+  npm-data:
+  npm-letsencrypt:

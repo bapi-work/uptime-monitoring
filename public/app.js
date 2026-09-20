@@ -1,0 +1,640 @@
+// ---- Tabs ----
+document.getElementById('tabs').addEventListener('click', (e) => {
+  const btn = e.target.closest('.tab-btn');
+  if (!btn) return;
+  document.querySelectorAll('.tab-btn').forEach((b) => b.classList.toggle('active', b === btn));
+  document.querySelectorAll('.tab-panel').forEach((p) => p.classList.toggle('active', p.id === `tab-${btn.dataset.tab}`));
+});
+
+function escapeHtml(str) {
+  return String(str || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+document.getElementById('logout-btn').addEventListener('click', async () => {
+  await fetch('/api/logout', { method: 'POST' });
+  window.location.href = '/login.html';
+});
+
+async function api(url, options) {
+  const res = await fetch(url, options);
+  if (res.status === 401) {
+    window.location.href = '/login.html';
+    throw new Error('unauthenticated');
+  }
+  return res;
+}
+
+// =========================================================
+// Monitors
+// =========================================================
+
+const typeSelect = document.getElementById('f-type');
+const fieldMap = {
+  url: document.getElementById('field-url'),
+  host: document.getElementById('field-host'),
+  port: document.getElementById('field-port'),
+  keyword: document.getElementById('field-keyword'),
+  keywordType: document.getElementById('field-keyword-type'),
+  jsonpath: document.getElementById('field-jsonpath'),
+  jsonexpected: document.getElementById('field-jsonexpected'),
+  dnstype: document.getElementById('field-dnstype'),
+  dnsexpected: document.getElementById('field-dnsexpected'),
+  cert: document.getElementById('field-cert'),
+};
+
+const TYPE_FIELDS = {
+  http: ['url', 'cert'],
+  keyword: ['url', 'keyword', 'keywordType', 'cert'],
+  json_query: ['url', 'jsonpath', 'jsonexpected', 'cert'],
+  tcp: ['host', 'port'],
+  dns: ['host', 'dnstype', 'dnsexpected'],
+  ping: ['host'],
+  websocket: ['url'],
+};
+
+function updateTypeFields() {
+  const visible = TYPE_FIELDS[typeSelect.value] || ['url'];
+  for (const key of Object.keys(fieldMap)) {
+    fieldMap[key].style.display = visible.includes(key) ? '' : 'none';
+  }
+}
+typeSelect.addEventListener('change', updateTypeFields);
+updateTypeFields();
+
+const form = document.getElementById('monitor-form');
+const idField = document.getElementById('monitor-id');
+const submitBtn = document.getElementById('submit-btn');
+const cancelBtn = document.getElementById('cancel-edit');
+const formTitle = document.getElementById('form-title');
+const notifSelect = document.getElementById('f-notifications');
+
+function resetForm() {
+  form.reset();
+  idField.value = '';
+  submitBtn.textContent = 'Add Monitor';
+  formTitle.textContent = 'Add Monitor';
+  cancelBtn.style.display = 'none';
+  updateTypeFields();
+}
+cancelBtn.addEventListener('click', resetForm);
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const tags = document.getElementById('f-tags').value.split(',').map((t) => t.trim()).filter(Boolean);
+  const notificationIds = [...notifSelect.selectedOptions].map((o) => o.value);
+  const payload = {
+    name: document.getElementById('f-name').value.trim(),
+    type: typeSelect.value,
+    url: document.getElementById('f-url').value.trim(),
+    host: document.getElementById('f-host').value.trim(),
+    port: document.getElementById('f-port').value,
+    interval: document.getElementById('f-interval').value,
+    timeout: document.getElementById('f-timeout').value,
+    retries: document.getElementById('f-retries').value,
+    keyword: document.getElementById('f-keyword').value,
+    keywordType: document.getElementById('f-keyword-type').value,
+    jsonPath: document.getElementById('f-jsonpath').value,
+    jsonExpected: document.getElementById('f-jsonexpected').value,
+    dnsRecordType: document.getElementById('f-dnstype').value,
+    dnsExpected: document.getElementById('f-dnsexpected').value,
+    certCheck: document.getElementById('f-certcheck').checked,
+    certExpiryThreshold: document.getElementById('f-cert-threshold').value,
+    tags,
+    notificationIds,
+  };
+  const id = idField.value;
+  const url = id ? `/api/monitors/${id}` : '/api/monitors';
+  const method = id ? 'PUT' : 'POST';
+  const res = await api(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    alert(err.error || 'Failed to save monitor');
+    return;
+  }
+  resetForm();
+  loadMonitors();
+});
+
+function statusBadge(status) {
+  const label = { up: 'Up', down: 'Down', pending: 'Pending', 'up-pending-retry': 'Pending', maintenance: 'Maintenance' }[status] || status;
+  return `<span class="badge ${status}"><span class="dot"></span>${label}</span>`;
+}
+
+let monitorsCache = [];
+
+async function loadMonitors() {
+  const res = await api('/api/monitors');
+  monitorsCache = await res.json();
+  renderMonitorsTable();
+  populateMonitorMultiSelects();
+}
+
+function renderMonitorsTable() {
+  const body = document.getElementById('monitors-body');
+  if (!monitorsCache.length) {
+    body.innerHTML = '<tr><td colspan="7" class="empty">No monitors yet. Add one above.</td></tr>';
+    return;
+  }
+  body.innerHTML = monitorsCache
+    .map((m) => {
+      const target = m.type === 'tcp' || m.type === 'dns' || m.type === 'ping' ? (m.host || m.url) : m.url;
+      const lastCheck = m.lastCheck ? new Date(m.lastCheck).toLocaleString() : '-';
+      const tags = (m.tags || []).map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
+      return `
+        <tr>
+          <td>${statusBadge(m.currentStatus)}</td>
+          <td>${escapeHtml(m.name)}</td>
+          <td class="muted">${escapeHtml(target)}</td>
+          <td>${tags}</td>
+          <td class="muted">${m.interval}s</td>
+          <td class="muted">${lastCheck}</td>
+          <td>
+            <div class="row-actions">
+              <button class="secondary" onclick="viewEvents('${m.id}')">Events</button>
+              <button class="secondary" onclick="editMonitor('${m.id}')">Edit</button>
+              <button class="danger" onclick="deleteMonitor('${m.id}')">Delete</button>
+            </div>
+          </td>
+        </tr>`;
+    })
+    .join('');
+}
+
+async function editMonitor(id) {
+  const res = await api(`/api/monitors/${id}`);
+  const m = await res.json();
+  idField.value = m.id;
+  document.getElementById('f-name').value = m.name;
+  typeSelect.value = m.type;
+  document.getElementById('f-url').value = m.url || '';
+  document.getElementById('f-host').value = m.host || '';
+  document.getElementById('f-port').value = m.port || '';
+  document.getElementById('f-interval').value = m.interval;
+  document.getElementById('f-timeout').value = m.timeout;
+  document.getElementById('f-retries').value = m.retries;
+  document.getElementById('f-keyword').value = m.keyword || '';
+  document.getElementById('f-keyword-type').value = m.keywordType || 'contains';
+  document.getElementById('f-jsonpath').value = m.jsonPath || '';
+  document.getElementById('f-jsonexpected').value = m.jsonExpected || '';
+  document.getElementById('f-dnstype').value = m.dnsRecordType || 'A';
+  document.getElementById('f-dnsexpected').value = m.dnsExpected || '';
+  document.getElementById('f-certcheck').checked = !!m.certCheck;
+  document.getElementById('f-cert-threshold').value = m.certExpiryThreshold || 14;
+  document.getElementById('f-tags').value = (m.tags || []).join(', ');
+  [...notifSelect.options].forEach((o) => { o.selected = (m.notificationIds || []).includes(o.value); });
+  updateTypeFields();
+  submitBtn.textContent = 'Save Changes';
+  formTitle.textContent = 'Edit Monitor';
+  cancelBtn.style.display = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+async function deleteMonitor(id) {
+  if (!confirm('Delete this monitor? This removes its history too.')) return;
+  await api(`/api/monitors/${id}`, { method: 'DELETE' });
+  loadMonitors();
+}
+
+async function viewEvents(id) {
+  const monitor = monitorsCache.find((m) => m.id === id);
+  const res = await api(`/api/monitors/${id}/events`);
+  const events = await res.json();
+  document.getElementById('events-monitor-name').textContent = monitor ? monitor.name : '';
+  document.getElementById('events-body').innerHTML = events
+    .slice()
+    .reverse()
+    .map((e) => `<tr><td class="muted">${new Date(e.time).toLocaleString()}</td><td>${statusBadge(e.status)}</td><td>${escapeHtml(e.message)}</td></tr>`)
+    .join('') || '<tr><td colspan="3" class="empty">No events yet</td></tr>';
+  document.getElementById('events-panel').style.display = '';
+  document.getElementById('events-panel').scrollIntoView({ behavior: 'smooth' });
+}
+
+// =========================================================
+// Notifications
+// =========================================================
+
+const NOTIF_CONFIG_FIELDS = {
+  webhook: [{ key: 'url', label: 'Webhook URL', placeholder: 'https://example.com/hook' }],
+  slack: [{ key: 'webhookUrl', label: 'Slack Webhook URL', placeholder: 'https://hooks.slack.com/...' }],
+  discord: [{ key: 'webhookUrl', label: 'Discord Webhook URL', placeholder: 'https://discord.com/api/webhooks/...' }],
+  teams: [{ key: 'webhookUrl', label: 'Teams Incoming Webhook URL', placeholder: 'https://outlook.office.com/webhook/...' }],
+  telegram: [
+    { key: 'botToken', label: 'Bot Token', placeholder: '123456:ABC-DEF' },
+    { key: 'chatId', label: 'Chat ID', placeholder: '-1001234567890' },
+  ],
+  email: [
+    { key: 'host', label: 'SMTP Host', placeholder: 'smtp.example.com' },
+    { key: 'port', label: 'SMTP Port', placeholder: '587' },
+    { key: 'user', label: 'SMTP Username', placeholder: '' },
+    { key: 'pass', label: 'SMTP Password', placeholder: '', type: 'password' },
+    { key: 'from', label: 'From address', placeholder: 'alerts@example.com' },
+    { key: 'to', label: 'To address', placeholder: 'you@example.com' },
+  ],
+};
+
+const notifTypeSelect = document.getElementById('n-type');
+const notifConfigFields = document.getElementById('notif-config-fields');
+const notifForm = document.getElementById('notif-form');
+const notifIdField = document.getElementById('n-id');
+const notifSubmitBtn = document.getElementById('notif-submit-btn');
+const notifCancelBtn = document.getElementById('notif-cancel');
+const notifFormTitle = document.getElementById('notif-form-title');
+
+function renderNotifConfigFields(values = {}) {
+  const fields = NOTIF_CONFIG_FIELDS[notifTypeSelect.value] || [];
+  notifConfigFields.innerHTML = fields
+    .map(
+      (f) => `
+      <div>
+        <label>${f.label}</label>
+        <input data-key="${f.key}" type="${f.type || 'text'}" placeholder="${f.placeholder || ''}" value="${escapeHtml(values[f.key] || '')}" />
+      </div>`
+    )
+    .join('');
+}
+notifTypeSelect.addEventListener('change', () => renderNotifConfigFields());
+renderNotifConfigFields();
+
+function resetNotifForm() {
+  notifForm.reset();
+  notifIdField.value = '';
+  notifSubmitBtn.textContent = 'Add Channel';
+  notifFormTitle.textContent = 'Add Notification Channel';
+  notifCancelBtn.style.display = 'none';
+  renderNotifConfigFields();
+}
+notifCancelBtn.addEventListener('click', resetNotifForm);
+
+notifForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const config = {};
+  notifConfigFields.querySelectorAll('input').forEach((input) => { config[input.dataset.key] = input.value; });
+  const payload = { name: document.getElementById('n-name').value.trim(), type: notifTypeSelect.value, config };
+  const id = notifIdField.value;
+  const url = id ? `/api/notifications/${id}` : '/api/notifications';
+  const method = id ? 'PUT' : 'POST';
+  const res = await api(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    alert(err.error || 'Failed to save notification channel');
+    return;
+  }
+  resetNotifForm();
+  loadNotifications();
+});
+
+let notificationsCache = [];
+
+async function loadNotifications() {
+  const res = await api('/api/notifications');
+  notificationsCache = await res.json();
+  const body = document.getElementById('notif-body');
+  body.innerHTML = notificationsCache.length
+    ? notificationsCache
+        .map(
+          (n) => `
+        <tr>
+          <td>${escapeHtml(n.name)}</td>
+          <td class="muted">${n.type}</td>
+          <td>
+            <div class="row-actions">
+              <button class="secondary" onclick="editNotification('${n.id}')">Edit</button>
+              <button class="danger" onclick="deleteNotification('${n.id}')">Delete</button>
+            </div>
+          </td>
+        </tr>`
+        )
+        .join('')
+    : '<tr><td colspan="3" class="empty">No notification channels yet.</td></tr>';
+
+  notifSelect.innerHTML = notificationsCache.map((n) => `<option value="${n.id}">${escapeHtml(n.name)} (${n.type})</option>`).join('');
+}
+
+function editNotification(id) {
+  const n = notificationsCache.find((x) => x.id === id);
+  if (!n) return;
+  notifIdField.value = n.id;
+  document.getElementById('n-name').value = n.name;
+  notifTypeSelect.value = n.type;
+  renderNotifConfigFields(n.config || {});
+  notifSubmitBtn.textContent = 'Save Changes';
+  notifFormTitle.textContent = 'Edit Notification Channel';
+  notifCancelBtn.style.display = '';
+}
+
+async function deleteNotification(id) {
+  if (!confirm('Delete this notification channel?')) return;
+  await api(`/api/notifications/${id}`, { method: 'DELETE' });
+  loadNotifications();
+}
+
+// =========================================================
+// Status Pages
+// =========================================================
+
+const spForm = document.getElementById('sp-form');
+const spIdField = document.getElementById('sp-id');
+const spMonitors = document.getElementById('sp-monitors');
+const spSubmitBtn = document.getElementById('sp-submit-btn');
+const spCancelBtn = document.getElementById('sp-cancel');
+const spFormTitle = document.getElementById('sp-form-title');
+
+function populateMonitorMultiSelects() {
+  const opts = monitorsCache.map((m) => `<option value="${m.id}">${escapeHtml(m.name)}</option>`).join('');
+  spMonitors.innerHTML = opts;
+  document.getElementById('m-monitors').innerHTML = opts;
+}
+
+function resetSpForm() {
+  spForm.reset();
+  spIdField.value = '';
+  spSubmitBtn.textContent = 'Create Page';
+  spFormTitle.textContent = 'Create Status Page';
+  spCancelBtn.style.display = 'none';
+}
+spCancelBtn.addEventListener('click', resetSpForm);
+
+spForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const payload = {
+    title: document.getElementById('sp-title').value.trim(),
+    slug: document.getElementById('sp-slug').value.trim(),
+    description: document.getElementById('sp-description').value.trim(),
+    monitorIds: [...spMonitors.selectedOptions].map((o) => o.value),
+  };
+  const id = spIdField.value;
+  const url = id ? `/api/statuspages/${id}` : '/api/statuspages';
+  const method = id ? 'PUT' : 'POST';
+  const res = await api(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    alert(err.error || 'Failed to save status page');
+    return;
+  }
+  resetSpForm();
+  loadStatusPages();
+});
+
+let statusPagesCache = [];
+
+async function loadStatusPages() {
+  const res = await api('/api/statuspages');
+  statusPagesCache = await res.json();
+  const body = document.getElementById('sp-body');
+  body.innerHTML = statusPagesCache.length
+    ? statusPagesCache
+        .map(
+          (p) => `
+        <tr>
+          <td>${escapeHtml(p.title)}</td>
+          <td><a href="/status/${p.slug}" target="_blank" class="muted">/status/${escapeHtml(p.slug)}</a></td>
+          <td class="muted">${p.monitorIds.length}</td>
+          <td>
+            <div class="row-actions">
+              <button class="secondary" onclick="editStatusPage('${p.id}')">Edit</button>
+              <button class="danger" onclick="deleteStatusPage('${p.id}')">Delete</button>
+            </div>
+          </td>
+        </tr>`
+        )
+        .join('')
+    : '<tr><td colspan="4" class="empty">No status pages yet. The default page at /status.html always shows every monitor.</td></tr>';
+}
+
+function editStatusPage(id) {
+  const p = statusPagesCache.find((x) => x.id === id);
+  if (!p) return;
+  spIdField.value = p.id;
+  document.getElementById('sp-title').value = p.title;
+  document.getElementById('sp-slug').value = p.slug;
+  document.getElementById('sp-description').value = p.description || '';
+  [...spMonitors.options].forEach((o) => { o.selected = p.monitorIds.includes(o.value); });
+  spSubmitBtn.textContent = 'Save Changes';
+  spFormTitle.textContent = 'Edit Status Page';
+  spCancelBtn.style.display = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+async function deleteStatusPage(id) {
+  if (!confirm('Delete this status page?')) return;
+  await api(`/api/statuspages/${id}`, { method: 'DELETE' });
+  loadStatusPages();
+}
+
+// =========================================================
+// Maintenance windows
+// =========================================================
+
+const maintForm = document.getElementById('maint-form');
+maintForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const payload = {
+    title: document.getElementById('m-title').value.trim(),
+    start: new Date(document.getElementById('m-start').value).toISOString(),
+    end: new Date(document.getElementById('m-end').value).toISOString(),
+    monitorIds: [...document.getElementById('m-monitors').selectedOptions].map((o) => o.value),
+  };
+  const res = await api('/api/maintenance', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    alert(err.error || 'Failed to schedule maintenance');
+    return;
+  }
+  maintForm.reset();
+  loadMaintenance();
+});
+
+async function loadMaintenance() {
+  const res = await api('/api/maintenance');
+  const list = await res.json();
+  const body = document.getElementById('maint-body');
+  body.innerHTML = list.length
+    ? list
+        .map((w) => {
+          const names = w.monitorIds.map((id) => monitorsCache.find((m) => m.id === id)?.name).filter(Boolean).join(', ');
+          return `
+          <tr>
+            <td>${escapeHtml(w.title)}</td>
+            <td class="muted">${escapeHtml(names)}</td>
+            <td class="muted">${new Date(w.start).toLocaleString()}</td>
+            <td class="muted">${new Date(w.end).toLocaleString()}</td>
+            <td><button class="danger" onclick="deleteMaintenance('${w.id}')">Delete</button></td>
+          </tr>`;
+        })
+        .join('')
+    : '<tr><td colspan="5" class="empty">No maintenance windows scheduled.</td></tr>';
+}
+
+async function deleteMaintenance(id) {
+  await api(`/api/maintenance/${id}`, { method: 'DELETE' });
+  loadMaintenance();
+}
+
+// =========================================================
+// Security: password + 2FA
+// =========================================================
+
+document.getElementById('password-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const currentPassword = document.getElementById('p-current').value;
+  const newPassword = document.getElementById('p-new').value;
+  const res = await api('/api/change-password', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ currentPassword, newPassword }) });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    alert(data.error || 'Failed to change password');
+    return;
+  }
+  alert('Password updated');
+  e.target.reset();
+});
+
+async function refreshTwoFactorStatus() {
+  const res = await api('/api/session');
+  const data = await res.json();
+  const enabled = !!data.twoFactorEnabled;
+  document.getElementById('twofa-status').textContent = enabled ? '2FA is currently enabled.' : '2FA is currently disabled.';
+  document.getElementById('twofa-enable-btn').style.display = enabled ? 'none' : '';
+  document.getElementById('twofa-disable-btn').style.display = enabled ? '' : 'none';
+  document.getElementById('twofa-setup').style.display = 'none';
+}
+
+document.getElementById('twofa-enable-btn').addEventListener('click', async () => {
+  const res = await api('/api/2fa/setup', { method: 'POST' });
+  const data = await res.json();
+  document.getElementById('twofa-qr').src = data.qrDataUrl;
+  document.getElementById('twofa-setup').style.display = '';
+});
+
+document.getElementById('twofa-confirm-btn').addEventListener('click', async () => {
+  const token = document.getElementById('twofa-token').value.trim();
+  const res = await api('/api/2fa/confirm', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token }) });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    alert(data.error || 'Invalid code');
+    return;
+  }
+  alert('Two-factor authentication enabled');
+  refreshTwoFactorStatus();
+});
+
+document.getElementById('twofa-disable-btn').addEventListener('click', async () => {
+  if (!confirm('Disable two-factor authentication?')) return;
+  await api('/api/2fa/disable', { method: 'POST' });
+  refreshTwoFactorStatus();
+});
+
+// =========================================================
+// Real-time updates via WebSocket (falls back to polling)
+// =========================================================
+
+function connectWebSocket() {
+  const proto = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+  const ws = new WebSocket(`${proto}//${window.location.host}/ws`);
+  ws.onmessage = (evt) => {
+    try {
+      const { type, payload } = JSON.parse(evt.data);
+      if (type === 'monitor-update') {
+        const m = monitorsCache.find((x) => x.id === payload.id);
+        if (m) {
+          m.currentStatus = payload.status;
+          m.lastCheck = payload.lastCheck;
+          renderMonitorsTable();
+        }
+      }
+    } catch (e) {}
+  };
+  ws.onclose = () => setTimeout(connectWebSocket, 3000);
+}
+
+// =========================================================
+// Branding
+// =========================================================
+
+let brandingState = {};
+
+function fileToDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+function updateBrandingPreviews() {
+  const logoPreview = document.getElementById('b-logo-preview');
+  logoPreview.src = brandingState.logoUrl || '';
+  logoPreview.style.display = brandingState.logoUrl ? '' : 'none';
+
+  const faviconPreview = document.getElementById('b-favicon-preview');
+  faviconPreview.src = brandingState.faviconUrl || '';
+  faviconPreview.style.display = brandingState.faviconUrl ? '' : 'none';
+}
+
+async function loadBranding() {
+  const res = await fetch('/api/branding');
+  brandingState = await res.json();
+  document.getElementById('b-sitename').value = brandingState.siteName || '';
+  document.getElementById('b-accent').value = brandingState.accentColor || '#4f8cff';
+  document.getElementById('b-footer').value = brandingState.footerText || '';
+  document.getElementById('b-powered-by').checked = brandingState.showPoweredBy !== false;
+  updateBrandingPreviews();
+}
+
+document.getElementById('b-logo-file').addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  brandingState.logoUrl = await fileToDataUrl(file);
+  updateBrandingPreviews();
+});
+document.getElementById('b-logo-clear').addEventListener('click', () => {
+  brandingState.logoUrl = '';
+  document.getElementById('b-logo-file').value = '';
+  updateBrandingPreviews();
+});
+document.getElementById('b-favicon-file').addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  brandingState.faviconUrl = await fileToDataUrl(file);
+  updateBrandingPreviews();
+});
+document.getElementById('b-favicon-clear').addEventListener('click', () => {
+  brandingState.faviconUrl = '';
+  document.getElementById('b-favicon-file').value = '';
+  updateBrandingPreviews();
+});
+
+document.getElementById('branding-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const payload = {
+    siteName: document.getElementById('b-sitename').value.trim(),
+    accentColor: document.getElementById('b-accent').value,
+    logoUrl: brandingState.logoUrl || '',
+    faviconUrl: brandingState.faviconUrl || '',
+    footerText: document.getElementById('b-footer').value.trim(),
+    showPoweredBy: document.getElementById('b-powered-by').checked,
+  };
+  const res = await api('/api/branding', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  if (!res.ok) {
+    alert('Failed to save branding');
+    return;
+  }
+  alert('Branding saved');
+  document.documentElement.style.setProperty('--accent', payload.accentColor);
+});
+
+// =========================================================
+// Init
+// =========================================================
+
+async function init() {
+  await loadNotifications();
+  await loadMonitors();
+  await loadStatusPages();
+  await loadMaintenance();
+  await refreshTwoFactorStatus();
+  await loadBranding();
+  connectWebSocket();
+}
+init();
+setInterval(loadMonitors, 30000);

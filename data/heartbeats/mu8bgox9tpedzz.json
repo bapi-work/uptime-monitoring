@@ -1,0 +1,3002 @@
+[
+  {
+    "time": "2026-09-20T05:11:20.919Z",
+    "status": "up",
+    "ping": 1709,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:12:20.162Z",
+    "status": "up",
+    "ping": 944,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:13:20.153Z",
+    "status": "up",
+    "ping": 932,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:14:20.150Z",
+    "status": "up",
+    "ping": 917,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:15:20.187Z",
+    "status": "up",
+    "ping": 953,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:16:20.600Z",
+    "status": "up",
+    "ping": 1357,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:17:20.202Z",
+    "status": "up",
+    "ping": 953,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:18:20.262Z",
+    "status": "up",
+    "ping": 996,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:19:20.187Z",
+    "status": "up",
+    "ping": 907,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:20:20.194Z",
+    "status": "up",
+    "ping": 907,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:21:20.240Z",
+    "status": "up",
+    "ping": 942,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:22:20.931Z",
+    "status": "up",
+    "ping": 1634,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:23:20.233Z",
+    "status": "up",
+    "ping": 922,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:24:20.508Z",
+    "status": "up",
+    "ping": 1195,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:25:20.252Z",
+    "status": "up",
+    "ping": 932,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:26:20.273Z",
+    "status": "up",
+    "ping": 948,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:27:20.304Z",
+    "status": "up",
+    "ping": 967,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:28:20.263Z",
+    "status": "up",
+    "ping": 917,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:29:20.299Z",
+    "status": "up",
+    "ping": 941,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:30:22.295Z",
+    "status": "up",
+    "ping": 2930,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:31:20.578Z",
+    "status": "up",
+    "ping": 1200,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:32:20.296Z",
+    "status": "up",
+    "ping": 906,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:33:22.169Z",
+    "status": "up",
+    "ping": 2772,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:34:20.313Z",
+    "status": "up",
+    "ping": 904,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:35:20.407Z",
+    "status": "up",
+    "ping": 994,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:36:20.367Z",
+    "status": "up",
+    "ping": 952,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:37:20.344Z",
+    "status": "up",
+    "ping": 925,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:38:20.329Z",
+    "status": "up",
+    "ping": 912,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:39:20.341Z",
+    "status": "up",
+    "ping": 911,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:40:20.359Z",
+    "status": "up",
+    "ping": 924,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:41:22.229Z",
+    "status": "up",
+    "ping": 2778,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:42:20.392Z",
+    "status": "up",
+    "ping": 935,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:43:21.105Z",
+    "status": "up",
+    "ping": 1640,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:44:21.721Z",
+    "status": "up",
+    "ping": 2243,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:45:20.403Z",
+    "status": "up",
+    "ping": 925,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:46:20.609Z",
+    "status": "up",
+    "ping": 1126,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:47:21.153Z",
+    "status": "up",
+    "ping": 1651,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:48:20.407Z",
+    "status": "up",
+    "ping": 905,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:49:20.521Z",
+    "status": "down",
+    "ping": 1016,
+    "message": "HTTP 502 (unexpected)"
+  },
+  {
+    "time": "2026-09-20T05:50:20.969Z",
+    "status": "up",
+    "ping": 1448,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:51:20.457Z",
+    "status": "up",
+    "ping": 916,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:52:20.487Z",
+    "status": "up",
+    "ping": 948,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:53:20.496Z",
+    "status": "up",
+    "ping": 951,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:54:20.471Z",
+    "status": "up",
+    "ping": 914,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:55:20.498Z",
+    "status": "up",
+    "ping": 938,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:56:20.506Z",
+    "status": "up",
+    "ping": 935,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:57:20.532Z",
+    "status": "up",
+    "ping": 948,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:58:20.487Z",
+    "status": "up",
+    "ping": 903,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T05:59:20.562Z",
+    "status": "up",
+    "ping": 969,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:00:23.493Z",
+    "status": "up",
+    "ping": 3887,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:01:26.438Z",
+    "status": "up",
+    "ping": 6814,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:02:20.556Z",
+    "status": "up",
+    "ping": 922,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:03:20.562Z",
+    "status": "up",
+    "ping": 927,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:04:20.617Z",
+    "status": "up",
+    "ping": 970,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:05:22.042Z",
+    "status": "up",
+    "ping": 2396,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:06:20.557Z",
+    "status": "up",
+    "ping": 903,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:07:20.570Z",
+    "status": "up",
+    "ping": 906,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:08:20.612Z",
+    "status": "up",
+    "ping": 938,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:09:20.595Z",
+    "status": "up",
+    "ping": 909,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:10:20.626Z",
+    "status": "up",
+    "ping": 936,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:11:30.587Z",
+    "status": "down",
+    "ping": null,
+    "message": "Timeout"
+  },
+  {
+    "time": "2026-09-20T06:12:20.647Z",
+    "status": "up",
+    "ping": 932,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:13:20.906Z",
+    "status": "up",
+    "ping": 1192,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:14:20.659Z",
+    "status": "up",
+    "ping": 931,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:15:20.644Z",
+    "status": "up",
+    "ping": 911,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:16:20.728Z",
+    "status": "up",
+    "ping": 984,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:17:20.675Z",
+    "status": "up",
+    "ping": 925,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:18:28.347Z",
+    "status": "up",
+    "ping": 8591,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:19:20.717Z",
+    "status": "up",
+    "ping": 949,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:20:20.728Z",
+    "status": "up",
+    "ping": 955,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:21:20.887Z",
+    "status": "up",
+    "ping": 1115,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:22:20.798Z",
+    "status": "up",
+    "ping": 1022,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:23:20.748Z",
+    "status": "up",
+    "ping": 963,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:24:20.744Z",
+    "status": "up",
+    "ping": 955,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:25:20.699Z",
+    "status": "up",
+    "ping": 902,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:26:22.779Z",
+    "status": "up",
+    "ping": 2968,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:27:20.761Z",
+    "status": "up",
+    "ping": 953,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:28:20.742Z",
+    "status": "up",
+    "ping": 918,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:29:20.808Z",
+    "status": "up",
+    "ping": 983,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:30:23.971Z",
+    "status": "up",
+    "ping": 4144,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:31:20.775Z",
+    "status": "up",
+    "ping": 932,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:32:20.750Z",
+    "status": "up",
+    "ping": 909,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:33:20.794Z",
+    "status": "up",
+    "ping": 950,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:34:20.773Z",
+    "status": "up",
+    "ping": 932,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:35:20.776Z",
+    "status": "up",
+    "ping": 928,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:36:20.838Z",
+    "status": "up",
+    "ping": 979,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:37:20.820Z",
+    "status": "up",
+    "ping": 962,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:38:20.825Z",
+    "status": "up",
+    "ping": 964,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:39:20.773Z",
+    "status": "up",
+    "ping": 910,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:40:20.586Z",
+    "status": "up",
+    "ping": 707,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:41:21.954Z",
+    "status": "up",
+    "ping": 2057,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:42:20.849Z",
+    "status": "up",
+    "ping": 952,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:43:20.831Z",
+    "status": "up",
+    "ping": 922,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:44:20.807Z",
+    "status": "up",
+    "ping": 901,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:45:20.857Z",
+    "status": "up",
+    "ping": 944,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:46:29.025Z",
+    "status": "up",
+    "ping": 9110,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:47:20.836Z",
+    "status": "up",
+    "ping": 915,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:48:22.128Z",
+    "status": "up",
+    "ping": 2193,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:49:20.840Z",
+    "status": "up",
+    "ping": 904,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:50:20.961Z",
+    "status": "up",
+    "ping": 1012,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:51:28.833Z",
+    "status": "up",
+    "ping": 8873,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:52:20.907Z",
+    "status": "up",
+    "ping": 945,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:53:21.438Z",
+    "status": "up",
+    "ping": 1471,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:54:20.923Z",
+    "status": "up",
+    "ping": 946,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:55:20.887Z",
+    "status": "up",
+    "ping": 909,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:56:20.917Z",
+    "status": "up",
+    "ping": 933,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:57:21.283Z",
+    "status": "up",
+    "ping": 1284,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:58:21.003Z",
+    "status": "up",
+    "ping": 1003,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T06:59:21.951Z",
+    "status": "up",
+    "ping": 1933,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:00:20.965Z",
+    "status": "up",
+    "ping": 942,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:01:21.592Z",
+    "status": "up",
+    "ping": 1556,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:02:20.981Z",
+    "status": "up",
+    "ping": 933,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:03:21.003Z",
+    "status": "up",
+    "ping": 957,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:04:20.998Z",
+    "status": "up",
+    "ping": 948,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:05:21.009Z",
+    "status": "up",
+    "ping": 947,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:06:22.241Z",
+    "status": "up",
+    "ping": 2166,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:07:30.012Z",
+    "status": "up",
+    "ping": 9935,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:08:22.280Z",
+    "status": "up",
+    "ping": 2201,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:09:21.439Z",
+    "status": "up",
+    "ping": 1348,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:10:21.897Z",
+    "status": "up",
+    "ping": 1797,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:11:21.084Z",
+    "status": "up",
+    "ping": 961,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:12:21.135Z",
+    "status": "up",
+    "ping": 1009,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:13:21.046Z",
+    "status": "up",
+    "ping": 917,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:14:22.938Z",
+    "status": "up",
+    "ping": 2802,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:15:21.090Z",
+    "status": "up",
+    "ping": 948,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:16:21.100Z",
+    "status": "up",
+    "ping": 945,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:17:21.080Z",
+    "status": "up",
+    "ping": 912,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:18:22.174Z",
+    "status": "up",
+    "ping": 1998,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:19:21.123Z",
+    "status": "up",
+    "ping": 943,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:20:21.307Z",
+    "status": "up",
+    "ping": 1124,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:21:21.392Z",
+    "status": "up",
+    "ping": 1204,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:22:29.148Z",
+    "status": "up",
+    "ping": 8952,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:23:22.415Z",
+    "status": "up",
+    "ping": 2217,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:24:21.160Z",
+    "status": "up",
+    "ping": 960,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:25:21.181Z",
+    "status": "up",
+    "ping": 975,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:26:21.251Z",
+    "status": "up",
+    "ping": 1038,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:27:21.156Z",
+    "status": "up",
+    "ping": 940,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:28:20.913Z",
+    "status": "up",
+    "ping": 687,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:29:22.168Z",
+    "status": "up",
+    "ping": 1928,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:30:21.167Z",
+    "status": "up",
+    "ping": 916,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:31:21.203Z",
+    "status": "up",
+    "ping": 945,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:32:21.197Z",
+    "status": "up",
+    "ping": 938,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:33:21.338Z",
+    "status": "up",
+    "ping": 1065,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:34:26.080Z",
+    "status": "up",
+    "ping": 5808,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:35:21.232Z",
+    "status": "up",
+    "ping": 952,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:36:21.195Z",
+    "status": "up",
+    "ping": 908,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:37:21.239Z",
+    "status": "up",
+    "ping": 948,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:38:21.249Z",
+    "status": "up",
+    "ping": 957,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:39:21.255Z",
+    "status": "up",
+    "ping": 949,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:40:21.270Z",
+    "status": "up",
+    "ping": 961,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:41:22.790Z",
+    "status": "up",
+    "ping": 2470,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:42:21.261Z",
+    "status": "up",
+    "ping": 947,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:43:29.428Z",
+    "status": "up",
+    "ping": 9107,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:44:21.275Z",
+    "status": "up",
+    "ping": 949,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:45:21.288Z",
+    "status": "up",
+    "ping": 958,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:46:21.289Z",
+    "status": "up",
+    "ping": 953,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:47:26.148Z",
+    "status": "up",
+    "ping": 5802,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:48:21.298Z",
+    "status": "up",
+    "ping": 950,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:49:21.289Z",
+    "status": "up",
+    "ping": 938,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:50:21.298Z",
+    "status": "up",
+    "ping": 944,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:51:21.639Z",
+    "status": "up",
+    "ping": 1274,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:52:21.577Z",
+    "status": "up",
+    "ping": 1216,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:53:24.474Z",
+    "status": "up",
+    "ping": 4099,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:54:21.318Z",
+    "status": "up",
+    "ping": 939,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:55:21.311Z",
+    "status": "up",
+    "ping": 928,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:56:21.294Z",
+    "status": "up",
+    "ping": 902,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:57:21.317Z",
+    "status": "up",
+    "ping": 919,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:58:22.404Z",
+    "status": "up",
+    "ping": 2006,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T07:59:21.335Z",
+    "status": "up",
+    "ping": 930,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:00:21.483Z",
+    "status": "up",
+    "ping": 1069,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:01:21.346Z",
+    "status": "up",
+    "ping": 926,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:02:21.934Z",
+    "status": "up",
+    "ping": 1517,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:03:21.613Z",
+    "status": "up",
+    "ping": 1188,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:04:21.369Z",
+    "status": "up",
+    "ping": 930,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:05:22.406Z",
+    "status": "up",
+    "ping": 1962,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:06:22.676Z",
+    "status": "up",
+    "ping": 2219,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:07:22.222Z",
+    "status": "up",
+    "ping": 1755,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:08:21.390Z",
+    "status": "up",
+    "ping": 919,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:09:21.395Z",
+    "status": "up",
+    "ping": 924,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:10:21.386Z",
+    "status": "up",
+    "ping": 902,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:11:23.685Z",
+    "status": "up",
+    "ping": 3197,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:12:26.863Z",
+    "status": "up",
+    "ping": 6364,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:13:30.900Z",
+    "status": "up",
+    "ping": 10401,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:14:21.454Z",
+    "status": "up",
+    "ping": 951,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:15:21.427Z",
+    "status": "up",
+    "ping": 914,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:16:21.440Z",
+    "status": "up",
+    "ping": 919,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:17:22.199Z",
+    "status": "up",
+    "ping": 1668,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:18:27.477Z",
+    "status": "up",
+    "ping": 6931,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:19:22.902Z",
+    "status": "up",
+    "ping": 2351,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:20:21.512Z",
+    "status": "up",
+    "ping": 953,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:21:21.994Z",
+    "status": "up",
+    "ping": 1428,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:22:21.536Z",
+    "status": "up",
+    "ping": 963,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:23:21.519Z",
+    "status": "up",
+    "ping": 941,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:24:21.940Z",
+    "status": "up",
+    "ping": 1365,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:25:22.877Z",
+    "status": "up",
+    "ping": 2298,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:26:21.484Z",
+    "status": "up",
+    "ping": 895,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:27:21.756Z",
+    "status": "up",
+    "ping": 1151,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:28:21.524Z",
+    "status": "up",
+    "ping": 916,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:29:21.558Z",
+    "status": "up",
+    "ping": 949,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:30:21.668Z",
+    "status": "up",
+    "ping": 1050,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:31:21.592Z",
+    "status": "up",
+    "ping": 962,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:32:21.348Z",
+    "status": "up",
+    "ping": 716,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:33:21.592Z",
+    "status": "up",
+    "ping": 958,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:34:21.544Z",
+    "status": "up",
+    "ping": 905,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:35:21.550Z",
+    "status": "up",
+    "ping": 905,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:36:21.620Z",
+    "status": "up",
+    "ping": 967,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:37:22.456Z",
+    "status": "up",
+    "ping": 1794,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:38:21.601Z",
+    "status": "up",
+    "ping": 938,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:39:21.596Z",
+    "status": "up",
+    "ping": 925,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:40:21.632Z",
+    "status": "up",
+    "ping": 952,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:41:21.736Z",
+    "status": "up",
+    "ping": 1049,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:42:21.634Z",
+    "status": "up",
+    "ping": 945,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:43:21.615Z",
+    "status": "up",
+    "ping": 924,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:44:21.639Z",
+    "status": "up",
+    "ping": 940,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:45:21.626Z",
+    "status": "up",
+    "ping": 924,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:46:21.658Z",
+    "status": "up",
+    "ping": 954,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:47:21.643Z",
+    "status": "up",
+    "ping": 932,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:48:21.881Z",
+    "status": "up",
+    "ping": 1160,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:49:21.642Z",
+    "status": "up",
+    "ping": 918,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:50:21.468Z",
+    "status": "up",
+    "ping": 727,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:51:21.720Z",
+    "status": "up",
+    "ping": 963,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:52:21.719Z",
+    "status": "up",
+    "ping": 958,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:53:23.887Z",
+    "status": "up",
+    "ping": 3124,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:54:21.725Z",
+    "status": "up",
+    "ping": 951,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:55:22.739Z",
+    "status": "up",
+    "ping": 1962,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:56:22.267Z",
+    "status": "up",
+    "ping": 1491,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:57:21.690Z",
+    "status": "up",
+    "ping": 904,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:58:23.843Z",
+    "status": "up",
+    "ping": 3056,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T08:59:22.996Z",
+    "status": "up",
+    "ping": 2205,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:00:22.059Z",
+    "status": "up",
+    "ping": 1256,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:01:21.744Z",
+    "status": "up",
+    "ping": 927,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:02:21.972Z",
+    "status": "down",
+    "ping": 1153,
+    "message": "HTTP 502 (unexpected)"
+  },
+  {
+    "time": "2026-09-20T09:03:23.880Z",
+    "status": "up",
+    "ping": 3048,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:04:21.773Z",
+    "status": "up",
+    "ping": 932,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:05:22.422Z",
+    "status": "up",
+    "ping": 1581,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:06:21.807Z",
+    "status": "up",
+    "ping": 960,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:07:21.801Z",
+    "status": "up",
+    "ping": 943,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:08:21.836Z",
+    "status": "up",
+    "ping": 966,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:09:21.793Z",
+    "status": "up",
+    "ping": 914,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:10:21.663Z",
+    "status": "up",
+    "ping": 770,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:11:22.636Z",
+    "status": "up",
+    "ping": 1737,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:12:22.295Z",
+    "status": "up",
+    "ping": 1388,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:13:30.919Z",
+    "status": "up",
+    "ping": 10003,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:14:22.744Z",
+    "status": "up",
+    "ping": 1822,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:15:21.963Z",
+    "status": "up",
+    "ping": 1034,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:16:21.873Z",
+    "status": "up",
+    "ping": 934,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:17:22.695Z",
+    "status": "up",
+    "ping": 1747,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:18:24.134Z",
+    "status": "up",
+    "ping": 3181,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:19:21.921Z",
+    "status": "up",
+    "ping": 959,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:20:21.865Z",
+    "status": "up",
+    "ping": 898,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:21:22.073Z",
+    "status": "up",
+    "ping": 1092,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:22:21.898Z",
+    "status": "up",
+    "ping": 918,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:23:21.927Z",
+    "status": "up",
+    "ping": 946,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:24:22.170Z",
+    "status": "up",
+    "ping": 1186,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:25:21.923Z",
+    "status": "up",
+    "ping": 931,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:26:21.928Z",
+    "status": "up",
+    "ping": 923,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:27:21.986Z",
+    "status": "up",
+    "ping": 974,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:28:21.992Z",
+    "status": "up",
+    "ping": 978,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:29:26.210Z",
+    "status": "up",
+    "ping": 5189,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:30:21.942Z",
+    "status": "up",
+    "ping": 905,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:31:22.023Z",
+    "status": "up",
+    "ping": 978,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:32:21.982Z",
+    "status": "up",
+    "ping": 938,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:33:22.067Z",
+    "status": "up",
+    "ping": 1019,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:34:21.961Z",
+    "status": "up",
+    "ping": 910,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:35:22.253Z",
+    "status": "up",
+    "ping": 1197,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:36:23.605Z",
+    "status": "up",
+    "ping": 2539,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:37:21.989Z",
+    "status": "up",
+    "ping": 911,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:38:22.123Z",
+    "status": "up",
+    "ping": 1041,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:39:22.840Z",
+    "status": "up",
+    "ping": 1745,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:40:22.292Z",
+    "status": "up",
+    "ping": 1194,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:41:22.841Z",
+    "status": "up",
+    "ping": 1739,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:42:21.993Z",
+    "status": "up",
+    "ping": 883,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:43:22.065Z",
+    "status": "up",
+    "ping": 949,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:44:22.093Z",
+    "status": "up",
+    "ping": 975,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:45:22.060Z",
+    "status": "up",
+    "ping": 935,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:46:22.069Z",
+    "status": "up",
+    "ping": 934,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:47:22.086Z",
+    "status": "up",
+    "ping": 948,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:48:22.613Z",
+    "status": "up",
+    "ping": 1463,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:49:22.116Z",
+    "status": "up",
+    "ping": 961,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:50:22.366Z",
+    "status": "up",
+    "ping": 1205,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:51:22.127Z",
+    "status": "up",
+    "ping": 963,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:52:22.121Z",
+    "status": "up",
+    "ping": 954,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:53:21.902Z",
+    "status": "up",
+    "ping": 730,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:54:22.270Z",
+    "status": "up",
+    "ping": 1080,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:55:22.324Z",
+    "status": "up",
+    "ping": 1121,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:56:22.212Z",
+    "status": "down",
+    "ping": 1007,
+    "message": "HTTP 502 (unexpected)"
+  },
+  {
+    "time": "2026-09-20T09:57:23.815Z",
+    "status": "up",
+    "ping": 2603,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:58:27.669Z",
+    "status": "up",
+    "ping": 6444,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T09:59:22.204Z",
+    "status": "up",
+    "ping": 970,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:00:22.161Z",
+    "status": "up",
+    "ping": 918,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:01:22.177Z",
+    "status": "up",
+    "ping": 933,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:02:22.208Z",
+    "status": "up",
+    "ping": 955,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:03:23.811Z",
+    "status": "up",
+    "ping": 2556,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:04:22.239Z",
+    "status": "up",
+    "ping": 980,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:05:22.211Z",
+    "status": "up",
+    "ping": 940,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:06:22.218Z",
+    "status": "up",
+    "ping": 937,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:07:22.250Z",
+    "status": "up",
+    "ping": 959,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:08:22.248Z",
+    "status": "up",
+    "ping": 956,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:09:22.227Z",
+    "status": "up",
+    "ping": 924,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:10:25.712Z",
+    "status": "up",
+    "ping": 4403,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:11:22.340Z",
+    "status": "up",
+    "ping": 1020,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:12:22.303Z",
+    "status": "up",
+    "ping": 979,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:13:22.292Z",
+    "status": "up",
+    "ping": 963,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:14:22.274Z",
+    "status": "up",
+    "ping": 937,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:15:22.282Z",
+    "status": "up",
+    "ping": 945,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:16:22.367Z",
+    "status": "up",
+    "ping": 1026,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:17:22.287Z",
+    "status": "up",
+    "ping": 934,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:18:22.310Z",
+    "status": "up",
+    "ping": 948,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:19:22.816Z",
+    "status": "up",
+    "ping": 1436,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:20:22.356Z",
+    "status": "up",
+    "ping": 968,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:21:22.321Z",
+    "status": "up",
+    "ping": 933,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:22:22.362Z",
+    "status": "up",
+    "ping": 970,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:23:22.337Z",
+    "status": "up",
+    "ping": 944,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:24:23.405Z",
+    "status": "up",
+    "ping": 1999,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:25:22.134Z",
+    "status": "up",
+    "ping": 713,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:26:22.418Z",
+    "status": "up",
+    "ping": 984,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:27:22.389Z",
+    "status": "up",
+    "ping": 939,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:28:22.417Z",
+    "status": "up",
+    "ping": 964,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:29:22.407Z",
+    "status": "up",
+    "ping": 952,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:30:22.427Z",
+    "status": "up",
+    "ping": 961,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:31:30.249Z",
+    "status": "up",
+    "ping": 8778,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:32:22.464Z",
+    "status": "up",
+    "ping": 988,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:33:22.402Z",
+    "status": "up",
+    "ping": 910,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:34:22.703Z",
+    "status": "down",
+    "ping": 1213,
+    "message": "HTTP 502 (unexpected)"
+  },
+  {
+    "time": "2026-09-20T10:35:22.409Z",
+    "status": "up",
+    "ping": 916,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:36:23.254Z",
+    "status": "up",
+    "ping": 1756,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:37:23.091Z",
+    "status": "up",
+    "ping": 1581,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:38:22.430Z",
+    "status": "up",
+    "ping": 915,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:39:22.477Z",
+    "status": "up",
+    "ping": 956,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:40:22.272Z",
+    "status": "up",
+    "ping": 740,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:41:22.457Z",
+    "status": "up",
+    "ping": 917,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:42:22.451Z",
+    "status": "up",
+    "ping": 909,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:43:22.500Z",
+    "status": "up",
+    "ping": 949,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:44:22.493Z",
+    "status": "up",
+    "ping": 935,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:45:23.469Z",
+    "status": "up",
+    "ping": 1899,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:46:22.501Z",
+    "status": "up",
+    "ping": 927,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:47:22.554Z",
+    "status": "up",
+    "ping": 966,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:48:22.562Z",
+    "status": "up",
+    "ping": 968,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:49:23.010Z",
+    "status": "up",
+    "ping": 1414,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:50:22.536Z",
+    "status": "up",
+    "ping": 928,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:51:22.576Z",
+    "status": "up",
+    "ping": 957,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:52:22.541Z",
+    "status": "up",
+    "ping": 915,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:53:22.569Z",
+    "status": "up",
+    "ping": 941,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:54:23.220Z",
+    "status": "up",
+    "ping": 1578,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:55:22.548Z",
+    "status": "up",
+    "ping": 905,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:56:22.611Z",
+    "status": "up",
+    "ping": 956,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:57:32.420Z",
+    "status": "down",
+    "ping": null,
+    "message": "Timeout"
+  },
+  {
+    "time": "2026-09-20T10:58:23.608Z",
+    "status": "up",
+    "ping": 1940,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T10:59:22.633Z",
+    "status": "up",
+    "ping": 957,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:00:22.590Z",
+    "status": "up",
+    "ping": 910,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:01:25.083Z",
+    "status": "up",
+    "ping": 3405,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:02:22.681Z",
+    "status": "up",
+    "ping": 999,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:03:26.725Z",
+    "status": "up",
+    "ping": 5025,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:04:22.999Z",
+    "status": "up",
+    "ping": 1305,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:05:22.610Z",
+    "status": "up",
+    "ping": 909,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:06:22.678Z",
+    "status": "up",
+    "ping": 969,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:07:32.438Z",
+    "status": "down",
+    "ping": null,
+    "message": "Timeout"
+  },
+  {
+    "time": "2026-09-20T11:08:32.436Z",
+    "status": "down",
+    "ping": null,
+    "message": "Timeout"
+  },
+  {
+    "time": "2026-09-20T11:09:32.433Z",
+    "status": "down",
+    "ping": null,
+    "message": "Timeout"
+  },
+  {
+    "time": "2026-09-20T11:10:22.687Z",
+    "status": "up",
+    "ping": 938,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:11:22.706Z",
+    "status": "up",
+    "ping": 943,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:12:22.763Z",
+    "status": "up",
+    "ping": 997,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:13:22.714Z",
+    "status": "up",
+    "ping": 932,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:14:22.734Z",
+    "status": "up",
+    "ping": 943,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:15:23.662Z",
+    "status": "up",
+    "ping": 1870,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:16:22.741Z",
+    "status": "up",
+    "ping": 945,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:17:22.952Z",
+    "status": "up",
+    "ping": 1147,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:18:22.780Z",
+    "status": "up",
+    "ping": 963,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:19:22.683Z",
+    "status": "up",
+    "ping": 851,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:20:22.793Z",
+    "status": "up",
+    "ping": 953,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:21:22.904Z",
+    "status": "up",
+    "ping": 1049,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:22:22.814Z",
+    "status": "up",
+    "ping": 962,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:23:22.775Z",
+    "status": "up",
+    "ping": 910,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:24:23.712Z",
+    "status": "up",
+    "ping": 1841,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:25:24.591Z",
+    "status": "up",
+    "ping": 2705,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:26:22.796Z",
+    "status": "up",
+    "ping": 905,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:27:22.848Z",
+    "status": "up",
+    "ping": 941,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:28:22.874Z",
+    "status": "up",
+    "ping": 963,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:29:30.597Z",
+    "status": "up",
+    "ping": 8676,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:30:22.838Z",
+    "status": "up",
+    "ping": 909,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:31:22.835Z",
+    "status": "up",
+    "ping": 902,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:32:23.298Z",
+    "status": "up",
+    "ping": 1357,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:33:23.050Z",
+    "status": "up",
+    "ping": 1104,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:34:22.909Z",
+    "status": "up",
+    "ping": 949,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:35:24.160Z",
+    "status": "up",
+    "ping": 2190,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:36:23.019Z",
+    "status": "up",
+    "ping": 1040,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:37:22.994Z",
+    "status": "up",
+    "ping": 1003,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:38:22.902Z",
+    "status": "up",
+    "ping": 899,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:39:26.282Z",
+    "status": "up",
+    "ping": 4271,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:40:22.988Z",
+    "status": "up",
+    "ping": 964,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:41:24.307Z",
+    "status": "up",
+    "ping": 2275,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:42:22.975Z",
+    "status": "up",
+    "ping": 930,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:43:27.953Z",
+    "status": "up",
+    "ping": 5894,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:44:22.976Z",
+    "status": "up",
+    "ping": 916,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:45:22.990Z",
+    "status": "up",
+    "ping": 922,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:46:30.076Z",
+    "status": "up",
+    "ping": 7994,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:47:22.999Z",
+    "status": "up",
+    "ping": 915,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:48:23.350Z",
+    "status": "up",
+    "ping": 1253,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:49:23.073Z",
+    "status": "up",
+    "ping": 962,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:50:23.065Z",
+    "status": "up",
+    "ping": 953,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:51:23.035Z",
+    "status": "up",
+    "ping": 907,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:52:23.039Z",
+    "status": "up",
+    "ping": 906,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:53:23.096Z",
+    "status": "up",
+    "ping": 959,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:54:24.653Z",
+    "status": "up",
+    "ping": 2516,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:55:24.988Z",
+    "status": "up",
+    "ping": 2846,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:56:23.074Z",
+    "status": "up",
+    "ping": 930,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:57:30.184Z",
+    "status": "up",
+    "ping": 8032,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:58:24.515Z",
+    "status": "up",
+    "ping": 2351,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T11:59:23.112Z",
+    "status": "up",
+    "ping": 946,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:00:23.600Z",
+    "status": "up",
+    "ping": 1433,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:01:23.123Z",
+    "status": "up",
+    "ping": 940,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:02:23.123Z",
+    "status": "up",
+    "ping": 945,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:03:30.160Z",
+    "status": "up",
+    "ping": 7980,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:04:24.894Z",
+    "status": "up",
+    "ping": 2701,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:05:23.545Z",
+    "status": "up",
+    "ping": 1351,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:06:23.150Z",
+    "status": "up",
+    "ping": 952,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:07:23.186Z",
+    "status": "up",
+    "ping": 980,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:08:28.329Z",
+    "status": "up",
+    "ping": 6120,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:09:23.120Z",
+    "status": "up",
+    "ping": 904,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:10:29.710Z",
+    "status": "up",
+    "ping": 7492,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:11:24.222Z",
+    "status": "up",
+    "ping": 1993,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:12:23.156Z",
+    "status": "up",
+    "ping": 913,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:13:29.318Z",
+    "status": "up",
+    "ping": 7074,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:14:24.525Z",
+    "status": "up",
+    "ping": 2277,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:15:23.204Z",
+    "status": "up",
+    "ping": 950,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:16:22.945Z",
+    "status": "up",
+    "ping": 688,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:17:23.947Z",
+    "status": "up",
+    "ping": 1690,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:18:25.897Z",
+    "status": "up",
+    "ping": 3632,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:19:23.247Z",
+    "status": "up",
+    "ping": 975,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:20:23.194Z",
+    "status": "up",
+    "ping": 909,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:21:23.235Z",
+    "status": "up",
+    "ping": 937,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:22:24.247Z",
+    "status": "up",
+    "ping": 1942,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:23:23.224Z",
+    "status": "up",
+    "ping": 913,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:24:23.831Z",
+    "status": "up",
+    "ping": 1513,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:25:23.264Z",
+    "status": "up",
+    "ping": 940,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:26:23.247Z",
+    "status": "up",
+    "ping": 910,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:27:23.304Z",
+    "status": "up",
+    "ping": 951,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:28:23.275Z",
+    "status": "up",
+    "ping": 915,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:29:23.268Z",
+    "status": "up",
+    "ping": 902,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:30:23.330Z",
+    "status": "up",
+    "ping": 950,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:31:23.338Z",
+    "status": "up",
+    "ping": 955,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:32:24.188Z",
+    "status": "up",
+    "ping": 1802,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:33:23.362Z",
+    "status": "up",
+    "ping": 970,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:34:23.338Z",
+    "status": "up",
+    "ping": 946,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:35:23.361Z",
+    "status": "up",
+    "ping": 955,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:36:23.934Z",
+    "status": "up",
+    "ping": 1526,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:37:24.547Z",
+    "status": "up",
+    "ping": 2129,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:38:25.389Z",
+    "status": "up",
+    "ping": 2960,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:39:23.342Z",
+    "status": "up",
+    "ping": 909,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:40:23.455Z",
+    "status": "up",
+    "ping": 1010,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:41:30.773Z",
+    "status": "up",
+    "ping": 8321,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:42:25.337Z",
+    "status": "up",
+    "ping": 2879,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:43:23.418Z",
+    "status": "up",
+    "ping": 953,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:44:23.602Z",
+    "status": "up",
+    "ping": 1133,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:45:23.399Z",
+    "status": "up",
+    "ping": 925,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:46:25.511Z",
+    "status": "up",
+    "ping": 3028,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:47:23.434Z",
+    "status": "up",
+    "ping": 939,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:48:23.431Z",
+    "status": "up",
+    "ping": 924,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:49:23.431Z",
+    "status": "up",
+    "ping": 918,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:50:25.764Z",
+    "status": "up",
+    "ping": 3239,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:51:23.490Z",
+    "status": "up",
+    "ping": 962,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:52:23.482Z",
+    "status": "up",
+    "ping": 954,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:53:23.763Z",
+    "status": "up",
+    "ping": 1229,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:54:23.490Z",
+    "status": "up",
+    "ping": 952,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:55:23.471Z",
+    "status": "up",
+    "ping": 921,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:56:27.048Z",
+    "status": "up",
+    "ping": 4491,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:56:50.142Z",
+    "status": "up",
+    "ping": 956,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:57:50.064Z",
+    "status": "up",
+    "ping": 2849,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:58:17.792Z",
+    "status": "up",
+    "ping": 8292,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T12:59:10.469Z",
+    "status": "up",
+    "ping": 942,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:00:10.493Z",
+    "status": "up",
+    "ping": 965,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:01:10.507Z",
+    "status": "up",
+    "ping": 966,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:02:10.503Z",
+    "status": "up",
+    "ping": 949,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:03:10.476Z",
+    "status": "up",
+    "ping": 916,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:04:10.532Z",
+    "status": "up",
+    "ping": 962,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:05:10.536Z",
+    "status": "up",
+    "ping": 959,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:06:11.812Z",
+    "status": "up",
+    "ping": 2226,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:07:17.529Z",
+    "status": "up",
+    "ping": 7933,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:08:11.207Z",
+    "status": "up",
+    "ping": 1608,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:09:10.526Z",
+    "status": "up",
+    "ping": 921,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:10:10.566Z",
+    "status": "up",
+    "ping": 963,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:11:10.526Z",
+    "status": "up",
+    "ping": 911,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:12:10.578Z",
+    "status": "up",
+    "ping": 960,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:13:11.834Z",
+    "status": "up",
+    "ping": 2211,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:14:11.059Z",
+    "status": "up",
+    "ping": 1433,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:15:10.586Z",
+    "status": "up",
+    "ping": 954,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:16:10.579Z",
+    "status": "up",
+    "ping": 933,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:17:10.596Z",
+    "status": "up",
+    "ping": 946,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:18:12.043Z",
+    "status": "up",
+    "ping": 2384,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:19:10.626Z",
+    "status": "up",
+    "ping": 964,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:20:13.620Z",
+    "status": "up",
+    "ping": 3959,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:21:10.638Z",
+    "status": "up",
+    "ping": 975,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:22:10.578Z",
+    "status": "up",
+    "ping": 902,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:23:10.625Z",
+    "status": "up",
+    "ping": 940,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:24:10.670Z",
+    "status": "up",
+    "ping": 974,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:25:12.983Z",
+    "status": "up",
+    "ping": 3286,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:26:10.648Z",
+    "status": "up",
+    "ping": 940,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:27:12.409Z",
+    "status": "up",
+    "ping": 2694,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:28:10.627Z",
+    "status": "up",
+    "ping": 912,
+    "message": "JSON query matched"
+  },
+  {
+    "time": "2026-09-20T13:29:10.655Z",
+    "status": "up",
+    "ping": 936,
+    "message": "JSON query matched"
+  }
+]

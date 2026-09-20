@@ -1,0 +1,3002 @@
+[
+  {
+    "time": "2026-09-20T05:11:19.088Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:12:18.974Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:13:18.971Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:14:18.998Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:15:19.003Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:16:19.024Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:17:19.018Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:18:19.036Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:19:19.035Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:20:19.042Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:21:19.052Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:22:19.038Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:23:19.052Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:24:19.063Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:25:19.061Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:26:19.061Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:27:19.075Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:28:19.081Z",
+    "status": "up",
+    "ping": 31,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:29:19.104Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:30:19.114Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:31:19.129Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:32:19.138Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:33:19.150Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:34:19.151Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:35:19.163Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:36:19.177Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:37:19.148Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:38:19.177Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:39:19.209Z",
+    "status": "up",
+    "ping": 54,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:40:19.206Z",
+    "status": "up",
+    "ping": 50,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:41:19.224Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:42:19.228Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:43:19.230Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:44:19.244Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:45:19.272Z",
+    "status": "up",
+    "ping": 54,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:46:19.268Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:47:19.268Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:48:19.259Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:49:19.290Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:50:19.299Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:51:19.329Z",
+    "status": "up",
+    "ping": 52,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:52:19.303Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:53:19.314Z",
+    "status": "up",
+    "ping": 51,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:54:19.332Z",
+    "status": "up",
+    "ping": 49,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:55:19.327Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:56:19.334Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:57:19.341Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:58:19.345Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T05:59:19.355Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:00:19.386Z",
+    "status": "up",
+    "ping": 52,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:01:19.409Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:02:19.378Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:03:19.380Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:04:19.390Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:05:19.413Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:06:19.395Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:07:19.412Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:08:19.410Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:09:19.440Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:10:19.442Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:11:19.460Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:12:19.462Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:13:19.464Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:14:19.469Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:15:19.461Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:16:19.480Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:17:19.494Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:18:19.473Z",
+    "status": "up",
+    "ping": 17,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:19:19.500Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:20:19.493Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:21:19.516Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:22:19.505Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:23:19.504Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:24:19.507Z",
+    "status": "up",
+    "ping": 17,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:25:19.529Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:26:19.528Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:27:19.552Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:28:19.565Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:29:19.562Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:30:19.585Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:31:22.548Z",
+    "status": "up",
+    "ping": 2985,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:32:19.591Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:33:19.609Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:34:19.625Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:35:19.628Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:36:19.634Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:37:19.635Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:38:19.632Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:39:19.628Z",
+    "status": "up",
+    "ping": 32,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:40:19.636Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:41:19.654Z",
+    "status": "up",
+    "ping": 17,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:42:19.672Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:43:19.702Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:44:19.693Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:45:19.686Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:46:19.698Z",
+    "status": "up",
+    "ping": 50,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:47:19.709Z",
+    "status": "up",
+    "ping": 49,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:48:19.702Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:49:19.725Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:50:19.724Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:51:19.746Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:52:19.739Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:53:19.736Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:54:19.748Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:55:19.756Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:56:19.766Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:57:19.754Z",
+    "status": "up",
+    "ping": 17,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:58:19.774Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T06:59:19.793Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:00:19.805Z",
+    "status": "up",
+    "ping": 49,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:01:19.816Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:02:19.825Z",
+    "status": "up",
+    "ping": 50,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:03:19.817Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:04:19.836Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:05:19.839Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:06:19.850Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:07:19.852Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:08:19.854Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:09:19.843Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:10:19.877Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:11:19.873Z",
+    "status": "up",
+    "ping": 17,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:12:19.904Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:13:19.906Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:14:19.915Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:15:19.917Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:16:19.921Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:17:19.942Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:18:19.928Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:19:19.959Z",
+    "status": "up",
+    "ping": 50,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:20:19.963Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:21:19.986Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:22:19.964Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:23:19.979Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:24:19.984Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:25:19.986Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:26:19.983Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:27:19.993Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:28:20.014Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:29:20.014Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:30:20.035Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:31:20.050Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:32:20.034Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:33:20.050Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:34:20.069Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:35:20.090Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:36:20.100Z",
+    "status": "up",
+    "ping": 52,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:37:20.086Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:38:20.091Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:39:20.098Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:40:20.120Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:41:20.132Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:42:20.127Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:43:20.125Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:44:20.134Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:45:20.140Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:46:20.154Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:47:20.155Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:48:20.160Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:49:20.154Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:50:20.176Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:51:20.178Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:52:20.160Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:53:20.180Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:54:20.190Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:55:20.211Z",
+    "status": "up",
+    "ping": 52,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:56:20.203Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:57:20.205Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:58:20.212Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T07:59:20.239Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:00:20.243Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:01:20.257Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:02:20.265Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:03:20.271Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:04:20.277Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:05:20.288Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:06:20.297Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:07:20.312Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:08:20.309Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:09:20.321Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:10:20.333Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:11:20.341Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:12:20.336Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:13:20.347Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:14:20.349Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:15:20.349Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:16:20.359Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:17:20.373Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:18:20.389Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:19:20.391Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:20:20.408Z",
+    "status": "up",
+    "ping": 53,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:21:20.440Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:22:20.416Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:23:20.416Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:24:20.423Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:25:20.403Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:26:20.437Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:27:20.456Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:28:20.444Z",
+    "status": "up",
+    "ping": 17,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:29:20.467Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:30:20.500Z",
+    "status": "up",
+    "ping": 61,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:31:20.502Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:32:20.491Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:33:20.476Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:34:20.492Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:35:20.503Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:36:20.479Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:37:20.510Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:38:20.521Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:39:20.523Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:40:20.546Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:41:20.563Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:42:20.571Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:43:20.571Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:44:20.572Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:45:20.572Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:46:20.577Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:47:20.590Z",
+    "status": "up",
+    "ping": 58,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:48:20.581Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:49:20.591Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:50:20.605Z",
+    "status": "up",
+    "ping": 55,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:51:20.609Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:52:20.621Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:53:20.609Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:54:20.622Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:55:20.639Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:56:20.643Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:57:20.631Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:58:20.660Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T08:59:20.650Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:00:20.677Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:01:20.690Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:02:20.704Z",
+    "status": "up",
+    "ping": 49,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:03:20.691Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:04:20.712Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:05:20.709Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:06:20.717Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:07:20.733Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:08:20.732Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:09:20.739Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:10:20.768Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:11:20.786Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:12:20.784Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:13:20.793Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:14:20.790Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:15:20.814Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:16:20.808Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:17:20.815Z",
+    "status": "up",
+    "ping": 32,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:18:20.830Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:19:20.833Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:20:20.839Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:21:20.868Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:22:20.867Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:23:20.877Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:24:20.882Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:25:20.898Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:26:20.935Z",
+    "status": "up",
+    "ping": 63,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:27:20.918Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:28:20.910Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:29:20.902Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:30:20.930Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:31:20.923Z",
+    "status": "up",
+    "ping": 17,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:32:20.930Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:33:20.933Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:34:20.941Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:35:20.946Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:36:20.960Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:37:20.960Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:38:20.969Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:39:20.960Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:40:20.981Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:41:21.011Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:42:21.005Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:43:21.009Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:44:20.993Z",
+    "status": "up",
+    "ping": 21,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:45:21.028Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:46:21.040Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:47:21.046Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:48:21.059Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:49:21.057Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:50:21.059Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:51:21.072Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:52:21.071Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:53:21.080Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:54:21.095Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:55:21.088Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:56:21.095Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:57:21.113Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:58:21.120Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T09:59:21.118Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:00:21.154Z",
+    "status": "up",
+    "ping": 63,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:01:21.134Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:02:21.138Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:03:21.149Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:04:21.150Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:05:21.142Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:06:21.176Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:07:21.206Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:08:21.186Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:09:21.217Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:10:21.220Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:11:21.244Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:12:21.248Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:13:21.235Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:14:21.249Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:15:21.246Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:16:21.232Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:17:21.266Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:18:21.289Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:19:21.260Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:20:21.286Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:21:21.284Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:22:21.283Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:23:21.285Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:24:21.303Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:25:21.306Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:26:21.336Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:27:21.334Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:28:21.328Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:29:21.344Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:30:21.346Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:31:21.344Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:32:21.375Z",
+    "status": "up",
+    "ping": 59,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:33:21.375Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:34:21.381Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:35:21.394Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:36:21.395Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:37:21.407Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:38:21.415Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:39:21.419Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:40:21.444Z",
+    "status": "up",
+    "ping": 49,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:41:21.445Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:42:21.451Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:43:21.467Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:44:21.469Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:45:21.485Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:46:21.489Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:47:21.484Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:48:21.496Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:49:21.496Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:50:21.478Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:51:21.509Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:52:21.530Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:53:21.535Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:54:21.547Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:55:21.536Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:56:21.557Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:57:21.572Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:58:21.572Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T10:59:21.583Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:00:21.583Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:01:21.584Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:02:21.614Z",
+    "status": "up",
+    "ping": 51,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:03:21.606Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:04:21.620Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:05:21.628Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:06:21.633Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:07:21.626Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:08:21.624Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:09:21.645Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:10:21.643Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:11:21.657Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:12:21.660Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:13:21.686Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:14:21.685Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:15:21.693Z",
+    "status": "up",
+    "ping": 32,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:16:21.698Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:17:21.676Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:18:21.718Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:19:21.736Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:20:21.738Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:21:21.754Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:22:21.760Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:23:21.767Z",
+    "status": "up",
+    "ping": 49,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:24:21.757Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:25:21.774Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:26:21.778Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:27:21.793Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:28:21.797Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:29:21.801Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:30:21.816Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:31:21.821Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:32:21.820Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:33:21.828Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:34:21.836Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:35:21.859Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:36:21.857Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:37:21.850Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:38:21.888Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:39:21.890Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:40:21.902Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:41:21.910Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:42:21.925Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:43:21.928Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:44:21.902Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:45:21.940Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:46:21.948Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:47:21.947Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:48:21.944Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:49:21.980Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:50:21.999Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:51:22.002Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:52:22.018Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:53:22.010Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:54:22.019Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:55:22.029Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:56:22.023Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:57:22.032Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:58:22.045Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T11:59:22.058Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:00:22.064Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:01:22.074Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:02:22.075Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:03:22.076Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:04:22.084Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:05:22.113Z",
+    "status": "up",
+    "ping": 49,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:06:22.111Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:07:22.119Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:08:22.121Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:09:22.129Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:10:22.127Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:11:22.149Z",
+    "status": "up",
+    "ping": 49,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:12:22.155Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:13:22.169Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:14:22.169Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:15:22.183Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:16:22.199Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:17:22.197Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:18:22.214Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:19:22.189Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:20:22.213Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:21:22.215Z",
+    "status": "up",
+    "ping": 32,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:22:22.225Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:23:22.228Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:24:22.251Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:25:22.250Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:26:22.258Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:27:22.265Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:28:22.282Z",
+    "status": "up",
+    "ping": 50,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:29:22.275Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:30:22.284Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:31:22.290Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:32:22.300Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:33:22.307Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:34:22.292Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:35:22.334Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:36:22.337Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:37:22.338Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:38:22.347Z",
+    "status": "up",
+    "ping": 32,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:39:22.367Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:40:22.369Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:41:22.383Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:42:22.385Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:43:22.388Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:44:22.395Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:45:22.377Z",
+    "status": "up",
+    "ping": 16,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:46:22.412Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:47:22.416Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:48:22.418Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:49:22.424Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:50:22.444Z",
+    "status": "up",
+    "ping": 46,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:51:22.443Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:52:22.450Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:53:22.463Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:54:22.466Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:55:22.474Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:56:22.481Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:56:49.231Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:57:47.261Z",
+    "status": "up",
+    "ping": 49,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:58:09.548Z",
+    "status": "up",
+    "ping": 52,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T12:59:09.564Z",
+    "status": "up",
+    "ping": 41,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:00:09.548Z",
+    "status": "up",
+    "ping": 25,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:01:09.567Z",
+    "status": "up",
+    "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:02:09.569Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:03:09.584Z",
+    "status": "up",
+    "ping": 47,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:04:09.595Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:05:09.597Z",
+    "status": "up",
+    "ping": 43,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:06:09.603Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:07:09.617Z",
+    "status": "up",
+    "ping": 44,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:08:09.613Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:09:09.619Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:10:09.637Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:11:09.605Z",
+    "status": "up",
+    "ping": 15,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:12:09.641Z",
+    "status": "up",
+    "ping": 45,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:13:09.646Z",
+    "status": "up",
+    "ping": 36,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:14:09.641Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:15:09.645Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:16:09.660Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:17:09.668Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:18:09.669Z",
+    "status": "up",
+    "ping": 32,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:19:09.695Z",
+    "status": "up",
+    "ping": 53,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:20:09.689Z",
+    "status": "up",
+    "ping": 35,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:21:09.701Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:22:09.712Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:23:09.719Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:24:09.737Z",
+    "status": "up",
+    "ping": 42,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:25:09.735Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:26:09.739Z",
+    "status": "up",
+    "ping": 33,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:27:09.760Z",
+    "status": "up",
+    "ping": 48,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:28:09.752Z",
+    "status": "up",
+    "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:29:09.754Z",
+    "status": "up",
+    "ping": 37,
+    "message": "Resolved 2 record(s)"
+  }
+]
