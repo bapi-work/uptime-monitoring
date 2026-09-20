@@ -15,6 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 3300;
 
 store.ensureDirs();
+store.applyRetentionLimits();
 users.ensureAdmin();
 
 // Set TRUST_PROXY=1 when running behind a reverse proxy (nginx, Caddy, a
@@ -93,6 +94,8 @@ process.on('uncaughtException', (err) => {
 process.on('unhandledRejection', (err) => {
   console.error('Unhandled rejection:', err);
 });
+
+setInterval(() => store.applyRetentionLimits(), 24 * 60 * 60 * 1000).unref();
 
 const server = app.listen(PORT, () => {
   console.log(`Uptime monitor running at http://localhost:${PORT}`);

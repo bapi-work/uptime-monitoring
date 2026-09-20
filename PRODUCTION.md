@@ -216,6 +216,50 @@ docker compose up -d --build
 check with `docker volume ls` if you're not sure. A brand-new deployment with
 an empty volume does not need this step.)
 
+## Data retention
+
+Storage is JSON files under `data/`, and every history type the app keeps is
+already capped by default — nothing grows forever even with no configuration:
+
+| What | Default cap | Env var to override | Minimum allowed |
+|---|---|---|---|
+| Raw heartbeats (per monitor) | 500 | `RETENTION_HEARTBEATS` | 20 |
+| Daily stats (per monitor) | 90 days | `RETENTION_DAILY_DAYS` | 7 |
+| Hourly stats (per monitor) | 50 hours | `RETENTION_HOURLY_HOURS` | 25 |
+| Event/incident history (per monitor) | 200 events | `RETENTION_EVENTS` | 10 |
+| Finished maintenance windows | 30 days | `RETENTION_MAINTENANCE_DAYS` | 1 |
+
+The minimums exist so a too-aggressive setting can't silently break
+something — e.g. `RETENTION_HOURLY_HOURS` below 25 would make the "Hourly"
+and "Daily" status page ranges (which need a full rolling 24h) return gaps.
+
+To tighten any of these, add the env var under the `uptime-monitoring`
+service's `environment:` block in `docker-compose.yml` (same mapping syntax
+already there):
+
+```yaml
+    environment:
+      PORT: '3300'
+      TRUST_PROXY: '1'
+      RETENTION_HEARTBEATS: '200'
+      RETENTION_DAILY_DAYS: '30'
+```
+
+then `docker compose up -d --build`. Two things happen: going forward, every
+write respects the new cap; and **on that restart, existing files are
+retroactively trimmed down to it too** — so lowering a limit actually
+reclaims disk space, not just slows future growth. This retroactive trim also
+re-runs automatically every 24 hours while the container is up, so an expired
+maintenance window disappears from the list within a day of finishing even
+without a restart.
+
+What isn't covered by these settings, and why it doesn't need to be:
+monitor/notification-channel/status-page definitions themselves (small,
+user-managed, not something that grows on its own), session files (already
+self-expiring via the session store's own TTL), and container logs (already
+capped via the `logging:` driver settings in `docker-compose.yml` — 10MB × 3
+files per service).
+
 ## Backups
 
 Everything the app knows — monitors, notification channels, status pages,
