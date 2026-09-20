@@ -1,0 +1,10 @@
+node_modules/
+
+# Runtime data: monitors, credentials, sessions, heartbeat/stats history.
+# This is application state, not source — it changes on every check cycle
+# and must never be committed.
+data/
+
+npm-debug.log*
+*.log
+.env
