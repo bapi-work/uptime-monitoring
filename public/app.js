@@ -298,6 +298,7 @@ async function loadNotifications() {
           <td class="muted">${n.type}</td>
           <td>
             <div class="row-actions">
+              <button class="secondary" onclick="testSavedNotification('${n.id}', this)">Send Test</button>
               <button class="secondary" onclick="editNotification('${n.id}')">Edit</button>
               <button class="danger" onclick="deleteNotification('${n.id}')">Delete</button>
             </div>
@@ -327,6 +328,42 @@ async function deleteNotification(id) {
   await api(`/api/notifications/${id}`, { method: 'DELETE' });
   loadNotifications();
 }
+
+async function runNotificationTest(button, body) {
+  const original = button.textContent;
+  button.disabled = true;
+  button.textContent = 'Sending...';
+  try {
+    const res = await api('/api/notifications/test', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    const result = await res.json().catch(() => ({}));
+    if (result.ok) {
+      alert('Test notification sent successfully.');
+    } else {
+      alert(`Test notification failed: ${result.error || 'Unknown error'}`);
+    }
+  } catch (e) {
+    alert('Test notification failed: could not reach server.');
+  } finally {
+    button.disabled = false;
+    button.textContent = original;
+  }
+}
+
+function testSavedNotification(id, button) {
+  const n = notificationsCache.find((x) => x.id === id);
+  if (!n) return;
+  runNotificationTest(button, { type: n.type, config: n.config });
+}
+
+document.getElementById('notif-test-btn').addEventListener('click', (e) => {
+  const config = {};
+  notifConfigFields.querySelectorAll('input').forEach((input) => { config[input.dataset.key] = input.value; });
+  runNotificationTest(e.target, { type: notifTypeSelect.value, config });
+});
 
 // =========================================================
 // Status Pages

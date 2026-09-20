@@ -1,6 +1,7 @@
 const express = require('express');
 const store = require('../lib/store');
 const scheduler = require('../lib/scheduler');
+const { testNotification } = require('../lib/notify');
 
 const router = express.Router();
 
@@ -204,6 +205,20 @@ router.put('/notifications/:id', requireAuth, (req, res) => {
   const updated = store.updateNotification(req.params.id, req.body || {});
   if (!updated) return res.status(404).json({ error: 'Not found' });
   res.json(updated);
+});
+
+router.post('/notifications/test', requireAuth, async (req, res) => {
+  const { type, config } = req.body || {};
+  if (!type) return res.status(400).json({ error: 'type is required' });
+  const result = await testNotification({ type, config: config || {} });
+  res.json(result);
+});
+
+router.post('/notifications/:id/test', requireAuth, async (req, res) => {
+  const channel = store.getNotification(req.params.id);
+  if (!channel) return res.status(404).json({ error: 'Not found' });
+  const result = await testNotification(channel);
+  res.json(result);
 });
 
 router.delete('/notifications/:id', requireAuth, (req, res) => {
