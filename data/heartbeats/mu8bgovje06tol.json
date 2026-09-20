@@ -1,23 +1,5 @@
 [
   {
-    "time": "2026-09-20T05:12:18.974Z",
-    "status": "up",
-    "ping": 38,
-    "message": "Resolved 2 record(s)"
-  },
-  {
-    "time": "2026-09-20T05:13:18.971Z",
-    "status": "up",
-    "ping": 33,
-    "message": "Resolved 2 record(s)"
-  },
-  {
-    "time": "2026-09-20T05:14:18.998Z",
-    "status": "up",
-    "ping": 36,
-    "message": "Resolved 2 record(s)"
-  },
-  {
     "time": "2026-09-20T05:15:19.003Z",
     "status": "up",
     "ping": 37,
@@ -2997,6 +2979,24 @@
     "time": "2026-09-20T13:30:09.757Z",
     "status": "up",
     "ping": 38,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:31:09.764Z",
+    "status": "up",
+    "ping": 39,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:32:09.773Z",
+    "status": "up",
+    "ping": 40,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:33:09.779Z",
+    "status": "up",
+    "ping": 34,
     "message": "Resolved 2 record(s)"
   }
 ]
