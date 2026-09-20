@@ -1,11 +1,5 @@
 [
   {
-    "time": "2026-09-20T05:15:19.003Z",
-    "status": "up",
-    "ping": 37,
-    "message": "Resolved 2 record(s)"
-  },
-  {
     "time": "2026-09-20T05:16:19.024Z",
     "status": "up",
     "ping": 40,
@@ -2997,6 +2991,12 @@
     "time": "2026-09-20T13:33:09.779Z",
     "status": "up",
     "ping": 34,
+    "message": "Resolved 2 record(s)"
+  },
+  {
+    "time": "2026-09-20T13:34:09.809Z",
+    "status": "up",
+    "ping": 46,
     "message": "Resolved 2 record(s)"
   }
 ]

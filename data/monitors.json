@@ -25,7 +25,7 @@
     "active": true,
     "createdAt": "2026-09-19T11:41:04.054Z",
     "currentStatus": "up",
-    "lastCheck": "2026-09-20T13:33:10.020Z",
+    "lastCheck": "2026-09-20T13:34:10.036Z",
     "certExpiryDate": "2026-10-27T22:17:21.000Z",
     "certDaysRemaining": 38
   },
@@ -52,7 +52,7 @@
     "active": true,
     "createdAt": "2026-09-19T11:41:04.111Z",
     "currentStatus": "up",
-    "lastCheck": "2026-09-20T13:33:09.779Z",
+    "lastCheck": "2026-09-20T13:34:09.809Z",
     "certExpiryDate": null,
     "certDaysRemaining": null
   },
@@ -79,7 +79,7 @@
     "active": true,
     "createdAt": "2026-09-19T11:41:04.173Z",
     "currentStatus": "up",
-    "lastCheck": "2026-09-20T13:33:10.664Z",
+    "lastCheck": "2026-09-20T13:34:10.728Z",
     "certExpiryDate": null,
     "certDaysRemaining": null
   },
@@ -106,7 +106,7 @@
     "active": true,
     "createdAt": "2026-09-19T11:41:04.222Z",
     "currentStatus": "up",
-    "lastCheck": "2026-09-20T13:33:10.008Z",
+    "lastCheck": "2026-09-20T13:34:10.049Z",
     "certExpiryDate": null,
     "certDaysRemaining": null
   },
@@ -136,7 +136,7 @@
     "active": true,
     "createdAt": "2026-09-19T11:43:53.688Z",
     "currentStatus": "down",
-    "lastCheck": "2026-09-20T13:33:23.142Z",
+    "lastCheck": "2026-09-20T13:34:33.218Z",
     "certExpiryDate": null,
     "certDaysRemaining": null
   }
