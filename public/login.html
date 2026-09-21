@@ -42,9 +42,26 @@
     }
     .back-link { text-align: center; margin-top: 16px; }
     .back-link a { color: var(--muted); font-size: 13px; text-decoration: none; }
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+    .theme-toggle:hover {
+      background: var(--panel-2);
+      border-color: var(--accent);
+    }
   </style>
 </head>
 <body>
+  <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()"></button>
   <div class="panel login-box">
     <img data-brand-logo class="brand-logo login-logo" style="display:none" alt="" />
     <h1><span data-brand-name>Uptime Monitor</span> Admin Login</h1>
@@ -69,6 +86,7 @@
     <div data-brand-footer class="brand-footer" style="display:none; text-align:center; margin-top:14px;"></div>
   </div>
 
+  <script src="/theme.js"></script>
   <script src="/branding.js"></script>
   <script src="/login.js"></script>
 </body>

@@ -12,7 +12,10 @@
       <img data-brand-logo class="brand-logo" style="display:none" alt="" />
       <h1 id="page-title">System Status</h1>
     </div>
-    <a href="/">Admin dashboard &rarr;</a>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <button class="secondary" id="theme-toggle" onclick="toggleTheme()" style="padding:6px 12px; font-size:16px; border:none; background:transparent;"></button>
+      <a href="/">Admin dashboard &rarr;</a>
+    </div>
   </header>
 
   <div class="container">
@@ -38,6 +41,7 @@
     <div data-brand-footer class="brand-footer" style="display:none"></div>
   </div>
 
+  <script src="/theme.js"></script>
   <script src="/branding.js"></script>
   <script src="/status.js"></script>
 </body>
