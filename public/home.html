@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Status Pages</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body {
+      padding: 20px;
+      background: var(--bg);
+      color: var(--fg);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .header-nav {
+      display: flex;
+      gap: 16px;
+    }
+    .header-nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .header-nav a:hover {
+      text-decoration: underline;
+    }
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .page-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      background: var(--panel-bg);
+    }
+    .page-card:hover {
+      border-color: var(--accent);
+      background: var(--panel-hover);
+    }
+    .page-card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .page-card p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+    }
+    .empty-state h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <img data-brand-logo class="brand-logo" style="display:none; height:32px; margin-right:12px;" alt="" />
+        <h1><span data-brand-name>Uptime Monitor</span> Status Pages</h1>
+      </div>
+      <div class="header-nav">
+        <a href="/login">Admin Login →</a>
+      </div>
+    </div>
+
+    <div id="pages-container">
+      <div class="empty-state">
+        <h2>Loading status pages...</h2>
+      </div>
+    </div>
+
+    <div data-brand-footer class="brand-footer" style="display:none; text-align:center; margin-top:32px; padding-top:16px; border-top:1px solid var(--border);"></div>
+  </div>
+
+  <script src="/branding.js"></script>
+  <script>
+    async function loadStatusPages() {
+      try {
+        const res = await fetch('/api/statuspages');
+        const pages = await res.json();
+        const publicPages = pages.filter((p) => p.isPublic !== false);
+
+        const container = document.getElementById('pages-container');
+        if (!publicPages.length) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <h2>No status pages available</h2>
+              <p>Check back soon for updates.</p>
+            </div>
+          `;
+          return;
+        }
+
+        const html = publicPages
+          .map((p) => `
+            <a href="/status/${p.slug}" style="text-decoration:none; color:inherit;">
+              <div class="page-card">
+                <h3>${escapeHtml(p.title)}</h3>
+                ${p.description ? `<p>${escapeHtml(p.description)}</p>` : ''}
+              </div>
+            </a>
+          `)
+          .join('');
+        container.innerHTML = `<div class="pages-grid">${html}</div>`;
+      } catch (err) {
+        document.getElementById('pages-container').innerHTML = `
+          <div class="empty-state" style="color:var(--down);">
+            <h2>Error loading pages</h2>
+            <p>${escapeHtml(err.message)}</p>
+          </div>
+        `;
+      }
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    loadStatusPages();
+  </script>
+</body>
+</html>

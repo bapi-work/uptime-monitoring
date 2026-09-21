@@ -246,8 +246,15 @@ router.delete('/maintenance/:id', canDelete, (req, res) => {
 
 // ---- Status pages (admin management) ----
 
-router.get('/statuspages', requireAuth, (req, res) => {
-  res.json(store.getStatusPages());
+router.get('/statuspages', (req, res) => {
+  const { liveUser } = require('../lib/rbac');
+  const user = liveUser(req);
+  const pages = store.getStatusPages().map((p) => ({
+    ...p,
+    isPublic: p.isPublic !== false,
+  }));
+  if (!user) return res.json(pages.filter((p) => p.isPublic));
+  res.json(pages);
 });
 
 router.post('/statuspages', canWrite, (req, res) => {
@@ -257,7 +264,15 @@ router.post('/statuspages', canWrite, (req, res) => {
 });
 
 router.put('/statuspages/:id', canWrite, (req, res) => {
-  const updated = store.updateStatusPage(req.params.id, req.body || {});
+  const data = req.body || {};
+  const updated = store.updateStatusPage(req.params.id, {
+    title: data.title,
+    description: data.description,
+    slug: data.slug,
+    monitorIds: data.monitorIds,
+    tags: data.tags,
+    isPublic: data.isPublic,
+  });
   if (!updated) return res.status(404).json({ error: 'Not found' });
   res.json(updated);
 });

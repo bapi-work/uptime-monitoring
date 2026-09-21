@@ -32,7 +32,7 @@ form.addEventListener('submit', async (e) => {
       errorMsg.style.display = 'block';
       return;
     }
-    window.location.href = '/';
+    window.location.href = data.redirect || '/admin';
   } catch (e) {
     errorMsg.textContent = 'Could not reach server';
     errorMsg.style.display = 'block';

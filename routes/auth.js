@@ -6,7 +6,7 @@ const { requireAuth, requireRole, liveUser } = require('../lib/rbac');
 const router = express.Router();
 
 router.post('/login', async (req, res) => {
-  const { username, password, token } = req.body || {};
+  const { username, password, token, redirect } = req.body || {};
   const user = users.verifyLogin(username, password);
   if (!user) {
     return res.status(401).json({ error: 'Invalid username or password' });
@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
     }
   }
   req.session.user = { id: user.id, username: user.username, role: user.role };
-  res.json({ ok: true, username: user.username, role: user.role });
+  res.json({ ok: true, username: user.username, role: user.role, redirect: redirect || '/admin' });
 });
 
 router.post('/logout', (req, res) => {

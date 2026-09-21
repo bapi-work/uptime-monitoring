@@ -76,30 +76,25 @@ function requireAdminRole(req, res, next) {
   res.redirect('/login.html');
 }
 
-// Admin dashboard is gated behind login; public status page(s) and static
-// assets (css/js) remain open so anyone can view system status.
-app.get('/', requireAdminPage, (req, res) => {
+// Home page: public listing of public status pages.
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'home.html'));
+});
+
+// Admin dashboard is gated behind login.
+app.get('/admin', (req, res) => {
+  const user = liveUser(req);
+  if (!user) return res.redirect('/login');
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-app.get('/index.html', requireAdminPage, (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+
+app.get('/login', (req, res) => {
+  const user = liveUser(req);
+  if (user) return res.redirect('/admin');
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
-// The "all monitors" default status page is admin-only — everyone else
-// only ever sees the specific named status page(s) an admin curated.
-app.get('/status.html', requireAdminRole, (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'status.html'));
-});
-
-// Clean public URL: "/status" resolves to the single configured status
-// page (or an index/empty-state if there are zero or several) — handled
-// client-side in status.js.
-app.get('/status', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'status.html'));
-});
-
-// Named status pages: /status/<slug> reuses the same status page shell,
-// which reads the slug from the URL client-side.
+// Status pages: /status/<slug> is public, accessible to anyone.
 app.get('/status/:slug', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'status.html'));
 });

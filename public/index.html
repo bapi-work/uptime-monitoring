@@ -227,6 +227,12 @@
             <label>Monitors on this page</label>
             <select id="sp-monitors" multiple size="6" style="width:100%"></select>
           </div>
+          <div style="margin-top:12px;">
+            <label style="display:flex; align-items:center; gap:8px;">
+              <input type="checkbox" id="sp-is-public" checked />
+              <span>Publish on home page</span>
+            </label>
+          </div>
           <div style="margin-top:14px; display:flex; gap:10px;">
             <button type="submit" id="sp-submit-btn">Create Page</button>
             <button type="button" class="secondary" id="sp-cancel" style="display:none">Cancel</button>
@@ -236,8 +242,8 @@
       <div class="panel">
         <h2>Status Pages</h2>
         <table>
-          <thead><tr><th>Title</th><th>URL</th><th>Monitors</th><th></th></tr></thead>
-          <tbody id="sp-body"><tr><td colspan="4" class="empty">Loading...</td></tr></tbody>
+          <thead><tr><th>Title</th><th>URL</th><th>Monitors</th><th>Visibility</th><th></th></tr></thead>
+          <tbody id="sp-body"><tr><td colspan="5" class="empty">Loading...</td></tr></tbody>
         </table>
       </div>
     </section>

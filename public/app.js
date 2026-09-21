@@ -441,6 +441,7 @@ spForm.addEventListener('submit', async (e) => {
     slug: document.getElementById('sp-slug').value.trim(),
     description: document.getElementById('sp-description').value.trim(),
     monitorIds: [...spMonitors.selectedOptions].map((o) => o.value),
+    isPublic: document.getElementById('sp-is-public').checked,
   };
   const id = spIdField.value;
   const url = id ? `/api/statuspages/${id}` : '/api/statuspages';
@@ -469,6 +470,7 @@ async function loadStatusPages() {
           <td>${escapeHtml(p.title)}</td>
           <td><a href="/status/${p.slug}" target="_blank" class="muted">/status/${escapeHtml(p.slug)}</a></td>
           <td class="muted">${p.monitorIds.length}</td>
+          <td class="muted">${p.isPublic !== false ? '🌐 Public' : '🔒 Private'}</td>
           <td>
             <div class="row-actions">
               ${canWriteRole() ? `<button class="secondary" onclick="editStatusPage('${p.id}')">Edit</button>` : ''}
@@ -478,7 +480,7 @@ async function loadStatusPages() {
         </tr>`
         )
         .join('')
-    : '<tr><td colspan="4" class="empty">No status pages yet. Create one above so the public /status URL has something to show — the full "all monitors" view is admin-only.</td></tr>';
+    : '<tr><td colspan="5" class="empty">No status pages yet. Create one above and check "Publish on home page" to make it visible to the public.</td></tr>';
 }
 
 function editStatusPage(id) {
@@ -489,6 +491,7 @@ function editStatusPage(id) {
   document.getElementById('sp-slug').value = p.slug;
   document.getElementById('sp-description').value = p.description || '';
   [...spMonitors.options].forEach((o) => { o.selected = p.monitorIds.includes(o.value); });
+  document.getElementById('sp-is-public').checked = p.isPublic !== false;
   spSubmitBtn.textContent = 'Save Changes';
   spFormTitle.textContent = 'Edit Status Page';
   spCancelBtn.style.display = '';
