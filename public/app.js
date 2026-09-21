@@ -25,6 +25,47 @@ async function api(url, options) {
 }
 
 // =========================================================
+// Role-based access: admin (full access) / manager (create+edit,
+// no delete, no user management) / user (read-only)
+// =========================================================
+
+let currentRole = 'admin';
+let currentUserId = null;
+
+function canWriteRole() {
+  return currentRole === 'admin' || currentRole === 'manager';
+}
+function canDeleteRole() {
+  return currentRole === 'admin';
+}
+
+async function loadSession() {
+  const res = await api('/api/session');
+  const data = await res.json();
+  currentRole = data.role || 'admin';
+  currentUserId = data.id || null;
+  applyRoleUI();
+  return data;
+}
+
+function applyRoleUI() {
+  document.getElementById('users-tab-btn').style.display = currentRole === 'admin' ? '' : 'none';
+  const allMonitorsLink = document.getElementById('all-monitors-link');
+  if (allMonitorsLink) allMonitorsLink.style.display = currentRole === 'admin' ? '' : 'none';
+
+  const writePanels = [
+    document.getElementById('monitor-form').closest('.panel'),
+    document.getElementById('notif-form').closest('.panel'),
+    document.getElementById('sp-form').closest('.panel'),
+    document.getElementById('maint-form').closest('.panel'),
+    document.getElementById('branding-form').closest('.panel'),
+  ];
+  for (const panel of writePanels) {
+    if (panel) panel.style.display = canWriteRole() ? '' : 'none';
+  }
+}
+
+// =========================================================
 // Monitors
 // =========================================================
 
@@ -140,6 +181,8 @@ function renderMonitorsTable() {
       const target = m.type === 'tcp' || m.type === 'dns' || m.type === 'ping' ? (m.host || m.url) : m.url;
       const lastCheck = m.lastCheck ? new Date(m.lastCheck).toLocaleString() : '-';
       const tags = (m.tags || []).map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
+      const editBtn = canWriteRole() ? `<button class="secondary" onclick="editMonitor('${m.id}')">Edit</button>` : '';
+      const deleteBtn = canDeleteRole() ? `<button class="danger" onclick="deleteMonitor('${m.id}')">Delete</button>` : '';
       return `
         <tr>
           <td>${statusBadge(m.currentStatus)}</td>
@@ -151,8 +194,8 @@ function renderMonitorsTable() {
           <td>
             <div class="row-actions">
               <button class="secondary" onclick="viewEvents('${m.id}')">Events</button>
-              <button class="secondary" onclick="editMonitor('${m.id}')">Edit</button>
-              <button class="danger" onclick="deleteMonitor('${m.id}')">Delete</button>
+              ${editBtn}
+              ${deleteBtn}
             </div>
           </td>
         </tr>`;
@@ -299,8 +342,8 @@ async function loadNotifications() {
           <td>
             <div class="row-actions">
               <button class="secondary" onclick="testSavedNotification('${n.id}', this)">Send Test</button>
-              <button class="secondary" onclick="editNotification('${n.id}')">Edit</button>
-              <button class="danger" onclick="deleteNotification('${n.id}')">Delete</button>
+              ${canWriteRole() ? `<button class="secondary" onclick="editNotification('${n.id}')">Edit</button>` : ''}
+              ${canDeleteRole() ? `<button class="danger" onclick="deleteNotification('${n.id}')">Delete</button>` : ''}
             </div>
           </td>
         </tr>`
@@ -428,14 +471,14 @@ async function loadStatusPages() {
           <td class="muted">${p.monitorIds.length}</td>
           <td>
             <div class="row-actions">
-              <button class="secondary" onclick="editStatusPage('${p.id}')">Edit</button>
-              <button class="danger" onclick="deleteStatusPage('${p.id}')">Delete</button>
+              ${canWriteRole() ? `<button class="secondary" onclick="editStatusPage('${p.id}')">Edit</button>` : ''}
+              ${canDeleteRole() ? `<button class="danger" onclick="deleteStatusPage('${p.id}')">Delete</button>` : ''}
             </div>
           </td>
         </tr>`
         )
         .join('')
-    : '<tr><td colspan="4" class="empty">No status pages yet. The default page at /status.html always shows every monitor.</td></tr>';
+    : '<tr><td colspan="4" class="empty">No status pages yet. Create one above so the public /status URL has something to show — the full "all monitors" view is admin-only.</td></tr>';
 }
 
 function editStatusPage(id) {
@@ -495,7 +538,7 @@ async function loadMaintenance() {
             <td class="muted">${escapeHtml(names)}</td>
             <td class="muted">${new Date(w.start).toLocaleString()}</td>
             <td class="muted">${new Date(w.end).toLocaleString()}</td>
-            <td><button class="danger" onclick="deleteMaintenance('${w.id}')">Delete</button></td>
+            <td>${canDeleteRole() ? `<button class="danger" onclick="deleteMaintenance('${w.id}')">Delete</button>` : ''}</td>
           </tr>`;
         })
         .join('')
@@ -661,16 +704,105 @@ document.getElementById('branding-form').addEventListener('submit', async (e) =>
 });
 
 // =========================================================
+// Users (admin only)
+// =========================================================
+
+const userForm = document.getElementById('user-form');
+userForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const payload = {
+    username: document.getElementById('u-username').value.trim(),
+    password: document.getElementById('u-password').value,
+    role: document.getElementById('u-role').value,
+  };
+  const res = await api('/api/users', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    alert(data.error || 'Failed to create user');
+    return;
+  }
+  userForm.reset();
+  loadUsers();
+});
+
+async function loadUsers() {
+  if (currentRole !== 'admin') return;
+  const res = await api('/api/users');
+  const list = await res.json();
+  const body = document.getElementById('user-body');
+  body.innerHTML = list.length
+    ? list
+        .map((u) => {
+          const isSelf = u.id === currentUserId;
+          const roleSelect = `
+            <select onchange="changeUserRole('${u.id}', this.value)" ${isSelf ? 'disabled title="You cannot change your own role"' : ''}>
+              <option value="user" ${u.role === 'user' ? 'selected' : ''}>User</option>
+              <option value="manager" ${u.role === 'manager' ? 'selected' : ''}>Manager</option>
+              <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>Admin</option>
+            </select>`;
+          return `
+          <tr>
+            <td>${escapeHtml(u.username)}${isSelf ? ' <span class="muted">(you)</span>' : ''}</td>
+            <td>${roleSelect}</td>
+            <td class="muted">${u.twoFactorEnabled ? 'Enabled' : 'Disabled'}</td>
+            <td class="muted">${u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '-'}</td>
+            <td>
+              <div class="row-actions">
+                <button class="secondary" onclick="resetUserPassword('${u.id}')">Reset Password</button>
+                ${isSelf ? '' : `<button class="danger" onclick="deleteUser('${u.id}')">Delete</button>`}
+              </div>
+            </td>
+          </tr>`;
+        })
+        .join('')
+    : '<tr><td colspan="5" class="empty">No users yet.</td></tr>';
+}
+
+async function changeUserRole(id, role) {
+  const res = await api(`/api/users/${id}/role`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ role }) });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    alert(data.error || 'Failed to change role');
+  }
+  loadUsers();
+}
+
+async function resetUserPassword(id) {
+  const newPassword = prompt('Enter a new password for this user (min 6 characters):');
+  if (!newPassword) return;
+  const res = await api(`/api/users/${id}/reset-password`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ newPassword }) });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    alert(data.error || 'Failed to reset password');
+    return;
+  }
+  alert('Password reset.');
+}
+
+async function deleteUser(id) {
+  if (!confirm('Delete this user? They will lose access immediately.')) return;
+  const res = await api(`/api/users/${id}`, { method: 'DELETE' });
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    alert(data.error || 'Failed to delete user');
+    return;
+  }
+  loadUsers();
+}
+
+// =========================================================
 // Init
 // =========================================================
 
 async function init() {
+  await loadSession();
   await loadNotifications();
   await loadMonitors();
   await loadStatusPages();
   await loadMaintenance();
   await refreshTwoFactorStatus();
   await loadBranding();
+  await loadUsers();
   connectWebSocket();
 }
 init();

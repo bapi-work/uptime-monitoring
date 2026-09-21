@@ -13,7 +13,8 @@
       <h1><span data-brand-name>Uptime Monitor</span></h1>
     </div>
     <div style="display:flex; align-items:center; gap:18px;">
-      <a href="/status.html">View public status page &rarr;</a>
+      <a href="/status">View public status page &rarr;</a>
+      <a href="/status.html" id="all-monitors-link" style="display:none">All monitors (admin) &rarr;</a>
       <button class="secondary" id="logout-btn" type="button">Log out</button>
     </div>
   </header>
@@ -26,6 +27,7 @@
       <button class="tab-btn" data-tab="maintenance">Maintenance</button>
       <button class="tab-btn" data-tab="branding">Branding</button>
       <button class="tab-btn" data-tab="security">Security</button>
+      <button class="tab-btn" data-tab="users" id="users-tab-btn" style="display:none">Users</button>
     </nav>
 
     <!-- ===== Monitors tab ===== -->
@@ -359,6 +361,48 @@
         </div>
         <button type="button" id="twofa-enable-btn">Enable 2FA</button>
         <button type="button" class="danger" id="twofa-disable-btn" style="display:none;">Disable 2FA</button>
+      </div>
+    </section>
+
+    <!-- ===== Users tab (admin only) ===== -->
+    <section class="tab-panel" id="tab-users">
+      <div class="panel">
+        <h2>Add User</h2>
+        <p class="muted" style="margin-top:-6px;">
+          <b>Admin</b>: full access, including deleting things and managing users.
+          <b>Manager</b>: can create and edit monitors, notifications, status pages and maintenance windows, but cannot delete anything.
+          <b>User</b>: read-only access to the dashboard.
+        </p>
+        <form id="user-form">
+          <div class="form-grid">
+            <div>
+              <label>Username</label>
+              <input id="u-username" required />
+            </div>
+            <div>
+              <label>Password</label>
+              <input id="u-password" type="password" required minlength="6" />
+            </div>
+            <div>
+              <label>Role</label>
+              <select id="u-role">
+                <option value="user">User (read-only)</option>
+                <option value="manager">Manager (create/edit)</option>
+                <option value="admin">Admin (full access)</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-top:14px;">
+            <button type="submit">Add User</button>
+          </div>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>Users</h2>
+        <table>
+          <thead><tr><th>Username</th><th>Role</th><th>2FA</th><th>Created</th><th></th></tr></thead>
+          <tbody id="user-body"><tr><td colspan="5" class="empty">Loading...</td></tr></tbody>
+        </table>
       </div>
     </section>
   </div>

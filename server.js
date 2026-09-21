@@ -8,6 +8,7 @@ const scheduler = require('./lib/scheduler');
 const realtime = require('./lib/realtime');
 const { getSessionSecret } = require('./lib/secret');
 const { rateLimit } = require('./lib/rateLimit');
+const { liveUser } = require('./lib/rbac');
 const apiRouter = require('./routes/api');
 const authRouter = require('./routes/auth');
 
@@ -65,7 +66,13 @@ app.use('/api', apiRouter);
 app.use('/api', authRouter);
 
 function requireAdminPage(req, res, next) {
-  if (req.session && req.session.user) return next();
+  if (liveUser(req)) return next();
+  res.redirect('/login.html');
+}
+
+function requireAdminRole(req, res, next) {
+  const user = liveUser(req);
+  if (user && user.role === 'admin') return next();
   res.redirect('/login.html');
 }
 
@@ -76,6 +83,19 @@ app.get('/', requireAdminPage, (req, res) => {
 });
 app.get('/index.html', requireAdminPage, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// The "all monitors" default status page is admin-only — everyone else
+// only ever sees the specific named status page(s) an admin curated.
+app.get('/status.html', requireAdminRole, (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'status.html'));
+});
+
+// Clean public URL: "/status" resolves to the single configured status
+// page (or an index/empty-state if there are zero or several) — handled
+// client-side in status.js.
+app.get('/status', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'status.html'));
 });
 
 // Named status pages: /status/<slug> reuses the same status page shell,

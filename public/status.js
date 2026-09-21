@@ -1,6 +1,6 @@
 let currentRange = '30';
 let monitorsCache = [];
-let allowedMonitorIds = null; // null = show all monitors (default page)
+let allowedMonitorIds = null; // null on the admin-only default page = show every monitor
 
 const RANGE_LABELS = {
   hourly: 'last 24h',
@@ -11,8 +11,12 @@ const RANGE_LABELS = {
   '90': '90d',
 };
 
-const pathMatch = window.location.pathname.match(/^\/status\/([^/]+)/);
-const slug = pathMatch ? decodeURIComponent(pathMatch[1]) : null;
+const isDefaultPage = /^\/status\.html$/.test(window.location.pathname);
+const slugMatch = window.location.pathname.match(/^\/status\/([^/]+)/);
+let slug = slugMatch ? decodeURIComponent(slugMatch[1]) : null;
+// Bare "/status" (no slug, not the admin default page) auto-resolves to
+// whichever single named status page exists, or shows an index/empty state.
+const isRootStatus = !isDefaultPage && !slug;
 
 const rangeToggle = document.getElementById('range-toggle');
 rangeToggle.addEventListener('click', (e) => {
@@ -71,6 +75,18 @@ async function renderMonitors() {
     monitors.map((m) => fetch(`/api/status/${m.id}?range=${currentRange}`).then((r) => r.json()))
   );
 
+  // Keep monitorsCache's live-status fields in sync with what we just
+  // fetched, so the WebSocket handler and banner reflect real data even on
+  // pages that never called the bulk (admin-only) /api/status endpoint.
+  for (const d of details) {
+    const m = monitorsCache.find((x) => x.id === d.id);
+    if (m) {
+      m.currentStatus = d.currentStatus;
+      m.lastCheck = d.lastCheck;
+    }
+  }
+  renderBanner();
+
   list.innerHTML = details
     .map((d) => {
       const tags = (d.tags || []).map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
@@ -113,28 +129,74 @@ async function loadPageNav() {
   const res = await fetch('/api/public/statuspages');
   const pages = await res.json();
   const nav = document.getElementById('page-nav');
-  if (!pages.length) return;
-  const links = [`<a href="/status.html" class="${!slug ? '' : 'muted'}">All monitors</a>`]
-    .concat(pages.map((p) => `<a href="/status/${p.slug}" class="${slug === p.slug ? '' : 'muted'}">${escapeHtml(p.title)}</a>`));
+  // No "All monitors" entry here on purpose — that view is admin-only now.
+  // With one page or fewer there's nothing to switch between, so skip the nav.
+  if (pages.length < 2) return;
+  const links = pages.map(
+    (p) => `<a href="/status/${p.slug}" class="${slug === p.slug ? '' : 'muted'}">${escapeHtml(p.title)}</a>`
+  );
   nav.innerHTML = links.join(' &nbsp;|&nbsp; ');
   nav.style.display = '';
 }
 
-async function load() {
-  if (slug) {
-    const res = await fetch(`/api/public/statuspages/${encodeURIComponent(slug)}`);
-    if (res.ok) {
-      const page = await res.json();
-      allowedMonitorIds = page.monitorIds;
-      document.getElementById('page-title').textContent = page.title;
-      document.title = page.title;
-      if (page.description) {
-        document.getElementById('page-description').textContent = page.description;
-        document.getElementById('page-description').style.display = '';
-      }
-    }
+function showEmptyState(message) {
+  document.getElementById('overall-banner').innerHTML = '';
+  document.querySelector('.range-toggle').closest('.panel').style.display = 'none';
+  document.getElementById('monitors-list').innerHTML = `<div class="panel empty">${escapeHtml(message)}</div>`;
+}
+
+async function resolvePage(forSlug) {
+  const res = await fetch(`/api/public/statuspages/${encodeURIComponent(forSlug)}`);
+  if (!res.ok) return null;
+  const page = await res.json();
+  allowedMonitorIds = page.monitorIds;
+  monitorsCache = page.monitorIds.map((id) => ({ id }));
+  document.getElementById('page-title').textContent = page.title;
+  document.title = page.title;
+  if (page.description) {
+    document.getElementById('page-description').textContent = page.description;
+    document.getElementById('page-description').style.display = '';
   }
+  return page;
+}
+
+async function load() {
+  if (isRootStatus) {
+    const res = await fetch('/api/public/statuspages');
+    const pages = await res.json();
+    if (pages.length === 0) {
+      showEmptyState('No public status page has been configured yet.');
+      return;
+    }
+    if (pages.length > 1) {
+      document.getElementById('page-title').textContent = 'Status Pages';
+      document.getElementById('overall-banner').innerHTML = '';
+      document.querySelector('.range-toggle').closest('.panel').style.display = 'none';
+      document.getElementById('monitors-list').innerHTML = `<div class="panel">
+        <h2>Choose a status page</h2>
+        <ul>${pages.map((p) => `<li><a href="/status/${p.slug}">${escapeHtml(p.title)}</a></li>`).join('')}</ul>
+      </div>`;
+      return;
+    }
+    slug = pages[0].slug; // exactly one page — resolve it directly under the clean /status URL
+  }
+
+  if (slug) {
+    const page = await resolvePage(slug);
+    if (!page) {
+      showEmptyState('This status page could not be found.');
+      return;
+    }
+    await renderMonitors();
+    return;
+  }
+
+  // Admin-only default page (/status.html): full monitor list.
   const res = await fetch('/api/status');
+  if (res.status === 401 || res.status === 403) {
+    window.location.href = '/login.html';
+    return;
+  }
   monitorsCache = await res.json();
   renderBanner();
   await renderMonitors();
@@ -161,7 +223,7 @@ function connectWebSocket() {
   ws.onclose = () => setTimeout(connectWebSocket, 3000);
 }
 
-loadPageNav();
+if (!isRootStatus) loadPageNav();
 load();
 connectWebSocket();
 setInterval(load, 60000);

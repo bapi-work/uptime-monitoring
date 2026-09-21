@@ -15,7 +15,9 @@ Deploying for real use? See **[PRODUCTION.md](PRODUCTION.md)** — reverse proxy
 - **Event/incident history** — a log of every up/down transition per monitor, viewable from the admin dashboard
 - **Two-factor authentication (TOTP)** — optional, set up from Security tab with a QR code for any authenticator app
 - **Branding** — set a site name, logo, favicon, accent color, and footer text from the Branding tab; applied to the public status page(s) and login screen
-- Admin login page — monitor setup/management is behind authentication; status pages stay public
+- **User roles** — Admin (full access), Manager (create/edit, no delete), User (read-only); manage accounts from the admin-only Users tab
+- **Clean public status URLs** — `/status` resolves to your one configured status page automatically; the full "all monitors" view is admin-only
+- Admin login page — monitor setup/management is behind authentication; named status pages stay public
 - Retry-before-down logic, response time tracking, live status badges
 - Status page history range toggle: Hourly (rolling last 24h) / Daily (today) / 7 / 30 / 45 / 90 Days
 

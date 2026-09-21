@@ -216,6 +216,44 @@ docker compose up -d --build
 check with `docker volume ls` if you're not sure. A brand-new deployment with
 an empty volume does not need this step.)
 
+## Users and roles
+
+The app supports multiple accounts with three roles, managed from the
+admin-only **Users** tab (`ADMIN_USERNAME`/`ADMIN_PASSWORD` only ever create
+the first admin account on first boot — everything after that is managed
+through this tab, not env vars):
+
+| Role | Can view | Can create/edit | Can delete | User management |
+|---|---|---|---|---|
+| **Admin** | Everything, including the all-monitors status view | Yes | Yes | Yes |
+| **Manager** | Everything except the all-monitors status view | Yes | No | No |
+| **User** | Everything except the all-monitors status view | No (read-only) | No | No |
+
+A few safeguards are worth knowing about:
+
+- **Access is checked live, not cached.** Deleting a user or changing their
+  role takes effect on their very next request — they don't get to keep
+  acting on a stale session for up to the 8-hour cookie lifetime.
+- **You can't delete your own account**, and **the last remaining admin
+  can't be deleted or demoted** — there's always at least one way back in.
+- Upgrading from a version before multi-user support migrates the existing
+  single admin account automatically on first boot after the upgrade
+  (`data/users.json` changes from a single object to an array); the
+  password and 2FA state are preserved, but **everyone's session is
+  invalidated by the shape change, so expect to log back in once** after
+  this specific upgrade.
+
+### Status page visibility
+
+The "all monitors" status view (`/status.html`) is **admin-only** — it
+requires login, same as the dashboard itself. Everyone else (including
+Manager and User roles, and the general public) only ever sees whatever
+specific named status page(s) you've built and shared, at their `/status/
+<slug>` URL. If there's exactly one status page configured, it's also
+reachable at the clean root URL `/status` directly; with zero or several
+configured, `/status` shows an empty-state message or a simple index of
+links respectively.
+
 ## Data retention
 
 Storage is JSON files under `data/`, and every history type the app keeps is

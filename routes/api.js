@@ -2,13 +2,14 @@ const express = require('express');
 const store = require('../lib/store');
 const scheduler = require('../lib/scheduler');
 const { testNotification } = require('../lib/notify');
+const { requireAuth, requireRole } = require('../lib/rbac');
 
 const router = express.Router();
 
-function requireAuth(req, res, next) {
-  if (req.session && req.session.user) return next();
-  res.status(401).json({ error: 'Authentication required' });
-}
+// Managers can create/edit; only admins can delete. Read access is any
+// logged-in role (admin, manager, user).
+const canWrite = requireRole('admin', 'manager');
+const canDelete = requireRole('admin');
 
 function todayStr(d = new Date()) {
   return d.toISOString().slice(0, 10);
@@ -140,7 +141,7 @@ function validateMonitorInput(body) {
   return null;
 }
 
-router.post('/monitors', requireAuth, (req, res) => {
+router.post('/monitors', canWrite, (req, res) => {
   const error = validateMonitorInput(req.body || {});
   if (error) return res.status(400).json({ error });
   const monitor = store.createMonitor(req.body);
@@ -148,14 +149,14 @@ router.post('/monitors', requireAuth, (req, res) => {
   res.status(201).json(monitor);
 });
 
-router.put('/monitors/:id', requireAuth, (req, res) => {
+router.put('/monitors/:id', canWrite, (req, res) => {
   const updated = store.updateMonitor(req.params.id, req.body || {});
   if (!updated) return res.status(404).json({ error: 'Not found' });
   scheduler.refreshMonitor(updated.id);
   res.json(updated);
 });
 
-router.delete('/monitors/:id', requireAuth, (req, res) => {
+router.delete('/monitors/:id', canDelete, (req, res) => {
   scheduler.unscheduleMonitor(req.params.id);
   store.deleteMonitor(req.params.id);
   res.status(204).end();
@@ -195,13 +196,13 @@ router.get('/notifications', requireAuth, (req, res) => {
   res.json(store.getNotifications());
 });
 
-router.post('/notifications', requireAuth, (req, res) => {
+router.post('/notifications', canWrite, (req, res) => {
   const { name, type } = req.body || {};
   if (!name || !type) return res.status(400).json({ error: 'name and type are required' });
   res.status(201).json(store.createNotification(req.body));
 });
 
-router.put('/notifications/:id', requireAuth, (req, res) => {
+router.put('/notifications/:id', canWrite, (req, res) => {
   const updated = store.updateNotification(req.params.id, req.body || {});
   if (!updated) return res.status(404).json({ error: 'Not found' });
   res.json(updated);
@@ -221,7 +222,7 @@ router.post('/notifications/:id/test', requireAuth, async (req, res) => {
   res.json(result);
 });
 
-router.delete('/notifications/:id', requireAuth, (req, res) => {
+router.delete('/notifications/:id', canDelete, (req, res) => {
   store.deleteNotification(req.params.id);
   res.status(204).end();
 });
@@ -232,13 +233,13 @@ router.get('/maintenance', requireAuth, (req, res) => {
   res.json(store.getMaintenanceWindows());
 });
 
-router.post('/maintenance', requireAuth, (req, res) => {
+router.post('/maintenance', canWrite, (req, res) => {
   const { title, monitorIds, start, end } = req.body || {};
   if (!start || !end) return res.status(400).json({ error: 'start and end are required' });
   res.status(201).json(store.createMaintenanceWindow(req.body));
 });
 
-router.delete('/maintenance/:id', requireAuth, (req, res) => {
+router.delete('/maintenance/:id', canDelete, (req, res) => {
   store.deleteMaintenanceWindow(req.params.id);
   res.status(204).end();
 });
@@ -249,26 +250,28 @@ router.get('/statuspages', requireAuth, (req, res) => {
   res.json(store.getStatusPages());
 });
 
-router.post('/statuspages', requireAuth, (req, res) => {
+router.post('/statuspages', canWrite, (req, res) => {
   const { title } = req.body || {};
   if (!title) return res.status(400).json({ error: 'title is required' });
   res.status(201).json(store.createStatusPage(req.body));
 });
 
-router.put('/statuspages/:id', requireAuth, (req, res) => {
+router.put('/statuspages/:id', canWrite, (req, res) => {
   const updated = store.updateStatusPage(req.params.id, req.body || {});
   if (!updated) return res.status(404).json({ error: 'Not found' });
   res.json(updated);
 });
 
-router.delete('/statuspages/:id', requireAuth, (req, res) => {
+router.delete('/statuspages/:id', canDelete, (req, res) => {
   store.deleteStatusPage(req.params.id);
   res.status(204).end();
 });
 
-// ---- Public status data ----
+// ---- All-monitors status listing (admin only — see the "All monitors"
+// view). Public visitors only ever see specific named status pages, whose
+// data comes from /status/:id and /public/statuspages/:slug below. ----
 
-router.get('/status', (req, res) => {
+router.get('/status', requireRole('admin'), (req, res) => {
   const monitors = store.getMonitors();
   const data = monitors.map((m) => {
     const daily = store.getDailyStats(m.id);
@@ -350,7 +353,7 @@ router.get('/branding', (req, res) => {
   res.json(store.getBranding());
 });
 
-router.put('/branding', requireAuth, (req, res) => {
+router.put('/branding', canWrite, (req, res) => {
   res.json(store.updateBranding(req.body || {}));
 });
 
