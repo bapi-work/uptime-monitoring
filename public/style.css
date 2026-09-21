@@ -1,15 +1,15 @@
 :root {
-  --bg: #0f1115;
-  --panel: #171a21;
-  --panel-2: #1e222b;
-  --border: #2a2f3a;
-  --text: #e7e9ee;
-  --muted: #8b93a3;
-  --up: #2ecc71;
-  --down: #e74c3c;
-  --pending: #f1c40f;
-  --none: #3a3f4b;
-  --accent: #4f8cff;
+  --bg: #ffffff;
+  --panel: #f5f5f5;
+  --panel-2: #eeeeee;
+  --border: #d0d0d0;
+  --text: #000000;
+  --muted: #666666;
+  --up: #333333;
+  --down: #666666;
+  --pending: #555555;
+  --none: #cccccc;
+  --accent: #000000;
   --radius: 10px;
 }
 
@@ -32,7 +32,7 @@ header.top {
 }
 
 header.top h1 { font-size: 18px; margin: 0; }
-header.top a { color: var(--accent); text-decoration: none; font-size: 14px; }
+header.top a { color: #000000; text-decoration: none; font-size: 14px; }
 
 .container { max-width: 980px; margin: 0 auto; padding: 24px 20px 60px; }
 
@@ -72,11 +72,11 @@ button {
   padding: 9px 16px;
   font-size: 13px;
   font-weight: 600;
-  background: var(--accent);
-  color: white;
+  background: #000000;
+  color: #ffffff;
 }
 button.secondary { background: var(--panel-2); color: var(--text); border: 1px solid var(--border); }
-button.danger { background: var(--down); }
+button.danger { background: #555555; }
 button:disabled { opacity: 0.5; cursor: not-allowed; }
 
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
@@ -93,12 +93,12 @@ th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: upp
   font-weight: 600;
 }
 .badge .dot { width: 8px; height: 8px; border-radius: 50%; }
-.badge.up { background: rgba(46,204,113,0.12); color: var(--up); }
-.badge.up .dot { background: var(--up); }
-.badge.down { background: rgba(231,76,60,0.12); color: var(--down); }
-.badge.down .dot { background: var(--down); }
-.badge.pending, .badge.up-pending-retry { background: rgba(241,196,15,0.12); color: var(--pending); }
-.badge.pending .dot, .badge.up-pending-retry .dot { background: var(--pending); }
+.badge.up { background: rgba(0,0,0,0.08); color: #000000; }
+.badge.up .dot { background: #000000; }
+.badge.down { background: rgba(0,0,0,0.12); color: #333333; }
+.badge.down .dot { background: #333333; }
+.badge.pending, .badge.up-pending-retry { background: rgba(0,0,0,0.1); color: #555555; }
+.badge.pending .dot, .badge.up-pending-retry .dot { background: #555555; }
 
 .muted { color: var(--muted); }
 .row-actions { display: flex; gap: 8px; }
@@ -128,7 +128,7 @@ th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: upp
   border: 1px solid var(--border);
   padding: 6px 14px;
 }
-.range-toggle button.active { background: var(--accent); color: white; border-color: var(--accent); }
+.range-toggle button.active { background: #000000; color: white; border-color: #000000; }
 
 .bars {
   display: flex;
@@ -174,8 +174,8 @@ th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: upp
   margin-bottom: 22px;
   font-weight: 600;
 }
-.overall-banner.up { background: rgba(46,204,113,0.1); color: var(--up); border: 1px solid rgba(46,204,113,0.3); }
-.overall-banner.down { background: rgba(231,76,60,0.1); color: var(--down); border: 1px solid rgba(231,76,60,0.3); }
+.overall-banner.up { background: rgba(0,0,0,0.05); color: #000000; border: 1px solid rgba(0,0,0,0.15); }
+.overall-banner.down { background: rgba(0,0,0,0.08); color: #333333; border: 1px solid rgba(0,0,0,0.2); }
 
 .empty { text-align: center; color: var(--muted); padding: 40px 0; }
 
@@ -189,7 +189,7 @@ th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: upp
   padding: 10px 16px;
   font-weight: 600;
 }
-.tab-btn.active { color: var(--text); border-bottom-color: var(--accent); }
+.tab-btn.active { color: var(--text); border-bottom-color: #000000; }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
@@ -213,8 +213,8 @@ th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: upp
 }
 .cert-check-row label { display: flex; align-items: center; gap: 6px; margin: 0; color: var(--text); }
 
-.badge.maintenance { background: rgba(79,140,255,0.12); color: var(--accent); }
-.badge.maintenance .dot { background: var(--accent); }
+.badge.maintenance { background: rgba(0,0,0,0.08); color: #000000; }
+.badge.maintenance .dot { background: #000000; }
 
 select[multiple] { padding: 6px; }
 select[multiple] option { padding: 4px 6px; }
