@@ -120,12 +120,32 @@ th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: upp
 .row-actions { display: flex; gap: 8px; }
 .row-actions button { padding: 6px 10px; font-size: 12px; }
 
+#monitors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1200px) {
+  #monitors-list {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  #monitors-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 .monitor-card {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px 20px;
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
 }
 .monitor-card .head {
   display: flex;
@@ -134,7 +154,14 @@ th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: upp
   margin-bottom: 12px;
 }
 .monitor-card .head h3 { margin: 0; font-size: 15px; }
-.monitor-card .stats { display: flex; gap: 18px; font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+.monitor-card .stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
 .monitor-card .stats b { color: var(--text); font-size: 13px; }
 
 .range-toggle { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -154,6 +181,8 @@ th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: upp
   overflow: hidden;
   padding-top: 4px;
   width: 100%;
+  flex-grow: 1;
+  margin-top: auto;
 }
 .bar {
   flex: 1 1 0;
