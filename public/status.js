@@ -202,6 +202,35 @@ async function load() {
   await renderMonitors();
 }
 
+async function updateMonitorCard(monitorId) {
+  try {
+    const response = await fetch(`/api/status/${monitorId}?range=${currentRange}`);
+    if (!response.ok) return;
+    const detail = await response.json();
+
+    const m = monitorsCache.find((x) => x.id === monitorId);
+    if (m) {
+      m.currentStatus = detail.currentStatus;
+      m.lastCheck = detail.lastCheck;
+    }
+
+    const card = document.querySelector(`.monitor-card[data-id="${monitorId}"]`);
+    if (card) {
+      card.querySelector('.status-slot').innerHTML = statusBadge(detail.currentStatus);
+      card.querySelector('.stats').innerHTML = `
+        <div>Uptime (${RANGE_LABELS[detail.range] || RANGE_LABELS[currentRange] || ''}): <b>${fmtPct(detail.uptimePercent)}</b></div>
+        <div>Avg response: <b>${detail.avgPing !== null ? detail.avgPing + ' ms' : '-'}</b></div>
+        <div>Last check: <b>${detail.lastCheck ? new Date(detail.lastCheck).toLocaleString() : '-'}</b></div>
+        ${detail.certDaysRemaining !== null && detail.certDaysRemaining !== undefined ? `<div>TLS cert: <b>${detail.certDaysRemaining} day(s) left</b></div>` : ''}
+      `;
+      card.querySelector('.bars').innerHTML = renderBars(detail.series);
+    }
+    renderBanner();
+  } catch (e) {
+    console.error('Failed to update monitor card:', e);
+  }
+}
+
 function connectWebSocket() {
   const proto = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
   const ws = new WebSocket(`${proto}//${window.location.host}/ws`);
@@ -213,9 +242,7 @@ function connectWebSocket() {
         if (m) {
           m.currentStatus = payload.status;
           m.lastCheck = payload.lastCheck;
-          renderBanner();
-          const card = document.querySelector(`.monitor-card[data-id="${payload.id}"] .status-slot`);
-          if (card) card.innerHTML = statusBadge(payload.status);
+          updateMonitorCard(payload.id);
         }
       }
     } catch (e) {}
@@ -226,4 +253,4 @@ function connectWebSocket() {
 if (!isRootStatus) loadPageNav();
 load();
 connectWebSocket();
-setInterval(load, 60000);
+setInterval(load, 30000);
