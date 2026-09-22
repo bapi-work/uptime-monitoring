@@ -1,4 +1,6 @@
 let currentRange = '30';
+let currentGrouping = 'none';
+let searchFilter = '';
 let monitorsCache = [];
 let allowedMonitorIds = null; // null on the admin-only default page = show every monitor
 
@@ -26,6 +28,25 @@ rangeToggle.addEventListener('click', (e) => {
   [...rangeToggle.querySelectorAll('button')].forEach((b) => b.classList.toggle('active', b === btn));
   renderMonitors();
 });
+
+const groupingToggle = document.getElementById('grouping-toggle');
+if (groupingToggle) {
+  groupingToggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-group]');
+    if (!btn) return;
+    currentGrouping = btn.dataset.group;
+    [...groupingToggle.querySelectorAll('button')].forEach((b) => b.classList.toggle('active', b === btn));
+    renderMonitors();
+  });
+}
+
+const monitorSearch = document.getElementById('monitor-search');
+if (monitorSearch) {
+  monitorSearch.addEventListener('input', (e) => {
+    searchFilter = e.target.value.toLowerCase();
+    renderMonitors();
+  });
+}
 
 function escapeHtml(str) {
   return String(str || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -63,6 +84,55 @@ function renderBars(series) {
     .join('');
 }
 
+function renderMonitorCard(d) {
+  const tags = (d.tags || []).map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
+  const cert = d.certDaysRemaining !== null && d.certDaysRemaining !== undefined
+    ? `<div>TLS cert: <b>${d.certDaysRemaining} day(s) left</b></div>`
+    : '';
+  const rangeLabel = RANGE_LABELS[d.range] || RANGE_LABELS[currentRange] || '';
+  return `
+    <div class="monitor-card" data-id="${d.id}">
+      <div class="head">
+        <h3>${escapeHtml(d.name)} ${tags}</h3>
+        <span class="status-slot">${statusBadge(d.currentStatus)}</span>
+      </div>
+      <div class="stats">
+        <div>Uptime (${rangeLabel}): <b>${fmtPct(d.uptimePercent)}</b></div>
+        <div>Avg response: <b>${d.avgPing !== null ? d.avgPing + ' ms' : '-'}</b></div>
+        <div>Last check: <b>${d.lastCheck ? new Date(d.lastCheck).toLocaleString() : '-'}</b></div>
+        ${cert}
+      </div>
+      <div class="bars">${renderBars(d.series)}</div>
+    </div>`;
+}
+
+function groupMonitorsByStatus(details) {
+  const groups = { up: [], down: [], pending: [], maintenance: [] };
+  details.forEach((d) => {
+    const key = ['up-pending-retry', 'pending'].includes(d.currentStatus) ? 'pending' : d.currentStatus;
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(d);
+  });
+  return groups;
+}
+
+function groupMonitorsByTags(details) {
+  const groups = {};
+  details.forEach((d) => {
+    const tags = (d.tags || ['Untagged']).length ? d.tags : ['Untagged'];
+    tags.forEach((tag) => {
+      if (!groups[tag]) groups[tag] = [];
+      groups[tag].push(d);
+    });
+  });
+  return groups;
+}
+
+function filterMonitors(details) {
+  if (!searchFilter) return details;
+  return details.filter((d) => d.name.toLowerCase().includes(searchFilter));
+}
+
 async function renderMonitors() {
   const list = document.getElementById('monitors-list');
   const monitors = allowedMonitorIds ? monitorsCache.filter((m) => allowedMonitorIds.includes(m.id)) : monitorsCache;
@@ -75,9 +145,6 @@ async function renderMonitors() {
     monitors.map((m) => fetch(`/api/status/${m.id}?range=${currentRange}`).then((r) => r.json()))
   );
 
-  // Keep monitorsCache's live-status fields in sync with what we just
-  // fetched, so the WebSocket handler and banner reflect real data even on
-  // pages that never called the bulk (admin-only) /api/status endpoint.
   for (const d of details) {
     const m = monitorsCache.find((x) => x.id === d.id);
     if (m) {
@@ -87,29 +154,49 @@ async function renderMonitors() {
   }
   renderBanner();
 
-  list.innerHTML = details
-    .map((d) => {
-      const tags = (d.tags || []).map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
-      const cert = d.certDaysRemaining !== null && d.certDaysRemaining !== undefined
-        ? `<div>TLS cert: <b>${d.certDaysRemaining} day(s) left</b></div>`
-        : '';
-      const rangeLabel = RANGE_LABELS[d.range] || RANGE_LABELS[currentRange] || '';
-      return `
-        <div class="monitor-card" data-id="${d.id}">
-          <div class="head">
-            <h3>${escapeHtml(d.name)} ${tags}</h3>
-            <span class="status-slot">${statusBadge(d.currentStatus)}</span>
-          </div>
-          <div class="stats">
-            <div>Uptime (${rangeLabel}): <b>${fmtPct(d.uptimePercent)}</b></div>
-            <div>Avg response: <b>${d.avgPing !== null ? d.avgPing + ' ms' : '-'}</b></div>
-            <div>Last check: <b>${d.lastCheck ? new Date(d.lastCheck).toLocaleString() : '-'}</b></div>
-            ${cert}
-          </div>
-          <div class="bars">${renderBars(d.series)}</div>
-        </div>`;
-    })
-    .join('');
+  const filtered = filterMonitors(details);
+  if (!filtered.length) {
+    list.innerHTML = '<div class="panel empty">No monitors match your search.</div>';
+    return;
+  }
+
+  let html = '';
+  if (currentGrouping === 'status') {
+    const groups = groupMonitorsByStatus(filtered);
+    const statusOrder = ['up', 'maintenance', 'pending', 'down'];
+    statusOrder.forEach((status) => {
+      if (groups[status]?.length) {
+        const label = { up: 'Operational', down: 'Down', pending: 'Pending', maintenance: 'Maintenance' }[status];
+        const cards = groups[status].map(renderMonitorCard).join('');
+        html += `
+          <div class="monitor-group">
+            <div class="group-header" onclick="this.classList.toggle('collapsed')">
+              <span class="toggle-icon">▼</span>
+              <span>${label} (${groups[status].length})</span>
+            </div>
+            <div class="group-content">${cards}</div>
+          </div>`;
+      }
+    });
+  } else if (currentGrouping === 'tags') {
+    const groups = groupMonitorsByTags(filtered);
+    Object.entries(groups)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .forEach(([tag, monitors]) => {
+        const cards = monitors.map(renderMonitorCard).join('');
+        html += `
+          <div class="monitor-group">
+            <div class="group-header" onclick="this.classList.toggle('collapsed')">
+              <span class="toggle-icon">▼</span>
+              <span>${escapeHtml(tag)} (${monitors.length})</span>
+            </div>
+            <div class="group-content">${cards}</div>
+          </div>`;
+      });
+  } else {
+    html = filtered.map(renderMonitorCard).join('');
+  }
+  list.innerHTML = html;
 }
 
 function renderBanner() {

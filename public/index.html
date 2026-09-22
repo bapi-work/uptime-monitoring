@@ -137,22 +137,16 @@
 
       <div class="panel">
         <h2>Monitors</h2>
-        <table id="monitors-table">
-          <thead>
-            <tr>
-              <th>Status</th>
-              <th>Name</th>
-              <th>Target</th>
-              <th>Tags</th>
-              <th>Interval</th>
-              <th>Last check</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="monitors-body">
-            <tr><td colspan="7" class="empty">Loading...</td></tr>
-          </tbody>
-        </table>
+        <div class="search-filter" style="margin-bottom:16px;">
+          <input type="text" id="admin-monitor-search" placeholder="Search monitors by name..." style="padding:8px 12px; border:1px solid var(--border); background:var(--panel-2); color:var(--text); border-radius:4px;" />
+          <div class="grouping-toggle" id="admin-grouping-toggle">
+            <button data-group="none" class="active">No grouping</button>
+            <button data-group="status">Group by status</button>
+            <button data-group="tags">Group by tags</button>
+            <button data-group="page">Group by status page</button>
+          </div>
+        </div>
+        <div id="monitors-display"></div>
       </div>
 
       <div class="panel" id="events-panel" style="display:none">

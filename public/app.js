@@ -162,45 +162,167 @@ function statusBadge(status) {
 }
 
 let monitorsCache = [];
+let adminMonitorGrouping = 'none';
+let adminSearchFilter = '';
+let statusPagesCache = [];
 
 async function loadMonitors() {
   const res = await api('/api/monitors');
   monitorsCache = await res.json();
+  if (!statusPagesCache.length) {
+    const pRes = await api('/api/statuspages');
+    statusPagesCache = await pRes.json();
+  }
   renderMonitorsTable();
   populateMonitorMultiSelects();
 }
 
+function renderMonitorRow(m) {
+  const target = m.type === 'tcp' || m.type === 'dns' || m.type === 'ping' ? (m.host || m.url) : m.url;
+  const lastCheck = m.lastCheck ? new Date(m.lastCheck).toLocaleString() : '-';
+  const tags = (m.tags || []).map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
+  const editBtn = canWriteRole() ? `<button class="secondary" onclick="editMonitor('${m.id}')">Edit</button>` : '';
+  const deleteBtn = canDeleteRole() ? `<button class="danger" onclick="deleteMonitor('${m.id}')">Delete</button>` : '';
+  return `
+    <tr>
+      <td>${statusBadge(m.currentStatus)}</td>
+      <td>${escapeHtml(m.name)}</td>
+      <td class="muted">${escapeHtml(target)}</td>
+      <td>${tags}</td>
+      <td class="muted">${m.interval}s</td>
+      <td class="muted">${lastCheck}</td>
+      <td>
+        <div class="row-actions">
+          <button class="secondary" onclick="viewEvents('${m.id}')">Events</button>
+          ${editBtn}
+          ${deleteBtn}
+        </div>
+      </td>
+    </tr>`;
+}
+
+function getMonitorStatusPage(monitorId) {
+  const page = statusPagesCache.find((p) => (p.monitorIds || []).includes(monitorId));
+  return page ? page.title : 'None';
+}
+
+function filterAdminMonitors(monitors) {
+  if (!adminSearchFilter) return monitors;
+  return monitors.filter((m) => m.name.toLowerCase().includes(adminSearchFilter));
+}
+
+function groupAdminMonitorsByStatus(monitors) {
+  const groups = { up: [], down: [], pending: [], maintenance: [] };
+  monitors.forEach((m) => {
+    const key = ['up-pending-retry', 'pending'].includes(m.currentStatus) ? 'pending' : m.currentStatus;
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(m);
+  });
+  return groups;
+}
+
+function groupAdminMonitorsByTags(monitors) {
+  const groups = {};
+  monitors.forEach((m) => {
+    const tags = (m.tags || []).length ? m.tags : ['Untagged'];
+    tags.forEach((tag) => {
+      if (!groups[tag]) groups[tag] = [];
+      groups[tag].push(m);
+    });
+  });
+  return groups;
+}
+
+function groupAdminMonitorsByPage(monitors) {
+  const groups = {};
+  monitors.forEach((m) => {
+    const page = getMonitorStatusPage(m.id);
+    if (!groups[page]) groups[page] = [];
+    groups[page].push(m);
+  });
+  return groups;
+}
+
 function renderMonitorsTable() {
-  const body = document.getElementById('monitors-body');
+  const display = document.getElementById('monitors-display');
   if (!monitorsCache.length) {
-    body.innerHTML = '<tr><td colspan="7" class="empty">No monitors yet. Add one above.</td></tr>';
+    display.innerHTML = '<table style="width:100%;"><tbody><tr><td colspan="7" class="empty">No monitors yet. Add one above.</td></tr></tbody></table>';
     return;
   }
-  body.innerHTML = monitorsCache
-    .map((m) => {
-      const target = m.type === 'tcp' || m.type === 'dns' || m.type === 'ping' ? (m.host || m.url) : m.url;
-      const lastCheck = m.lastCheck ? new Date(m.lastCheck).toLocaleString() : '-';
-      const tags = (m.tags || []).map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
-      const editBtn = canWriteRole() ? `<button class="secondary" onclick="editMonitor('${m.id}')">Edit</button>` : '';
-      const deleteBtn = canDeleteRole() ? `<button class="danger" onclick="deleteMonitor('${m.id}')">Delete</button>` : '';
-      return `
-        <tr>
-          <td>${statusBadge(m.currentStatus)}</td>
-          <td>${escapeHtml(m.name)}</td>
-          <td class="muted">${escapeHtml(target)}</td>
-          <td>${tags}</td>
-          <td class="muted">${m.interval}s</td>
-          <td class="muted">${lastCheck}</td>
-          <td>
-            <div class="row-actions">
-              <button class="secondary" onclick="viewEvents('${m.id}')">Events</button>
-              ${editBtn}
-              ${deleteBtn}
+
+  const filtered = filterAdminMonitors(monitorsCache);
+  if (!filtered.length) {
+    display.innerHTML = '<table style="width:100%;"><tbody><tr><td colspan="7" class="empty">No monitors match your search.</td></tr></tbody></table>';
+    return;
+  }
+
+  let html = '';
+  if (adminMonitorGrouping === 'status') {
+    const groups = groupAdminMonitorsByStatus(filtered);
+    const statusOrder = ['up', 'maintenance', 'pending', 'down'];
+    statusOrder.forEach((status) => {
+      if (groups[status]?.length) {
+        const label = { up: 'Up', down: 'Down', pending: 'Pending', maintenance: 'Maintenance' }[status];
+        const rows = groups[status].map(renderMonitorRow).join('');
+        html += `
+          <div class="monitor-group">
+            <div class="group-header" onclick="this.classList.toggle('collapsed')">
+              <span class="toggle-icon">▼</span>
+              <span>${label} (${groups[status].length})</span>
             </div>
-          </td>
-        </tr>`;
-    })
-    .join('');
+            <div class="group-content">
+              <table style="width:100%;"><thead><tr>
+                <th>Status</th><th>Name</th><th>Target</th><th>Tags</th><th>Interval</th><th>Last check</th><th></th>
+              </tr></thead><tbody>${rows}</tbody></table>
+            </div>
+          </div>`;
+      }
+    });
+  } else if (adminMonitorGrouping === 'tags') {
+    const groups = groupAdminMonitorsByTags(filtered);
+    Object.entries(groups)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .forEach(([tag, monitors]) => {
+        const rows = monitors.map(renderMonitorRow).join('');
+        html += `
+          <div class="monitor-group">
+            <div class="group-header" onclick="this.classList.toggle('collapsed')">
+              <span class="toggle-icon">▼</span>
+              <span>${escapeHtml(tag)} (${monitors.length})</span>
+            </div>
+            <div class="group-content">
+              <table style="width:100%;"><thead><tr>
+                <th>Status</th><th>Name</th><th>Target</th><th>Tags</th><th>Interval</th><th>Last check</th><th></th>
+              </tr></thead><tbody>${rows}</tbody></table>
+            </div>
+          </div>`;
+      });
+  } else if (adminMonitorGrouping === 'page') {
+    const groups = groupAdminMonitorsByPage(filtered);
+    Object.entries(groups)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .forEach(([page, monitors]) => {
+        const rows = monitors.map(renderMonitorRow).join('');
+        html += `
+          <div class="monitor-group">
+            <div class="group-header" onclick="this.classList.toggle('collapsed')">
+              <span class="toggle-icon">▼</span>
+              <span>${escapeHtml(page)} (${monitors.length})</span>
+            </div>
+            <div class="group-content">
+              <table style="width:100%;"><thead><tr>
+                <th>Status</th><th>Name</th><th>Target</th><th>Tags</th><th>Interval</th><th>Last check</th><th></th>
+              </tr></thead><tbody>${rows}</tbody></table>
+            </div>
+          </div>`;
+      });
+  } else {
+    const rows = filtered.map(renderMonitorRow).join('');
+    html = `<table style="width:100%;"><thead><tr>
+      <th>Status</th><th>Name</th><th>Target</th><th>Tags</th><th>Interval</th><th>Last check</th><th></th>
+    </tr></thead><tbody>${rows}</tbody></table>`;
+  }
+  display.innerHTML = html;
 }
 
 async function editMonitor(id) {
@@ -791,6 +913,26 @@ async function deleteUser(id) {
     return;
   }
   loadUsers();
+}
+
+// Admin monitors search and grouping
+const adminGroupingToggle = document.getElementById('admin-grouping-toggle');
+if (adminGroupingToggle) {
+  adminGroupingToggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-group]');
+    if (!btn) return;
+    adminMonitorGrouping = btn.dataset.group;
+    [...adminGroupingToggle.querySelectorAll('button')].forEach((b) => b.classList.toggle('active', b === btn));
+    renderMonitorsTable();
+  });
+}
+
+const adminMonitorSearch = document.getElementById('admin-monitor-search');
+if (adminMonitorSearch) {
+  adminMonitorSearch.addEventListener('input', (e) => {
+    adminSearchFilter = e.target.value.toLowerCase();
+    renderMonitorsTable();
+  });
 }
 
 // =========================================================
