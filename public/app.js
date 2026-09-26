@@ -294,15 +294,23 @@ function renderMonitorsTable() {
   }
 
   let html = '';
+  const hasLabels = groups.some((g) => g.label);
+  if (hasLabels) {
+    html += `<div class="group-collapse-all" style="margin-bottom:12px;">
+      <button class="secondary" type="button" onclick="document.querySelectorAll('#monitors-display .group-header').forEach((h) => h.classList.remove('collapsed'))">Expand all</button>
+      <button class="secondary" type="button" onclick="document.querySelectorAll('#monitors-display .group-header').forEach((h) => h.classList.add('collapsed'))">Collapse all</button>
+    </div>`;
+  }
   groups.forEach((g) => {
     const rows = g.monitors.map(renderMonitorRow).join('');
     if (!g.label) {
       html += `${tableHead}${rows}</tbody></table>`;
       return;
     }
+    const allUp = g.monitors.every((m) => normalizedStatus(m) === 'up');
     html += `
       <div class="monitor-group">
-        <div class="group-header" onclick="this.classList.toggle('collapsed')">
+        <div class="group-header${allUp ? ' collapsed' : ''}" onclick="this.classList.toggle('collapsed')">
           <span class="toggle-icon">▼</span>
           <span>${escapeHtml(g.label)}</span>
           ${groupCountsHtml(g.monitors)}

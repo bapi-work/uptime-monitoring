@@ -181,12 +181,18 @@ async function renderMonitors() {
         .map((k) => ({ label: k, monitors: byTag[k] }));
     }
 
+    html += `<div class="group-collapse-all" style="margin-bottom:12px;">
+      <button class="secondary" onclick="document.querySelectorAll('#monitors-list .group-header').forEach((h) => h.classList.remove('collapsed'))">Expand all</button>
+      <button class="secondary" onclick="document.querySelectorAll('#monitors-list .group-header').forEach((h) => h.classList.add('collapsed'))">Collapse all</button>
+    </div>`;
+
     groups.forEach((g) => {
       const up = g.monitors.filter((d) => (['up-pending-retry', 'pending'].includes(d.currentStatus) ? 'pending' : d.currentStatus) === 'up').length;
+      const allUp = up === g.monitors.length;
       const cards = g.monitors.map(renderMonitorCard).join('');
       html += `
         <div class="monitor-group">
-          <div class="group-header" onclick="this.classList.toggle('collapsed')">
+          <div class="group-header${allUp ? ' collapsed' : ''}" onclick="this.classList.toggle('collapsed')">
             <span class="toggle-icon">▼</span>
             <span>${escapeHtml(g.label)}</span>
             <span class="muted">(${up}/${g.monitors.length} up)</span>
