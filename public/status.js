@@ -161,40 +161,39 @@ async function renderMonitors() {
   }
 
   let html = '';
-  if (currentGrouping === 'status') {
-    const groups = groupMonitorsByStatus(filtered);
-    const statusOrder = ['up', 'maintenance', 'pending', 'down'];
-    statusOrder.forEach((status) => {
-      if (groups[status]?.length) {
-        const label = { up: 'Operational', down: 'Down', pending: 'Pending', maintenance: 'Maintenance' }[status];
-        const cards = groups[status].map(renderMonitorCard).join('');
-        html += `
-          <div class="monitor-group">
-            <div class="group-header" onclick="this.classList.toggle('collapsed')">
-              <span class="toggle-icon">▼</span>
-              <span>${label} (${groups[status].length})</span>
-            </div>
-            <div class="group-content">${cards}</div>
-          </div>`;
-      }
-    });
-  } else if (currentGrouping === 'tags') {
-    const groups = groupMonitorsByTags(filtered);
-    Object.entries(groups)
-      .sort(([a], [b]) => a.localeCompare(b))
-      .forEach(([tag, monitors]) => {
-        const cards = monitors.map(renderMonitorCard).join('');
-        html += `
-          <div class="monitor-group">
-            <div class="group-header" onclick="this.classList.toggle('collapsed')">
-              <span class="toggle-icon">▼</span>
-              <span>${escapeHtml(tag)} (${monitors.length})</span>
-            </div>
-            <div class="group-content">${cards}</div>
-          </div>`;
-      });
+  if (currentGrouping === 'none') {
+    const sorted = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
+    html = sorted.map(renderMonitorCard).join('');
   } else {
-    html = filtered.map(renderMonitorCard).join('');
+    const STATUS_ORDER = { up: 0, maintenance: 1, pending: 2, down: 3 };
+    const STATUS_LABELS = { up: 'Operational', down: 'Down', pending: 'Pending', maintenance: 'Maintenance' };
+    let groups;
+    if (currentGrouping === 'status') {
+      const byStatus = groupMonitorsByStatus(filtered);
+      groups = Object.keys(STATUS_ORDER)
+        .sort((a, b) => STATUS_ORDER[a] - STATUS_ORDER[b])
+        .filter((k) => (byStatus[k] || []).length)
+        .map((k) => ({ label: STATUS_LABELS[k] || k, monitors: byStatus[k] }));
+    } else {
+      const byTag = groupMonitorsByTags(filtered);
+      groups = Object.keys(byTag)
+        .sort((a, b) => a.localeCompare(b))
+        .map((k) => ({ label: k, monitors: byTag[k] }));
+    }
+
+    groups.forEach((g) => {
+      const up = g.monitors.filter((d) => (['up-pending-retry', 'pending'].includes(d.currentStatus) ? 'pending' : d.currentStatus) === 'up').length;
+      const cards = g.monitors.map(renderMonitorCard).join('');
+      html += `
+        <div class="monitor-group">
+          <div class="group-header" onclick="this.classList.toggle('collapsed')">
+            <span class="toggle-icon">▼</span>
+            <span>${escapeHtml(g.label)}</span>
+            <span class="muted">(${up}/${g.monitors.length} up)</span>
+          </div>
+          <div class="group-content">${cards}</div>
+        </div>`;
+    });
   }
   list.innerHTML = html;
 }

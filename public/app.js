@@ -243,85 +243,76 @@ function groupAdminMonitorsByPage(monitors) {
   return groups;
 }
 
+const STATUS_ORDER = { up: 0, maintenance: 1, pending: 2, down: 3 };
+const STATUS_LABELS = { up: 'Up', down: 'Down', pending: 'Pending', maintenance: 'Maintenance' };
+
+function normalizedStatus(m) {
+  return ['up-pending-retry', 'pending'].includes(m.currentStatus) ? 'pending' : m.currentStatus;
+}
+
+function groupCountsHtml(monitors) {
+  const up = monitors.filter((m) => normalizedStatus(m) === 'up').length;
+  return `<span class="muted">(${up}/${monitors.length} up)</span>`;
+}
+
 function renderMonitorsTable() {
   const display = document.getElementById('monitors-display');
   if (!monitorsCache.length) {
-    display.innerHTML = '<table style="width:100%;"><tbody><tr><td colspan="7" class="empty">No monitors yet. Add one above.</td></tr></tbody></table>';
+    display.innerHTML = '<div class="panel empty">No monitors yet. Add one above.</div>';
     return;
   }
 
   const filtered = filterAdminMonitors(monitorsCache);
   if (!filtered.length) {
-    display.innerHTML = '<table style="width:100%;"><tbody><tr><td colspan="7" class="empty">No monitors match your search.</td></tr></tbody></table>';
+    display.innerHTML = '<div class="panel empty">No monitors match your search.</div>';
     return;
   }
 
-  let html = '';
+  const tableHead = `<table style="width:100%;"><thead><tr>
+    <th>Status</th><th>Name</th><th>Target</th><th>Tags</th><th>Interval</th><th>Last check</th><th></th>
+  </tr></thead><tbody>`;
+
+  let groups; // ordered array of { key, label, monitors }
   if (adminMonitorGrouping === 'status') {
-    const groups = groupAdminMonitorsByStatus(filtered);
-    const statusOrder = ['up', 'maintenance', 'pending', 'down'];
-    statusOrder.forEach((status) => {
-      if (groups[status]?.length) {
-        const label = { up: 'Up', down: 'Down', pending: 'Pending', maintenance: 'Maintenance' }[status];
-        const rows = groups[status].map(renderMonitorRow).join('');
-        html += `
-          <div class="monitor-group">
-            <div class="group-header" onclick="this.classList.toggle('collapsed')">
-              <span class="toggle-icon">▼</span>
-              <span>${label} (${groups[status].length})</span>
-            </div>
-            <div class="group-content">
-              <table style="width:100%;"><thead><tr>
-                <th>Status</th><th>Name</th><th>Target</th><th>Tags</th><th>Interval</th><th>Last check</th><th></th>
-              </tr></thead><tbody>${rows}</tbody></table>
-            </div>
-          </div>`;
-      }
-    });
+    const byStatus = groupAdminMonitorsByStatus(filtered);
+    groups = Object.keys(STATUS_ORDER)
+      .sort((a, b) => STATUS_ORDER[a] - STATUS_ORDER[b])
+      .filter((k) => (byStatus[k] || []).length)
+      .map((k) => ({ key: k, label: STATUS_LABELS[k] || k, monitors: byStatus[k] }));
   } else if (adminMonitorGrouping === 'tags') {
-    const groups = groupAdminMonitorsByTags(filtered);
-    Object.entries(groups)
-      .sort(([a], [b]) => a.localeCompare(b))
-      .forEach(([tag, monitors]) => {
-        const rows = monitors.map(renderMonitorRow).join('');
-        html += `
-          <div class="monitor-group">
-            <div class="group-header" onclick="this.classList.toggle('collapsed')">
-              <span class="toggle-icon">▼</span>
-              <span>${escapeHtml(tag)} (${monitors.length})</span>
-            </div>
-            <div class="group-content">
-              <table style="width:100%;"><thead><tr>
-                <th>Status</th><th>Name</th><th>Target</th><th>Tags</th><th>Interval</th><th>Last check</th><th></th>
-              </tr></thead><tbody>${rows}</tbody></table>
-            </div>
-          </div>`;
-      });
+    const byTag = groupAdminMonitorsByTags(filtered);
+    groups = Object.keys(byTag)
+      .sort((a, b) => a.localeCompare(b))
+      .map((k) => ({ key: k, label: k, monitors: byTag[k] }));
   } else if (adminMonitorGrouping === 'page') {
-    const groups = groupAdminMonitorsByPage(filtered);
-    Object.entries(groups)
-      .sort(([a], [b]) => a.localeCompare(b))
-      .forEach(([page, monitors]) => {
-        const rows = monitors.map(renderMonitorRow).join('');
-        html += `
-          <div class="monitor-group">
-            <div class="group-header" onclick="this.classList.toggle('collapsed')">
-              <span class="toggle-icon">▼</span>
-              <span>${escapeHtml(page)} (${monitors.length})</span>
-            </div>
-            <div class="group-content">
-              <table style="width:100%;"><thead><tr>
-                <th>Status</th><th>Name</th><th>Target</th><th>Tags</th><th>Interval</th><th>Last check</th><th></th>
-              </tr></thead><tbody>${rows}</tbody></table>
-            </div>
-          </div>`;
-      });
+    const byPage = groupAdminMonitorsByPage(filtered);
+    groups = Object.keys(byPage)
+      .sort((a, b) => a.localeCompare(b))
+      .map((k) => ({ key: k, label: k, monitors: byPage[k] }));
   } else {
-    const rows = filtered.map(renderMonitorRow).join('');
-    html = `<table style="width:100%;"><thead><tr>
-      <th>Status</th><th>Name</th><th>Target</th><th>Tags</th><th>Interval</th><th>Last check</th><th></th>
-    </tr></thead><tbody>${rows}</tbody></table>`;
+    groups = [{ key: 'all', label: null, monitors: [...filtered].sort((a, b) => a.name.localeCompare(b.name)) }];
   }
+
+  let html = '';
+  groups.forEach((g) => {
+    const rows = g.monitors.map(renderMonitorRow).join('');
+    if (!g.label) {
+      html += `${tableHead}${rows}</tbody></table>`;
+      return;
+    }
+    html += `
+      <div class="monitor-group">
+        <div class="group-header" onclick="this.classList.toggle('collapsed')">
+          <span class="toggle-icon">▼</span>
+          <span>${escapeHtml(g.label)}</span>
+          ${groupCountsHtml(g.monitors)}
+        </div>
+        <div class="group-content">
+          ${tableHead}${rows}</tbody></table>
+        </div>
+      </div>`;
+  });
+
   display.innerHTML = html;
 }
 
@@ -577,8 +568,6 @@ spForm.addEventListener('submit', async (e) => {
   resetSpForm();
   loadStatusPages();
 });
-
-let statusPagesCache = [];
 
 async function loadStatusPages() {
   const res = await api('/api/statuspages');
