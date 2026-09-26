@@ -1,5 +1,6 @@
 let currentRange = '30';
 let currentGrouping = 'group';
+let currentView = 'vertical';
 let searchFilter = '';
 let monitorsCache = [];
 let allowedMonitorIds = null; // null on the admin-only default page = show every monitor
@@ -36,6 +37,17 @@ if (groupingToggle) {
     if (!btn) return;
     currentGrouping = btn.dataset.group;
     [...groupingToggle.querySelectorAll('button')].forEach((b) => b.classList.toggle('active', b === btn));
+    renderMonitors();
+  });
+}
+
+const viewToggle = document.getElementById('view-toggle');
+if (viewToggle) {
+  viewToggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-view]');
+    if (!btn) return;
+    currentView = btn.dataset.view;
+    [...viewToggle.querySelectorAll('button')].forEach((b) => b.classList.toggle('active', b === btn));
     renderMonitors();
   });
 }
@@ -106,6 +118,25 @@ function renderMonitorCard(d) {
     </div>`;
 }
 
+function renderMonitorRowHorizontal(d) {
+  const tags = (d.tags || []).map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
+  const rangeLabel = RANGE_LABELS[d.range] || RANGE_LABELS[currentRange] || '';
+  return `
+    <div class="monitor-row-h" data-id="${d.id}">
+      <div class="monitor-row-h-info">
+        ${statusBadge(d.currentStatus)}
+        <span class="name">${escapeHtml(d.name)}</span>
+        ${tags}
+        <span class="muted">Uptime (${rangeLabel}): <b>${fmtPct(d.uptimePercent)}</b></span>
+      </div>
+      <div class="bars">${renderBars(d.series)}</div>
+    </div>`;
+}
+
+function renderMonitorItem(d) {
+  return currentView === 'horizontal' ? renderMonitorRowHorizontal(d) : renderMonitorCard(d);
+}
+
 function groupMonitorsByStatus(details) {
   const groups = { up: [], down: [], pending: [], maintenance: [] };
   details.forEach((d) => {
@@ -116,14 +147,48 @@ function groupMonitorsByStatus(details) {
   return groups;
 }
 
-function groupMonitorsByGroup(details) {
-  const groups = {};
+// Groups nest via "/" in the monitor's Group field, e.g. "APAC/Mooments SG".
+function buildGroupTree(details) {
+  const root = { children: {}, monitors: [] };
   details.forEach((d) => {
-    const key = d.group || 'Ungrouped';
-    if (!groups[key]) groups[key] = [];
-    groups[key].push(d);
+    const path = (d.group || '').split('/').map((s) => s.trim()).filter(Boolean);
+    const segs = path.length ? path : ['Ungrouped'];
+    let node = root;
+    segs.forEach((seg) => {
+      if (!node.children[seg]) node.children[seg] = { name: seg, children: {}, monitors: [] };
+      node = node.children[seg];
+    });
+    node.monitors.push(d);
   });
-  return groups;
+  return root;
+}
+
+function collectNodeMonitors(node) {
+  let all = [...node.monitors];
+  Object.values(node.children).forEach((c) => { all = all.concat(collectNodeMonitors(c)); });
+  return all;
+}
+
+function renderGroupNode(node, depth) {
+  const childNames = Object.keys(node.children).sort((a, b) => (a === 'Ungrouped' ? 1 : b === 'Ungrouped' ? -1 : a.localeCompare(b)));
+  let html = '';
+  childNames.forEach((name) => {
+    const child = node.children[name];
+    const all = collectNodeMonitors(child);
+    const up = all.filter((d) => (['up-pending-retry', 'pending'].includes(d.currentStatus) ? 'pending' : d.currentStatus) === 'up').length;
+    const allUp = up === all.length;
+    const inner = renderGroupNode(child, depth + 1) + child.monitors.map(renderMonitorItem).join('');
+    html += `
+      <div class="monitor-group" style="margin-left:${depth * 20}px;">
+        <div class="group-header${allUp ? ' collapsed' : ''}" onclick="this.classList.toggle('collapsed')">
+          <span class="toggle-icon">▼</span>
+          <span>${escapeHtml(name)}</span>
+          <span class="muted">(${up}/${all.length} up)</span>
+        </div>
+        <div class="group-content">${inner}</div>
+      </div>`;
+  });
+  return html;
 }
 
 function groupMonitorsByTags(details) {
@@ -173,17 +238,19 @@ async function renderMonitors() {
   let html = '';
   if (currentGrouping === 'none') {
     const sorted = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
-    html = sorted.map(renderMonitorCard).join('');
+    html = sorted.map(renderMonitorItem).join('');
+  } else if (currentGrouping === 'group') {
+    const tree = buildGroupTree(filtered);
+    html += `<div class="group-collapse-all" style="margin-bottom:12px;">
+      <button class="secondary" onclick="document.querySelectorAll('#monitors-list .group-header').forEach((h) => h.classList.remove('collapsed'))">Expand all</button>
+      <button class="secondary" onclick="document.querySelectorAll('#monitors-list .group-header').forEach((h) => h.classList.add('collapsed'))">Collapse all</button>
+    </div>`;
+    html += renderGroupNode(tree, 0);
   } else {
     const STATUS_ORDER = { up: 0, maintenance: 1, pending: 2, down: 3 };
     const STATUS_LABELS = { up: 'Operational', down: 'Down', pending: 'Pending', maintenance: 'Maintenance' };
     let groups;
-    if (currentGrouping === 'group') {
-      const byGroup = groupMonitorsByGroup(filtered);
-      groups = Object.keys(byGroup)
-        .sort((a, b) => (a === 'Ungrouped' ? 1 : b === 'Ungrouped' ? -1 : a.localeCompare(b)))
-        .map((k) => ({ label: k, monitors: byGroup[k] }));
-    } else if (currentGrouping === 'status') {
+    if (currentGrouping === 'status') {
       const byStatus = groupMonitorsByStatus(filtered);
       groups = Object.keys(STATUS_ORDER)
         .sort((a, b) => STATUS_ORDER[a] - STATUS_ORDER[b])
@@ -204,7 +271,7 @@ async function renderMonitors() {
     groups.forEach((g) => {
       const up = g.monitors.filter((d) => (['up-pending-retry', 'pending'].includes(d.currentStatus) ? 'pending' : d.currentStatus) === 'up').length;
       const allUp = up === g.monitors.length;
-      const cards = g.monitors.map(renderMonitorCard).join('');
+      const cards = g.monitors.map(renderMonitorItem).join('');
       html += `
         <div class="monitor-group">
           <div class="group-header${allUp ? ' collapsed' : ''}" onclick="this.classList.toggle('collapsed')">
@@ -321,17 +388,8 @@ async function updateMonitorCard(monitorId) {
       m.lastCheck = detail.lastCheck;
     }
 
-    const card = document.querySelector(`.monitor-card[data-id="${monitorId}"]`);
-    if (card) {
-      card.querySelector('.status-slot').innerHTML = statusBadge(detail.currentStatus);
-      card.querySelector('.stats').innerHTML = `
-        <div>Uptime (${RANGE_LABELS[detail.range] || RANGE_LABELS[currentRange] || ''}): <b>${fmtPct(detail.uptimePercent)}</b></div>
-        <div>Avg response: <b>${detail.avgPing !== null ? detail.avgPing + ' ms' : '-'}</b></div>
-        <div>Last check: <b>${detail.lastCheck ? new Date(detail.lastCheck).toLocaleString() : '-'}</b></div>
-        ${detail.certDaysRemaining !== null && detail.certDaysRemaining !== undefined ? `<div>TLS cert: <b>${detail.certDaysRemaining} day(s) left</b></div>` : ''}
-      `;
-      card.querySelector('.bars').innerHTML = renderBars(detail.series);
-    }
+    const el = document.querySelector(`[data-id="${monitorId}"]`);
+    if (el) el.outerHTML = renderMonitorItem(detail);
     renderBanner();
   } catch (e) {
     console.error('Failed to update monitor card:', e);

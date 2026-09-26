@@ -231,14 +231,49 @@ function groupAdminMonitorsByStatus(monitors) {
   return groups;
 }
 
-function groupAdminMonitorsByGroup(monitors) {
-  const groups = {};
+// Groups nest via "/" in the monitor's Group field, e.g. "APAC/Mooments SG".
+function buildAdminGroupTree(monitors) {
+  const root = { children: {}, monitors: [] };
   monitors.forEach((m) => {
-    const key = m.group || 'Ungrouped';
-    if (!groups[key]) groups[key] = [];
-    groups[key].push(m);
+    const path = (m.group || '').split('/').map((s) => s.trim()).filter(Boolean);
+    const segs = path.length ? path : ['Ungrouped'];
+    let node = root;
+    segs.forEach((seg) => {
+      if (!node.children[seg]) node.children[seg] = { name: seg, children: {}, monitors: [] };
+      node = node.children[seg];
+    });
+    node.monitors.push(m);
   });
-  return groups;
+  return root;
+}
+
+function collectAdminNodeMonitors(node) {
+  let all = [...node.monitors];
+  Object.values(node.children).forEach((c) => { all = all.concat(collectAdminNodeMonitors(c)); });
+  return all;
+}
+
+function renderAdminGroupNode(node, depth, tableHead) {
+  const childNames = Object.keys(node.children).sort((a, b) => (a === 'Ungrouped' ? 1 : b === 'Ungrouped' ? -1 : a.localeCompare(b)));
+  let html = '';
+  childNames.forEach((name) => {
+    const child = node.children[name];
+    const all = collectAdminNodeMonitors(child);
+    const up = all.filter((m) => normalizedStatus(m) === 'up').length;
+    const allUp = up === all.length;
+    const ownRows = child.monitors.map(renderMonitorRow).join('');
+    const inner = renderAdminGroupNode(child, depth + 1, tableHead) + (ownRows ? `${tableHead}${ownRows}</tbody></table>` : '');
+    html += `
+      <div class="monitor-group" style="margin-left:${depth * 20}px;">
+        <div class="group-header${allUp ? ' collapsed' : ''}" onclick="this.classList.toggle('collapsed')">
+          <span class="toggle-icon">▼</span>
+          <span>${escapeHtml(name)}</span>
+          <span class="muted">(${up}/${all.length} up)</span>
+        </div>
+        <div class="group-content">${inner}</div>
+      </div>`;
+  });
+  return html;
 }
 
 function groupAdminMonitorsByTags(monitors) {
@@ -292,13 +327,19 @@ function renderMonitorsTable() {
     <th>Status</th><th>Name</th><th>Target</th><th>Tags</th><th>Interval</th><th>Last check</th><th></th>
   </tr></thead><tbody>`;
 
-  let groups; // ordered array of { key, label, monitors }
   if (adminMonitorGrouping === 'group') {
-    const byGroup = groupAdminMonitorsByGroup(filtered);
-    groups = Object.keys(byGroup)
-      .sort((a, b) => (a === 'Ungrouped' ? 1 : b === 'Ungrouped' ? -1 : a.localeCompare(b)))
-      .map((k) => ({ key: k, label: k, monitors: byGroup[k] }));
-  } else if (adminMonitorGrouping === 'status') {
+    const tree = buildAdminGroupTree(filtered);
+    let html = `<div class="group-collapse-all" style="margin-bottom:12px;">
+      <button class="secondary" type="button" onclick="document.querySelectorAll('#monitors-display .group-header').forEach((h) => h.classList.remove('collapsed'))">Expand all</button>
+      <button class="secondary" type="button" onclick="document.querySelectorAll('#monitors-display .group-header').forEach((h) => h.classList.add('collapsed'))">Collapse all</button>
+    </div>`;
+    html += renderAdminGroupNode(tree, 0, tableHead);
+    display.innerHTML = html;
+    return;
+  }
+
+  let groups; // ordered array of { key, label, monitors }
+  if (adminMonitorGrouping === 'status') {
     const byStatus = groupAdminMonitorsByStatus(filtered);
     groups = Object.keys(STATUS_ORDER)
       .sort((a, b) => STATUS_ORDER[a] - STATUS_ORDER[b])
