@@ -1,5 +1,5 @@
 let currentRange = '30';
-let currentGrouping = 'none';
+let currentGrouping = 'group';
 let searchFilter = '';
 let monitorsCache = [];
 let allowedMonitorIds = null; // null on the admin-only default page = show every monitor
@@ -116,6 +116,16 @@ function groupMonitorsByStatus(details) {
   return groups;
 }
 
+function groupMonitorsByGroup(details) {
+  const groups = {};
+  details.forEach((d) => {
+    const key = d.group || 'Ungrouped';
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(d);
+  });
+  return groups;
+}
+
 function groupMonitorsByTags(details) {
   const groups = {};
   details.forEach((d) => {
@@ -168,7 +178,12 @@ async function renderMonitors() {
     const STATUS_ORDER = { up: 0, maintenance: 1, pending: 2, down: 3 };
     const STATUS_LABELS = { up: 'Operational', down: 'Down', pending: 'Pending', maintenance: 'Maintenance' };
     let groups;
-    if (currentGrouping === 'status') {
+    if (currentGrouping === 'group') {
+      const byGroup = groupMonitorsByGroup(filtered);
+      groups = Object.keys(byGroup)
+        .sort((a, b) => (a === 'Ungrouped' ? 1 : b === 'Ungrouped' ? -1 : a.localeCompare(b)))
+        .map((k) => ({ label: k, monitors: byGroup[k] }));
+    } else if (currentGrouping === 'status') {
       const byStatus = groupMonitorsByStatus(filtered);
       groups = Object.keys(STATUS_ORDER)
         .sort((a, b) => STATUS_ORDER[a] - STATUS_ORDER[b])

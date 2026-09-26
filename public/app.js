@@ -122,6 +122,7 @@ cancelBtn.addEventListener('click', resetForm);
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const tags = document.getElementById('f-tags').value.split(',').map((t) => t.trim()).filter(Boolean);
+  const group = document.getElementById('f-group').value.trim();
   const notificationIds = [...notifSelect.selectedOptions].map((o) => o.value);
   const payload = {
     name: document.getElementById('f-name').value.trim(),
@@ -141,6 +142,7 @@ form.addEventListener('submit', async (e) => {
     certCheck: document.getElementById('f-certcheck').checked,
     certExpiryThreshold: document.getElementById('f-cert-threshold').value,
     tags,
+    group,
     notificationIds,
   };
   const id = idField.value;
@@ -162,9 +164,16 @@ function statusBadge(status) {
 }
 
 let monitorsCache = [];
-let adminMonitorGrouping = 'none';
+let adminMonitorGrouping = 'group';
 let adminSearchFilter = '';
 let statusPagesCache = [];
+
+function populateGroupOptions() {
+  const datalist = document.getElementById('group-options');
+  if (!datalist) return;
+  const groups = [...new Set(monitorsCache.map((m) => m.group).filter(Boolean))].sort();
+  datalist.innerHTML = groups.map((g) => `<option value="${escapeHtml(g)}"></option>`).join('');
+}
 
 async function loadMonitors() {
   const res = await api('/api/monitors');
@@ -175,6 +184,7 @@ async function loadMonitors() {
   }
   renderMonitorsTable();
   populateMonitorMultiSelects();
+  populateGroupOptions();
 }
 
 function renderMonitorRow(m) {
@@ -215,6 +225,16 @@ function groupAdminMonitorsByStatus(monitors) {
   const groups = { up: [], down: [], pending: [], maintenance: [] };
   monitors.forEach((m) => {
     const key = ['up-pending-retry', 'pending'].includes(m.currentStatus) ? 'pending' : m.currentStatus;
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(m);
+  });
+  return groups;
+}
+
+function groupAdminMonitorsByGroup(monitors) {
+  const groups = {};
+  monitors.forEach((m) => {
+    const key = m.group || 'Ungrouped';
     if (!groups[key]) groups[key] = [];
     groups[key].push(m);
   });
@@ -273,7 +293,12 @@ function renderMonitorsTable() {
   </tr></thead><tbody>`;
 
   let groups; // ordered array of { key, label, monitors }
-  if (adminMonitorGrouping === 'status') {
+  if (adminMonitorGrouping === 'group') {
+    const byGroup = groupAdminMonitorsByGroup(filtered);
+    groups = Object.keys(byGroup)
+      .sort((a, b) => (a === 'Ungrouped' ? 1 : b === 'Ungrouped' ? -1 : a.localeCompare(b)))
+      .map((k) => ({ key: k, label: k, monitors: byGroup[k] }));
+  } else if (adminMonitorGrouping === 'status') {
     const byStatus = groupAdminMonitorsByStatus(filtered);
     groups = Object.keys(STATUS_ORDER)
       .sort((a, b) => STATUS_ORDER[a] - STATUS_ORDER[b])
@@ -345,6 +370,7 @@ async function editMonitor(id) {
   document.getElementById('f-certcheck').checked = !!m.certCheck;
   document.getElementById('f-cert-threshold').value = m.certExpiryThreshold || 14;
   document.getElementById('f-tags').value = (m.tags || []).join(', ');
+  document.getElementById('f-group').value = m.group || '';
   [...notifSelect.options].forEach((o) => { o.selected = (m.notificationIds || []).includes(o.value); });
   updateTypeFields();
   submitBtn.textContent = 'Save Changes';

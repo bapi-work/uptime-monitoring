@@ -190,6 +190,16 @@ router.get('/tags', requireAuth, (req, res) => {
   res.json([...set].sort());
 });
 
+// ---- Monitor groups ----
+
+router.get('/groups', requireAuth, (req, res) => {
+  const set = new Set();
+  for (const m of store.getMonitors()) {
+    if (m.group) set.add(m.group);
+  }
+  res.json([...set].sort());
+});
+
 // ---- Notification channels ----
 
 router.get('/notifications', requireAuth, (req, res) => {
@@ -335,6 +345,7 @@ router.get('/status/:id', (req, res) => {
     currentStatus: monitor.currentStatus,
     lastCheck: monitor.lastCheck,
     tags: monitor.tags || [],
+    group: monitor.group || '',
     certExpiryDate: monitor.certExpiryDate,
     certDaysRemaining: monitor.certDaysRemaining,
     events: store.getEvents(monitor.id, 20),

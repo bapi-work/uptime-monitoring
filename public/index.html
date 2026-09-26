@@ -119,6 +119,11 @@
               <input id="f-tags" placeholder="prod, api" />
             </div>
             <div>
+              <label>Group</label>
+              <input id="f-group" list="group-options" placeholder="e.g. Mooments SG" />
+              <datalist id="group-options"></datalist>
+            </div>
+            <div>
               <label>Notify via</label>
               <select id="f-notifications" multiple size="3"></select>
             </div>
@@ -140,10 +145,11 @@
         <div class="search-filter" style="margin-bottom:16px;">
           <input type="text" id="admin-monitor-search" placeholder="Search monitors by name..." style="padding:8px 12px; border:1px solid var(--border); background:var(--panel-2); color:var(--text); border-radius:4px;" />
           <div class="grouping-toggle" id="admin-grouping-toggle">
-            <button data-group="none" class="active">No grouping</button>
+            <button data-group="group" class="active">Group</button>
             <button data-group="status">Group by status</button>
             <button data-group="tags">Group by tags</button>
             <button data-group="page">Group by status page</button>
+            <button data-group="none">No grouping</button>
           </div>
         </div>
         <div id="monitors-display"></div>
