@@ -1,6 +1,6 @@
 let currentRange = '30';
 let currentGrouping = 'group';
-let currentView = 'vertical';
+let currentView = 'table';
 let searchFilter = '';
 let monitorsCache = [];
 let allowedMonitorIds = null; // null on the admin-only default page = show every monitor
@@ -118,6 +118,54 @@ function renderMonitorCard(d) {
     </div>`;
 }
 
+function toggleDetailsRow(btn) {
+  const row = btn.closest('tr').nextElementSibling;
+  const showing = row.style.display !== 'none';
+  row.style.display = showing ? 'none' : '';
+  btn.textContent = showing ? 'Details' : 'Hide';
+}
+
+function renderMonitorTableRows(d) {
+  const tags = (d.tags || []).map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
+  const cert = d.certDaysRemaining !== null && d.certDaysRemaining !== undefined
+    ? `<div>TLS cert: <b>${d.certDaysRemaining} day(s) left</b></div>`
+    : '';
+  const rangeLabel = RANGE_LABELS[d.range] || RANGE_LABELS[currentRange] || '';
+  return `
+    <tr class="status-row" data-id="${d.id}">
+      <td>${statusBadge(d.currentStatus)}</td>
+      <td><b>${escapeHtml(d.name)}</b> ${tags}</td>
+      <td>${fmtPct(d.uptimePercent)}</td>
+      <td>${d.avgPing !== null ? d.avgPing + ' ms' : '-'}</td>
+      <td class="muted">${d.lastCheck ? new Date(d.lastCheck).toLocaleString() : '-'}</td>
+      <td><button class="secondary" type="button" onclick="toggleDetailsRow(this)">Details</button></td>
+    </tr>
+    <tr class="status-row-details" data-details-id="${d.id}" style="display:none">
+      <td colspan="6">
+        <div>Uptime (${rangeLabel}): <b>${fmtPct(d.uptimePercent)}</b></div>
+        <div>Avg response: <b>${d.avgPing !== null ? d.avgPing + ' ms' : '-'}</b></div>
+        <div>Last check: <b>${d.lastCheck ? new Date(d.lastCheck).toLocaleString() : '-'}</b></div>
+        ${cert}
+        <div class="bars" style="margin-top:8px;">${renderBars(d.series)}</div>
+      </td>
+    </tr>`;
+}
+
+function renderMonitorsAsTable(monitors) {
+  return `<table class="status-table" style="width:100%;">
+    <thead><tr><th>Status</th><th>Name</th><th>Uptime</th><th>Avg response</th><th>Last check</th><th></th></tr></thead>
+    <tbody>${monitors.map(renderMonitorTableRows).join('')}</tbody>
+  </table>`;
+}
+
+function renderMonitorItem(d) {
+  return currentView === 'horizontal' ? renderMonitorRowHorizontal(d) : renderMonitorCard(d);
+}
+
+function renderMonitorList(monitors) {
+  return currentView === 'table' ? renderMonitorsAsTable(monitors) : monitors.map(renderMonitorItem).join('');
+}
+
 function renderMonitorRowHorizontal(d) {
   const tags = (d.tags || []).map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
   const rangeLabel = RANGE_LABELS[d.range] || RANGE_LABELS[currentRange] || '';
@@ -131,10 +179,6 @@ function renderMonitorRowHorizontal(d) {
       </div>
       <div class="bars">${renderBars(d.series)}</div>
     </div>`;
-}
-
-function renderMonitorItem(d) {
-  return currentView === 'horizontal' ? renderMonitorRowHorizontal(d) : renderMonitorCard(d);
 }
 
 function groupMonitorsByStatus(details) {
@@ -177,7 +221,7 @@ function renderGroupNode(node, depth) {
     const all = collectNodeMonitors(child);
     const up = all.filter((d) => (['up-pending-retry', 'pending'].includes(d.currentStatus) ? 'pending' : d.currentStatus) === 'up').length;
     const allUp = up === all.length;
-    const inner = renderGroupNode(child, depth + 1) + child.monitors.map(renderMonitorItem).join('');
+    const inner = renderGroupNode(child, depth + 1) + renderMonitorList(child.monitors);
     html += `
       <div class="monitor-group" style="margin-left:${depth * 20}px;">
         <div class="group-header${allUp ? ' collapsed' : ''}" onclick="this.classList.toggle('collapsed')">
@@ -238,7 +282,7 @@ async function renderMonitors() {
   let html = '';
   if (currentGrouping === 'none') {
     const sorted = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
-    html = sorted.map(renderMonitorItem).join('');
+    html = renderMonitorList(sorted);
   } else if (currentGrouping === 'group') {
     const tree = buildGroupTree(filtered);
     html += `<div class="group-collapse-all" style="margin-bottom:12px;">
@@ -271,7 +315,7 @@ async function renderMonitors() {
     groups.forEach((g) => {
       const up = g.monitors.filter((d) => (['up-pending-retry', 'pending'].includes(d.currentStatus) ? 'pending' : d.currentStatus) === 'up').length;
       const allUp = up === g.monitors.length;
-      const cards = g.monitors.map(renderMonitorItem).join('');
+      const cards = renderMonitorList(g.monitors);
       html += `
         <div class="monitor-group">
           <div class="group-header${allUp ? ' collapsed' : ''}" onclick="this.classList.toggle('collapsed')">
@@ -388,8 +432,21 @@ async function updateMonitorCard(monitorId) {
       m.lastCheck = detail.lastCheck;
     }
 
-    const el = document.querySelector(`[data-id="${monitorId}"]`);
-    if (el) el.outerHTML = renderMonitorItem(detail);
+    if (currentView === 'table') {
+      const row = document.querySelector(`tr.status-row[data-id="${monitorId}"]`);
+      const detailsRow = document.querySelector(`tr.status-row-details[data-details-id="${monitorId}"]`);
+      if (row && detailsRow) {
+        const wasOpen = detailsRow.style.display !== 'none';
+        const tmp = document.createElement('tbody');
+        tmp.innerHTML = renderMonitorTableRows(detail);
+        detailsRow.remove();
+        row.replaceWith(...tmp.children);
+        if (wasOpen) document.querySelector(`tr.status-row-details[data-details-id="${monitorId}"]`).style.display = '';
+      }
+    } else {
+      const el = document.querySelector(`[data-id="${monitorId}"]`);
+      if (el) el.outerHTML = renderMonitorItem(detail);
+    }
     renderBanner();
   } catch (e) {
     console.error('Failed to update monitor card:', e);
