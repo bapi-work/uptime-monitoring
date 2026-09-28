@@ -25,6 +25,7 @@
       <button class="tab-btn active" data-tab="monitors">Monitors</button>
       <button class="tab-btn" data-tab="notifications">Notifications</button>
       <button class="tab-btn" data-tab="statuspages">Status Pages</button>
+      <button class="tab-btn" data-tab="incidents">Incidents</button>
       <button class="tab-btn" data-tab="maintenance">Maintenance</button>
       <button class="tab-btn" data-tab="branding">Branding</button>
       <button class="tab-btn" data-tab="security">Security</button>
@@ -246,6 +247,55 @@
           <thead><tr><th>Title</th><th>URL</th><th>Monitors</th><th>Visibility</th><th></th></tr></thead>
           <tbody id="sp-body"><tr><td colspan="5" class="empty">Loading...</td></tr></tbody>
         </table>
+      </div>
+    </section>
+
+    <!-- ===== Incidents tab ===== -->
+    <section class="tab-panel" id="tab-incidents">
+      <div class="panel">
+        <h2>Report Incident</h2>
+        <p class="muted" style="margin-top:-6px;">Creates a public incident with a starting update. Add follow-up updates and a root cause once resolved.</p>
+        <form id="incident-form">
+          <div class="form-grid">
+            <div>
+              <label>Title</label>
+              <input id="inc-title" required placeholder="Elevated API error rates" />
+            </div>
+            <div>
+              <label>Impact</label>
+              <select id="inc-impact">
+                <option value="minor">Minor</option>
+                <option value="major">Major</option>
+                <option value="critical">Critical</option>
+                <option value="maintenance">Maintenance</option>
+              </select>
+            </div>
+            <div>
+              <label>Status</label>
+              <select id="inc-status">
+                <option value="investigating">Investigating</option>
+                <option value="identified">Identified</option>
+                <option value="monitoring">Monitoring</option>
+                <option value="resolved">Resolved</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-top:12px;">
+            <label>Affected monitors</label>
+            <select id="inc-monitors" multiple size="6" style="width:100%"></select>
+          </div>
+          <div style="margin-top:12px;">
+            <label>Initial update message</label>
+            <input id="inc-message" required placeholder="We are investigating reports of..." />
+          </div>
+          <div style="margin-top:14px;">
+            <button type="submit">Report Incident</button>
+          </div>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>Incidents</h2>
+        <div id="incidents-body"></div>
       </div>
     </section>
 

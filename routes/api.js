@@ -254,6 +254,57 @@ router.delete('/maintenance/:id', canDelete, (req, res) => {
   res.status(204).end();
 });
 
+// ---- Incidents (root cause / postmortem history) ----
+
+router.get('/incidents', requireAuth, (req, res) => {
+  res.json(store.getIncidents().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
+});
+
+router.post('/incidents', canWrite, (req, res) => {
+  const { title } = req.body || {};
+  if (!title) return res.status(400).json({ error: 'title is required' });
+  res.status(201).json(store.createIncident(req.body));
+});
+
+router.put('/incidents/:id', canWrite, (req, res) => {
+  const updated = store.updateIncident(req.params.id, req.body || {});
+  if (!updated) return res.status(404).json({ error: 'Not found' });
+  res.json(updated);
+});
+
+router.post('/incidents/:id/updates', canWrite, (req, res) => {
+  const { status, message } = req.body || {};
+  if (!message) return res.status(400).json({ error: 'message is required' });
+  const updated = store.addIncidentUpdate(req.params.id, { status, message });
+  if (!updated) return res.status(404).json({ error: 'Not found' });
+  res.json(updated);
+});
+
+router.delete('/incidents/:id', canDelete, (req, res) => {
+  store.deleteIncident(req.params.id);
+  res.status(204).end();
+});
+
+// Public, read-only — powers the /incidents history page.
+router.get('/public/incidents', (req, res) => {
+  const monitors = store.getMonitors();
+  const monitorName = (id) => monitors.find((m) => m.id === id)?.name;
+  const list = store.getIncidents()
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    .map((i) => ({
+      id: i.id,
+      title: i.title,
+      impact: i.impact,
+      status: i.status,
+      createdAt: i.createdAt,
+      resolvedAt: i.resolvedAt,
+      rootCause: i.status === 'resolved' ? i.rootCause : '',
+      affected: (i.monitorIds || []).map(monitorName).filter(Boolean),
+      updates: i.updates,
+    }));
+  res.json(list);
+});
+
 // ---- Status pages (admin management) ----
 
 router.get('/statuspages', (req, res) => {

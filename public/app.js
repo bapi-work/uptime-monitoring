@@ -57,6 +57,7 @@ function applyRoleUI() {
     document.getElementById('monitor-form').closest('.panel'),
     document.getElementById('notif-form').closest('.panel'),
     document.getElementById('sp-form').closest('.panel'),
+    document.getElementById('incident-form').closest('.panel'),
     document.getElementById('maint-form').closest('.panel'),
     document.getElementById('branding-form').closest('.panel'),
   ];
@@ -647,6 +648,7 @@ function populateMonitorMultiSelects() {
   const opts = monitorsCache.map((m) => `<option value="${m.id}">${escapeHtml(m.name)}</option>`).join('');
   spMonitors.innerHTML = opts;
   document.getElementById('m-monitors').innerHTML = opts;
+  if (incMonitors) incMonitors.innerHTML = opts;
 }
 
 function resetSpForm() {
@@ -724,6 +726,106 @@ async function deleteStatusPage(id) {
   if (!confirm('Delete this status page?')) return;
   await api(`/api/statuspages/${id}`, { method: 'DELETE' });
   loadStatusPages();
+}
+
+// =========================================================
+// Incidents (root cause / postmortem history)
+// =========================================================
+
+const incidentForm = document.getElementById('incident-form');
+const incMonitors = document.getElementById('inc-monitors');
+let incidentsCache = [];
+
+incidentForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const payload = {
+    title: document.getElementById('inc-title').value.trim(),
+    impact: document.getElementById('inc-impact').value,
+    status: document.getElementById('inc-status').value,
+    monitorIds: [...incMonitors.selectedOptions].map((o) => o.value),
+    message: document.getElementById('inc-message').value.trim(),
+  };
+  const res = await api('/api/incidents', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    alert(err.error || 'Failed to report incident');
+    return;
+  }
+  incidentForm.reset();
+  loadIncidents();
+});
+
+async function loadIncidents() {
+  const res = await api('/api/incidents');
+  incidentsCache = await res.json();
+  const body = document.getElementById('incidents-body');
+  body.innerHTML = incidentsCache.length
+    ? incidentsCache.map(renderIncidentAdminCard).join('')
+    : '<div class="panel empty">No incidents reported yet.</div>';
+}
+
+function renderIncidentAdminCard(inc) {
+  const affected = (inc.monitorIds || []).map((id) => monitorsCache.find((m) => m.id === id)?.name).filter(Boolean).join(', ');
+  const updates = [...inc.updates]
+    .sort((a, b) => new Date(b.time) - new Date(a.time))
+    .map((u) => `<div class="muted" style="margin-bottom:4px;"><b>${escapeHtml(u.status)}</b> — ${new Date(u.time).toLocaleString()}: ${escapeHtml(u.message)}</div>`)
+    .join('');
+  const deleteBtn = canDeleteRole() ? `<button class="danger" onclick="deleteIncident('${inc.id}')">Delete</button>` : '';
+  return `
+    <div class="panel" style="margin-bottom:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+        <h3 style="margin:0;">${escapeHtml(inc.title)} <span class="badge impact-${inc.impact}">${escapeHtml(inc.impact)}</span></h3>
+        ${deleteBtn}
+      </div>
+      <div class="muted" style="margin:6px 0;">Status: <b>${escapeHtml(inc.status)}</b>${affected ? ` &middot; Affected: ${escapeHtml(affected)}` : ''}</div>
+      <div style="margin:10px 0;">${updates}</div>
+      ${canWriteRole() ? `
+      <form onsubmit="addIncidentUpdate(event, '${inc.id}')" style="display:flex; gap:8px; flex-wrap:wrap; align-items:flex-end; margin-top:10px;">
+        <div>
+          <label>New status</label>
+          <select name="status">
+            <option value="investigating" ${inc.status === 'investigating' ? 'selected' : ''}>Investigating</option>
+            <option value="identified" ${inc.status === 'identified' ? 'selected' : ''}>Identified</option>
+            <option value="monitoring" ${inc.status === 'monitoring' ? 'selected' : ''}>Monitoring</option>
+            <option value="resolved" ${inc.status === 'resolved' ? 'selected' : ''}>Resolved</option>
+          </select>
+        </div>
+        <div style="flex:1; min-width:200px;">
+          <label>Update message</label>
+          <input name="message" required placeholder="Add a status update..." />
+        </div>
+        <button type="submit">Post update</button>
+      </form>
+      <div style="margin-top:10px;">
+        <label>Root cause analysis (shown publicly once resolved)</label>
+        <textarea rows="3" style="width:100%;" onblur="saveRootCause('${inc.id}', this.value)">${escapeHtml(inc.rootCause || '')}</textarea>
+      </div>` : ''}
+    </div>`;
+}
+
+async function addIncidentUpdate(e, id) {
+  e.preventDefault();
+  const form = e.target;
+  const status = form.status.value;
+  const message = form.message.value.trim();
+  if (!message) return;
+  const res = await api(`/api/incidents/${id}/updates`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status, message }) });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    alert(err.error || 'Failed to add update');
+    return;
+  }
+  loadIncidents();
+}
+
+async function saveRootCause(id, rootCause) {
+  await api(`/api/incidents/${id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ rootCause }) });
+}
+
+async function deleteIncident(id) {
+  if (!confirm('Delete this incident? This cannot be undone.')) return;
+  await api(`/api/incidents/${id}`, { method: 'DELETE' });
+  loadIncidents();
 }
 
 // =========================================================
@@ -1044,6 +1146,7 @@ async function init() {
   await loadNotifications();
   await loadMonitors();
   await loadStatusPages();
+  await loadIncidents();
   await loadMaintenance();
   await refreshTwoFactorStatus();
   await loadBranding();
