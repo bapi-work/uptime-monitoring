@@ -5,6 +5,42 @@ let searchFilter = '';
 let monitorsCache = [];
 let allowedMonitorIds = null; // null on the admin-only default page = show every monitor
 
+// Remembers which groups the user has explicitly expanded/collapsed so that
+// re-renders (30s poll, websocket pushes) don't keep resetting their state.
+const COLLAPSE_STORE_KEY = `groupCollapse:${window.location.pathname}`;
+let groupCollapseOverrides = {};
+try {
+  groupCollapseOverrides = JSON.parse(localStorage.getItem(COLLAPSE_STORE_KEY) || '{}');
+} catch (e) { groupCollapseOverrides = {}; }
+
+function saveCollapseOverride(key, collapsed) {
+  groupCollapseOverrides[key] = collapsed;
+  try { localStorage.setItem(COLLAPSE_STORE_KEY, JSON.stringify(groupCollapseOverrides)); } catch (e) {}
+}
+
+function isGroupCollapsed(key, defaultCollapsed) {
+  return Object.prototype.hasOwnProperty.call(groupCollapseOverrides, key) ? groupCollapseOverrides[key] : defaultCollapsed;
+}
+
+function onGroupHeaderClick(el, key) {
+  el.classList.toggle('collapsed');
+  saveCollapseOverride(key, el.classList.contains('collapsed'));
+}
+
+// Delegated so it survives full innerHTML re-renders (30s poll, websocket pushes).
+document.getElementById('monitors-list').addEventListener('click', (e) => {
+  const header = e.target.closest('.group-header');
+  if (!header) return;
+  onGroupHeaderClick(header, header.dataset.groupKey);
+});
+
+function setAllGroupsCollapsed(collapsed) {
+  document.querySelectorAll('#monitors-list .group-header').forEach((h) => {
+    h.classList.toggle('collapsed', collapsed);
+    if (h.dataset.groupKey) saveCollapseOverride(h.dataset.groupKey, collapsed);
+  });
+}
+
 const RANGE_LABELS = {
   hourly: 'last 24h',
   daily: 'today',
@@ -213,18 +249,20 @@ function collectNodeMonitors(node) {
   return all;
 }
 
-function renderGroupNode(node, depth) {
+function renderGroupNode(node, depth, parentPath) {
   const childNames = Object.keys(node.children).sort((a, b) => (a === 'Ungrouped' ? 1 : b === 'Ungrouped' ? -1 : a.localeCompare(b)));
   let html = '';
   childNames.forEach((name) => {
     const child = node.children[name];
+    const key = `group:${parentPath}/${name}`;
     const all = collectNodeMonitors(child);
     const up = all.filter((d) => (['up-pending-retry', 'pending'].includes(d.currentStatus) ? 'pending' : d.currentStatus) === 'up').length;
-    const allUp = up === all.length;
-    const inner = renderGroupNode(child, depth + 1) + renderMonitorList(child.monitors);
+    const defaultCollapsed = up === all.length;
+    const collapsed = isGroupCollapsed(key, defaultCollapsed);
+    const inner = renderGroupNode(child, depth + 1, `${parentPath}/${name}`) + renderMonitorList(child.monitors);
     html += `
       <div class="monitor-group" style="margin-left:${depth * 20}px;">
-        <div class="group-header${allUp ? ' collapsed' : ''}" onclick="this.classList.toggle('collapsed')">
+        <div class="group-header${collapsed ? ' collapsed' : ''}" data-group-key="${escapeHtml(key)}">
           <span class="toggle-icon">▼</span>
           <span>${escapeHtml(name)}</span>
           <span class="muted">(${up}/${all.length} up)</span>
@@ -286,10 +324,10 @@ async function renderMonitors() {
   } else if (currentGrouping === 'group') {
     const tree = buildGroupTree(filtered);
     html += `<div class="group-collapse-all" style="margin-bottom:12px;">
-      <button class="secondary" onclick="document.querySelectorAll('#monitors-list .group-header').forEach((h) => h.classList.remove('collapsed'))">Expand all</button>
-      <button class="secondary" onclick="document.querySelectorAll('#monitors-list .group-header').forEach((h) => h.classList.add('collapsed'))">Collapse all</button>
+      <button class="secondary" onclick="setAllGroupsCollapsed(false)">Expand all</button>
+      <button class="secondary" onclick="setAllGroupsCollapsed(true)">Collapse all</button>
     </div>`;
-    html += renderGroupNode(tree, 0);
+    html += renderGroupNode(tree, 0, '');
   } else {
     const STATUS_ORDER = { up: 0, maintenance: 1, pending: 2, down: 3 };
     const STATUS_LABELS = { up: 'Operational', down: 'Down', pending: 'Pending', maintenance: 'Maintenance' };
@@ -308,17 +346,19 @@ async function renderMonitors() {
     }
 
     html += `<div class="group-collapse-all" style="margin-bottom:12px;">
-      <button class="secondary" onclick="document.querySelectorAll('#monitors-list .group-header').forEach((h) => h.classList.remove('collapsed'))">Expand all</button>
-      <button class="secondary" onclick="document.querySelectorAll('#monitors-list .group-header').forEach((h) => h.classList.add('collapsed'))">Collapse all</button>
+      <button class="secondary" onclick="setAllGroupsCollapsed(false)">Expand all</button>
+      <button class="secondary" onclick="setAllGroupsCollapsed(true)">Collapse all</button>
     </div>`;
 
     groups.forEach((g) => {
+      const key = `${currentGrouping}:${g.label}`;
       const up = g.monitors.filter((d) => (['up-pending-retry', 'pending'].includes(d.currentStatus) ? 'pending' : d.currentStatus) === 'up').length;
-      const allUp = up === g.monitors.length;
+      const defaultCollapsed = up === g.monitors.length;
+      const collapsed = isGroupCollapsed(key, defaultCollapsed);
       const cards = renderMonitorList(g.monitors);
       html += `
         <div class="monitor-group">
-          <div class="group-header${allUp ? ' collapsed' : ''}" onclick="this.classList.toggle('collapsed')">
+          <div class="group-header${collapsed ? ' collapsed' : ''}" data-group-key="${escapeHtml(key)}">
             <span class="toggle-icon">▼</span>
             <span>${escapeHtml(g.label)}</span>
             <span class="muted">(${up}/${g.monitors.length} up)</span>

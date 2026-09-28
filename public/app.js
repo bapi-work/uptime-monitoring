@@ -168,6 +168,38 @@ let adminMonitorGrouping = 'group';
 let adminSearchFilter = '';
 let statusPagesCache = [];
 
+// Remembers which groups the user has explicitly expanded/collapsed so that
+// re-renders (30s poll, websocket pushes) don't keep resetting their state.
+const ADMIN_COLLAPSE_STORE_KEY = 'adminGroupCollapse';
+let adminGroupCollapseOverrides = {};
+try {
+  adminGroupCollapseOverrides = JSON.parse(localStorage.getItem(ADMIN_COLLAPSE_STORE_KEY) || '{}');
+} catch (e) { adminGroupCollapseOverrides = {}; }
+
+function saveAdminCollapseOverride(key, collapsed) {
+  adminGroupCollapseOverrides[key] = collapsed;
+  try { localStorage.setItem(ADMIN_COLLAPSE_STORE_KEY, JSON.stringify(adminGroupCollapseOverrides)); } catch (e) {}
+}
+
+function isAdminGroupCollapsed(key, defaultCollapsed) {
+  return Object.prototype.hasOwnProperty.call(adminGroupCollapseOverrides, key) ? adminGroupCollapseOverrides[key] : defaultCollapsed;
+}
+
+function setAllAdminGroupsCollapsed(collapsed) {
+  document.querySelectorAll('#monitors-display .group-header').forEach((h) => {
+    h.classList.toggle('collapsed', collapsed);
+    if (h.dataset.groupKey) saveAdminCollapseOverride(h.dataset.groupKey, collapsed);
+  });
+}
+
+// Delegated so it survives full innerHTML re-renders (30s poll, websocket pushes).
+document.getElementById('monitors-display').addEventListener('click', (e) => {
+  const header = e.target.closest('.group-header');
+  if (!header) return;
+  header.classList.toggle('collapsed');
+  if (header.dataset.groupKey) saveAdminCollapseOverride(header.dataset.groupKey, header.classList.contains('collapsed'));
+});
+
 function populateGroupOptions() {
   const datalist = document.getElementById('group-options');
   if (!datalist) return;
@@ -253,19 +285,21 @@ function collectAdminNodeMonitors(node) {
   return all;
 }
 
-function renderAdminGroupNode(node, depth, tableHead) {
+function renderAdminGroupNode(node, depth, tableHead, parentPath) {
   const childNames = Object.keys(node.children).sort((a, b) => (a === 'Ungrouped' ? 1 : b === 'Ungrouped' ? -1 : a.localeCompare(b)));
   let html = '';
   childNames.forEach((name) => {
     const child = node.children[name];
+    const key = `group:${parentPath}/${name}`;
     const all = collectAdminNodeMonitors(child);
     const up = all.filter((m) => normalizedStatus(m) === 'up').length;
-    const allUp = up === all.length;
+    const defaultCollapsed = up === all.length;
+    const collapsed = isAdminGroupCollapsed(key, defaultCollapsed);
     const ownRows = child.monitors.map(renderMonitorRow).join('');
-    const inner = renderAdminGroupNode(child, depth + 1, tableHead) + (ownRows ? `${tableHead}${ownRows}</tbody></table>` : '');
+    const inner = renderAdminGroupNode(child, depth + 1, tableHead, `${parentPath}/${name}`) + (ownRows ? `${tableHead}${ownRows}</tbody></table>` : '');
     html += `
       <div class="monitor-group" style="margin-left:${depth * 20}px;">
-        <div class="group-header${allUp ? ' collapsed' : ''}" onclick="this.classList.toggle('collapsed')">
+        <div class="group-header${collapsed ? ' collapsed' : ''}" data-group-key="${escapeHtml(key)}">
           <span class="toggle-icon">▼</span>
           <span>${escapeHtml(name)}</span>
           <span class="muted">(${up}/${all.length} up)</span>
@@ -330,10 +364,10 @@ function renderMonitorsTable() {
   if (adminMonitorGrouping === 'group') {
     const tree = buildAdminGroupTree(filtered);
     let html = `<div class="group-collapse-all" style="margin-bottom:12px;">
-      <button class="secondary" type="button" onclick="document.querySelectorAll('#monitors-display .group-header').forEach((h) => h.classList.remove('collapsed'))">Expand all</button>
-      <button class="secondary" type="button" onclick="document.querySelectorAll('#monitors-display .group-header').forEach((h) => h.classList.add('collapsed'))">Collapse all</button>
+      <button class="secondary" type="button" onclick="setAllAdminGroupsCollapsed(false)">Expand all</button>
+      <button class="secondary" type="button" onclick="setAllAdminGroupsCollapsed(true)">Collapse all</button>
     </div>`;
-    html += renderAdminGroupNode(tree, 0, tableHead);
+    html += renderAdminGroupNode(tree, 0, tableHead, '');
     display.innerHTML = html;
     return;
   }
@@ -363,8 +397,8 @@ function renderMonitorsTable() {
   const hasLabels = groups.some((g) => g.label);
   if (hasLabels) {
     html += `<div class="group-collapse-all" style="margin-bottom:12px;">
-      <button class="secondary" type="button" onclick="document.querySelectorAll('#monitors-display .group-header').forEach((h) => h.classList.remove('collapsed'))">Expand all</button>
-      <button class="secondary" type="button" onclick="document.querySelectorAll('#monitors-display .group-header').forEach((h) => h.classList.add('collapsed'))">Collapse all</button>
+      <button class="secondary" type="button" onclick="setAllAdminGroupsCollapsed(false)">Expand all</button>
+      <button class="secondary" type="button" onclick="setAllAdminGroupsCollapsed(true)">Collapse all</button>
     </div>`;
   }
   groups.forEach((g) => {
@@ -373,10 +407,12 @@ function renderMonitorsTable() {
       html += `${tableHead}${rows}</tbody></table>`;
       return;
     }
-    const allUp = g.monitors.every((m) => normalizedStatus(m) === 'up');
+    const key = `${adminMonitorGrouping}:${g.label}`;
+    const defaultCollapsed = g.monitors.every((m) => normalizedStatus(m) === 'up');
+    const collapsed = isAdminGroupCollapsed(key, defaultCollapsed);
     html += `
       <div class="monitor-group">
-        <div class="group-header${allUp ? ' collapsed' : ''}" onclick="this.classList.toggle('collapsed')">
+        <div class="group-header${collapsed ? ' collapsed' : ''}" data-group-key="${escapeHtml(key)}">
           <span class="toggle-icon">▼</span>
           <span>${escapeHtml(g.label)}</span>
           ${groupCountsHtml(g.monitors)}
