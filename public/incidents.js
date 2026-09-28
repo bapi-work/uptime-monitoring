@@ -15,7 +15,9 @@ function monthLabel(iso) {
 
 function renderIncident(inc) {
   const affected = inc.affected.length
-    ? `<div class="muted" style="margin-bottom:8px;">Affected: ${inc.affected.map((a) => `<span class="tag-pill">${escapeHtml(a)}</span>`).join(' ')}</div>`
+    ? `<div class="muted" style="margin-bottom:8px;">Affected: ${inc.affected
+        .map((a) => `<span class="tag-pill">${escapeHtml(a.name)}${a.target ? ` <span style="opacity:0.7">(${escapeHtml(a.target)})</span>` : ''}</span>`)
+        .join(' ')}</div>`
     : '';
   const timeline = [...inc.updates]
     .sort((a, b) => new Date(b.time) - new Date(a.time))

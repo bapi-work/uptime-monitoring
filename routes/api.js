@@ -288,7 +288,12 @@ router.delete('/incidents/:id', canDelete, (req, res) => {
 // Public, read-only — powers the /incidents history page.
 router.get('/public/incidents', (req, res) => {
   const monitors = store.getMonitors();
-  const monitorName = (id) => monitors.find((m) => m.id === id)?.name;
+  const monitorInfo = (id) => {
+    const m = monitors.find((x) => x.id === id);
+    if (!m) return null;
+    const target = m.type === 'tcp' || m.type === 'dns' || m.type === 'ping' ? (m.host || m.url) : m.url;
+    return { name: m.name, target: target || '' };
+  };
   const list = store.getIncidents()
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     .map((i) => ({
@@ -299,7 +304,7 @@ router.get('/public/incidents', (req, res) => {
       createdAt: i.createdAt,
       resolvedAt: i.resolvedAt,
       rootCause: i.status === 'resolved' ? i.rootCause : '',
-      affected: (i.monitorIds || []).map(monitorName).filter(Boolean),
+      affected: (i.monitorIds || []).map(monitorInfo).filter(Boolean),
       updates: i.updates,
     }));
   res.json(list);
