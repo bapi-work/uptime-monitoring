@@ -497,6 +497,19 @@ const NOTIF_CONFIG_FIELDS = {
     { key: 'pass', label: 'SMTP Password', placeholder: '', type: 'password' },
     { key: 'from', label: 'From address', placeholder: 'alerts@example.com' },
     { key: 'to', label: 'To address', placeholder: 'you@example.com' },
+    {
+      key: 'subjectTemplate',
+      label: 'Subject template (optional)',
+      placeholder: '[{{statusUpper}}] {{monitor}}',
+      help: 'Leave blank to use the default. Placeholders: {{monitor}} {{status}} {{statusUpper}} {{message}} {{time}}',
+    },
+    {
+      key: 'bodyTemplate',
+      label: 'Body template (optional)',
+      type: 'textarea',
+      placeholder: '{{monitor}} is {{statusUpper}}\n{{message}}\nTime: {{time}}',
+      help: 'Leave blank to use the default. Same placeholders as above.',
+    },
   ],
 };
 
@@ -511,13 +524,17 @@ const notifFormTitle = document.getElementById('notif-form-title');
 function renderNotifConfigFields(values = {}) {
   const fields = NOTIF_CONFIG_FIELDS[notifTypeSelect.value] || [];
   notifConfigFields.innerHTML = fields
-    .map(
-      (f) => `
-      <div>
+    .map((f) => {
+      const help = f.help ? `<p class="muted" style="margin:2px 0 0; font-size:12px;">${escapeHtml(f.help)}</p>` : '';
+      const control = f.type === 'textarea'
+        ? `<textarea data-key="${f.key}" rows="3" style="width:100%;" placeholder="${escapeHtml(f.placeholder || '')}">${escapeHtml(values[f.key] || '')}</textarea>`
+        : `<input data-key="${f.key}" type="${f.type || 'text'}" placeholder="${escapeHtml(f.placeholder || '')}" value="${escapeHtml(values[f.key] || '')}" />`;
+      return `<div>
         <label>${f.label}</label>
-        <input data-key="${f.key}" type="${f.type || 'text'}" placeholder="${f.placeholder || ''}" value="${escapeHtml(values[f.key] || '')}" />
-      </div>`
-    )
+        ${control}
+        ${help}
+      </div>`;
+    })
     .join('');
 }
 notifTypeSelect.addEventListener('change', () => renderNotifConfigFields());
@@ -536,7 +553,7 @@ notifCancelBtn.addEventListener('click', resetNotifForm);
 notifForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const config = {};
-  notifConfigFields.querySelectorAll('input').forEach((input) => { config[input.dataset.key] = input.value; });
+  notifConfigFields.querySelectorAll('input, textarea').forEach((input) => { config[input.dataset.key] = input.value; });
   const payload = { name: document.getElementById('n-name').value.trim(), type: notifTypeSelect.value, config };
   const id = notifIdField.value;
   const url = id ? `/api/notifications/${id}` : '/api/notifications';
@@ -629,7 +646,7 @@ function testSavedNotification(id, button) {
 
 document.getElementById('notif-test-btn').addEventListener('click', (e) => {
   const config = {};
-  notifConfigFields.querySelectorAll('input').forEach((input) => { config[input.dataset.key] = input.value; });
+  notifConfigFields.querySelectorAll('input, textarea').forEach((input) => { config[input.dataset.key] = input.value; });
   runNotificationTest(e.target, { type: notifTypeSelect.value, config });
 });
 
