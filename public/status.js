@@ -388,11 +388,10 @@ async function loadPageNav() {
   const pages = await res.json();
   const nav = document.getElementById('page-nav');
   // No "All monitors" entry here on purpose — that view is admin-only now.
-  // With one page or fewer there's nothing to switch between, so skip the nav.
-  if (pages.length < 2) return;
   const links = pages.map(
     (p) => `<a href="/status/${p.slug}" class="${slug === p.slug ? '' : 'muted'}">${escapeHtml(p.title)}</a>`
   );
+  links.push('<a href="/incidents.html" class="muted">Incident history</a>');
   nav.innerHTML = links.join(' &nbsp;|&nbsp; ');
   nav.style.display = '';
 }
