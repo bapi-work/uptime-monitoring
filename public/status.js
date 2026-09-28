@@ -1,6 +1,6 @@
 let currentRange = '30';
 let currentGrouping = 'group';
-let currentView = 'vertical';
+let currentView = 'horizontal';
 let searchFilter = '';
 let monitorsCache = [];
 let allowedMonitorIds = null; // null on the admin-only default page = show every monitor
