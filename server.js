@@ -94,7 +94,10 @@ app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
-// Status pages: /status/<slug> is public, accessible to anyone.
+// Status pages: /status and /status/<slug> are public, accessible to anyone.
+app.get('/status', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'status.html'));
+});
 app.get('/status/:slug', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'status.html'));
 });
