@@ -4,6 +4,8 @@ A lightweight, self-hosted uptime monitor (Uptime Kuma style) built with Node.js
 
 Deploying for real use? See **[PRODUCTION.md](PRODUCTION.md)** — reverse proxy/TLS setup, required env vars, backups, updates, a pre-launch security checklist, and known limitations (single-instance only, etc).
 
+Setting up alerts? See **[docs/NOTIFICATIONS.md](docs/NOTIFICATIONS.md)** — step-by-step setup for Webhook, Slack, Discord, Teams, Telegram, and Email (SMTP), including provider-specific notes (SendGrid, Gmail, Microsoft 365) and troubleshooting.
+
 ## Features
 
 - **Monitor types:** HTTP(S), HTTP(S) Keyword match, HTTP(S) JSON query, TCP port, DNS record, Ping (ICMP via system `ping`), WebSocket handshake
