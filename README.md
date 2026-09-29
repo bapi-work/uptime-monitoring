@@ -56,20 +56,39 @@ Or via CLI:
 ADMIN_USERNAME=admin ADMIN_PASSWORD=yourpassword docker compose up -d --build
 ```
 
-**After first run, if you need to reset the admin password:**
+Credentials are stored bcrypt-hashed in `data/users.json`.
+
+## Password resets
+
+**A logged-in user changing their own password:** Security tab → "Change password".
+
+**An admin resetting another user's password:** Users tab → "Reset Password" next to
+that user. This works for admin, manager, and user accounts alike, and doesn't
+require knowing the old password.
+
+**If the only admin account is locked out** (forgot the password, lost the 2FA
+device, etc.) and nobody can log in at all, use the recovery script — it edits
+`data/users.json` directly, no login required, and also clears 2FA on that account
+so a lost authenticator can't cause a double lockout:
 
 ```bash
-# Stop the app
-docker compose down
+# Docker
+docker compose exec uptime-monitoring node scripts/reset-admin-password.js <new-password>
 
-# Remove the users file to reset
-rm data/users.json
-
-# Restart with new env vars
-ADMIN_USERNAME=admin ADMIN_PASSWORD=newpassword docker compose up -d --build
+# Local dev
+npm run reset-admin-password -- <new-password>
 ```
 
-Credentials are stored bcrypt-hashed in `data/users.json`. Admins can change their own password from the Security tab in the admin dashboard.
+By default it resets the first admin account found. To target a specific username
+(e.g. if you have multiple admins), pass it as a second argument:
+
+```bash
+docker compose exec uptime-monitoring node scripts/reset-admin-password.js <new-password> <username>
+```
+
+Password must be at least 6 characters. This is safer than deleting
+`data/users.json` — that would also destroy every other user account (manager/user)
+and everyone's 2FA settings, not just the admin's.
 
 ## Run it with Docker (recommended)
 

@@ -417,12 +417,15 @@ common cause of this). With a hand-written nginx config, see the `/ws`
 `Upgrade`/`Connection` headers. The UI falls back to polling if the socket
 can't connect, so this degrades gracefully but isn't real-time.
 
-**Forgot the admin password (and 2FA is off).** Delete the users file to regenerate the admin account:
+**Forgot the admin password (or lost the 2FA device).** Use the recovery script —
+it edits `data/users.json` directly (no login needed) and also clears 2FA on that
+account, so a lost authenticator can't cause a second lockout:
 
 ```bash
-docker compose down
-rm data/users.json
-ADMIN_USERNAME=admin ADMIN_PASSWORD=newpassword docker compose up -d --build
+docker compose exec uptime-monitoring node scripts/reset-admin-password.js <new-password>
 ```
 
-This clears all user accounts and creates a fresh admin. If 2FA was enabled on the old account, you'll need to re-enroll it after logging in.
+This only touches the one admin account's password/2FA — unlike deleting
+`data/users.json`, it doesn't destroy other user accounts, monitors, or history.
+See [README.md § Password resets](README.md#password-resets) for details,
+including targeting a specific username if you have more than one admin.
